@@ -1,0 +1,23 @@
+@import url("./overview.scss");
+@import url("./settings.scss");
+@import url("./layout.scss");
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  nextjs-portal {
+    display: none;
+  }
+}
+
+.maxW {
+  width: full;
+  margin: 0 auto;
+  max-width: 1256px;
+}
