@@ -12,9 +12,11 @@ const extendedColors: DeepPartial<
   },
   red: {
     100: '#F94243',
+    200: '#E53A35',
   },
   green: {
     100: '#5CFEA7',
+    200: '#009A51',
   },
   gray: {
     100: '#777E90',
