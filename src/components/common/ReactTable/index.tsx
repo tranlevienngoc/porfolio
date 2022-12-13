@@ -37,7 +37,7 @@ interface Props {
   total?: number;
   currentPage?: number;
   isShowPaging?: boolean;
-  hiddenItems?: string;
+  hiddenItems?: string[];
 
   isTableMarkets?: boolean;
   isTopGainersLosersTable?: boolean;
@@ -56,7 +56,7 @@ export default function ReactTable({
   currentPage = 1,
   // total = 0,
   isShowPaging = true,
-  hiddenItems = '',
+  hiddenItems = [],
 
   isTableMarkets = false,
   isTopGainersLosersTable = false,
@@ -72,7 +72,7 @@ export default function ReactTable({
     {
       columns,
       data,
-      initialState: { pageIndex: 0, hiddenColumns: [hiddenItems] },
+      initialState: { pageIndex: 0, hiddenColumns: hiddenItems },
     },
     useSortBy,
     usePagination
@@ -240,9 +240,6 @@ export default function ReactTable({
             fontSize={14}
             fontWeight={400}
             txt={`Page ${pageNext} of ${data.length}`}
-            position={{ base: 'absolute', md: 'unset' }}
-            left={{ base: '0px', md: 'unset' }}
-            top={{ base: '8px', md: 'unset' }}
           />
           <Box
             as='button'

@@ -70,7 +70,11 @@ const ElementContent = () => {
             row: { original, index },
           },
         }: CellOfTable) => (
-          <Flex gap='4px' alignItems='center'>
+          <Box
+            display={{ base: 'block', md: 'flex' }}
+            gap='4px'
+            alignItems='center'
+          >
             <TemplateText txt={original.value} fontSize={14} />
             <TemplateText
               fontWeight={400}
@@ -79,13 +83,28 @@ const ElementContent = () => {
               }
               color={index % 2 == 0 ? '#009A51' : '#E53A35'}
             />
-          </Flex>
+          </Box>
         ),
       },
     ],
     []
   );
 
-  return <ReactTable data={datas} columns={columns} />;
+  return (
+    <Box>
+      <Box display={{ base: 'none', md: 'unset' }}>
+        <ReactTable data={datas} columns={columns} total={20} currentPage={1} />
+      </Box>
+      <Box display={{ base: 'unset', md: 'none' }}>
+        <ReactTable
+          data={datas}
+          columns={columns}
+          total={20}
+          currentPage={1}
+          hiddenItems={['Balance']}
+        />
+      </Box>
+    </Box>
+  );
 };
 export default ElementContent;

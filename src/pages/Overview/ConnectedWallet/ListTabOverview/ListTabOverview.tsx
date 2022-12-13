@@ -23,7 +23,7 @@ export default function ListTabOverview({ icon, title, children }: props) {
   const { darkmodeColors } = useColorModeValueItem();
   const { isOpen, onToggle } = useDisclosure();
   return (
-    <Box mt='30px'>
+    <Box mt={{ base: '14px', md: '30px' }}>
       <Stack
         h='auto'
         border={darkmodeColors.border400}
