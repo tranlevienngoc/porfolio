@@ -5,6 +5,7 @@ import {
   PopoverContent,
   PopoverTrigger,
   Portal,
+  SimpleGrid,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
@@ -26,7 +27,7 @@ interface Props {
 const AccountHeader = ({ children }: Props) => {
   const { darkmodeColors } = useColorModeValueItem();
   return (
-    <Box p='24px'>
+    <Box w='auto' p={{ base: '16px', md: '24px' }}>
       <Flex>
         <Ava />
         <Box ml='16px'>
@@ -67,19 +68,32 @@ const AccountHeader = ({ children }: Props) => {
           />
         </Box>
       </Flex>
-      <Flex gap='24px' mt='16px'>
+      <Flex
+        justifyContent={{ base: 'space-between', md: 'unset' }}
+        w='90%'
+        gap={{ base: '32px', md: '24px' }}
+        mt='16px'
+      >
         {FOLLOW.map((item, index) => (
-          <Flex gap='8px' key={index}>
+          <Flex alignItems='center' gap='4px' key={index}>
             {item.icon}
-            <TemplateText fontWeight={400} fontSize='16px' txt={item.value} />
-            <TemplateText fontWeight={400} fontSize='16px' txt={item.label} />
+            <TemplateText
+              fontWeight={{ base: 500, md: 400 }}
+              fontSize={{ base: '13px', md: '16px' }}
+              txt={item.value}
+            />
+            <TemplateText
+              fontWeight={{ base: 500, md: 400 }}
+              fontSize={{ base: '13px', md: '16px' }}
+              txt={item.label}
+            />
           </Flex>
         ))}
       </Flex>
-      <Flex gap='8px' mt='16px'>
+      <SimpleGrid columns={{ base: 2, md: 4 }} gap='8px' mt='16px'>
         {TAGS.map((item, index) => (
           <TagBox
-            w='139px'
+            w='100%'
             h='40px'
             key={index}
             borderRadius='8px'
@@ -88,7 +102,7 @@ const AccountHeader = ({ children }: Props) => {
             iconLeft={item.icon}
           />
         ))}
-      </Flex>
+      </SimpleGrid>
       <Box mt='40px'>
         <ListTabs />
       </Box>
@@ -96,7 +110,7 @@ const AccountHeader = ({ children }: Props) => {
         mt={{ base: '-20px', md: 'unset' }}
         bg={darkmodeColors.bgColorRowOdd}
       >
-        <Box p={{ base: '16px', xl: 'unset' }}>{children}</Box>
+        <Box mt='30px'>{children}</Box>
       </Box>
     </Box>
   );

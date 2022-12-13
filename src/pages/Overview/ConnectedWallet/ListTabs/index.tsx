@@ -41,11 +41,11 @@ export default function ListTabs() {
         border={darkmodeColors.bg450}
         justifyContent='space-between'
         ref={seasonListRef}
-        w={{ base: '100%', xl: '100%' }}
+        w='100%'
         display={{ base: 'block', md: 'flex' }}
         mb='-1px'
       >
-        <Flex w={{ base: '100%' }} mr='auto' gap='6px'>
+        <Flex w='100%' gap='6px'>
           {LIST_TAB.map((item) => (
             <Link to={item.url} key={item.label}>
               <a>
@@ -74,6 +74,7 @@ export default function ListTabs() {
           ))}
         </Flex>
         <TagBox
+          mt={{ base: '10px', md: 'unset' }}
           p='4px 16px'
           content='All Network'
           borderRadius={8}
