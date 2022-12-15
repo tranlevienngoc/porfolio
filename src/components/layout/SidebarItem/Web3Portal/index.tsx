@@ -1,15 +1,20 @@
-import { Box, useMediaQuery } from '@chakra-ui/react';
+import { Box, BoxProps, useMediaQuery } from '@chakra-ui/react';
 
 import ButtonConnectWallet from '../../../common/Buttons/ButtonConnectWallet';
 import FlexCenter from '../../../common/Flex/FlexCenter';
 import TemplateText from '../../../common/Text/TemplateText';
 import Logo from '../../../svg/Logo';
 
-const Web3Portal = () => {
+const Web3Portal = ({ ...props }: BoxProps) => {
   const [isLargerThan1024] = useMediaQuery('(min-width: 1024px)');
 
   return (
-    <Box textAlign='center' w={{ base: '180px', lg: 'unset' }} m='0 auto'>
+    <Box
+      {...props}
+      textAlign='center'
+      w={{ base: '180px', lg: '184px' }}
+      m='0 auto'
+    >
       <FlexCenter mt='24px'>
         <Logo w={isLargerThan1024 ? 150 : 118} h={isLargerThan1024 ? 36 : 28} />
       </FlexCenter>

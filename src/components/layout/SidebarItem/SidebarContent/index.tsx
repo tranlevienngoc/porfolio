@@ -1,11 +1,12 @@
-import { Box } from '@chakra-ui/react';
+import { Box, BoxProps } from '@chakra-ui/react';
 import { Link, useLocation } from 'react-router-dom';
 
 import routes from '../../../../config/routes';
 import BoxRound from '../../../common/BoxRound';
+import Divider from '../../../common/Divider';
 import TemplateText from '../../../common/Text/TemplateText';
 
-const SidebarContent = () => {
+const SidebarContent = ({ ...props }: BoxProps) => {
   const location = useLocation();
   const renderColor = (path: string, disable: boolean) => {
     if (disable) return '#BDBDBF';
@@ -15,9 +16,10 @@ const SidebarContent = () => {
     (item) => !['/nft', '/history', '/approvals'].includes(item.path)
   );
   return (
-    <Box>
+    <Box {...props}>
       {newRoutes.map((item) => (
         <Link key={item.path} to={item.path}>
+          {item.path === '/your-wallet' && <Divider mt="20px" />}
           <BoxRound
             h='40px'
             mt='12px'

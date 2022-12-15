@@ -1,7 +1,12 @@
 import Activity from '../components/svg/Activity';
+import Bridge from '../components/svg/Bridge';
+import Earn from '../components/svg/Earn';
+import MoreActions from '../components/svg/MoreActions';
 import Portfolio from '../components/svg/Portfolio';
 import Send from '../components/svg/Send';
 import Setting from '../components/svg/Setting';
+import Swap from '../components/svg/Swap';
+import YourWallet from '../components/svg/YourWallet';
 import Approvals from '../pages/Approvals';
 import History from '../pages/History';
 import NFT from '../pages/NFT';
@@ -28,6 +33,27 @@ const routes = [
     component: Settings,
     title: 'Send',
     icon: <Send />,
+    disable: false,
+  },
+  {
+    path: '/swap',
+    component: Settings,
+    title: 'Swap',
+    icon: <Swap />,
+    disable: true,
+  },
+  {
+    path: '/bridge',
+    component: Settings,
+    title: 'Bridge',
+    icon: <Bridge />,
+    disable: true,
+  },
+  {
+    path: '/earn',
+    component: Settings,
+    title: 'Earn',
+    icon: <Earn />,
     disable: true,
   },
   {
@@ -50,125 +76,19 @@ const routes = [
     disable: false,
   },
   {
-    path: '/approvals',
+    path: '/your-wallet',
     component: Approvals,
     title: 'Approvals',
+    icon: <YourWallet />,
     disable: false,
   },
-  // {
-  //   path: Paths.absolute('overview'),
-  //   component: Overview,
-  //   title: 'overview',
-  // },
-  // {
-  //   path: Paths.absolute("walletManagement"),
-  //   component: WalletManagement,
-  //   title: translate("sidebar.walletManagment"),
-  //   merge: true,
-  // },
-  // {
-  //   path: Paths.absolute("nft"),
-  //   component: NFT,
-  //   title: translate("sidebar.nft"),
-  // },
-  // {
-  //   path: Paths.absolute("assets"),
-  //   component: Asset,
-  //   title: translate("sidebar.assets"),
-  // },
-  // {
-  //   path: Paths.absolute("collectionDetails", [":slug"]),
-  //   component: CollectionDetails,
-  //   title: translate("sidebar.nft"),
-  //   ifContext: "NFT",
-  // },
-  // {
-  //   path: Paths.absolute("activity"),
-  //   component: Activity,
-  //   title: translate("sidebar.activity"),
-  //   subtitle: translate("sidebar.activitySubTitle"),
-  //   ifContext: "Activity",
-  // },
-  // {
-  //   path: Paths.absolute("nftDetails", [":id"]),
-  //   component: NFTDetails,
-  //   title: translate("sidebar.nft"),
-  //   ifContext: "NFT",
-  // },
-  // {
-  //   path: Paths.absolute("tokens", [":token"]),
-  //   component: TokensDetails,
-  //   title: translate("sidebar.tokens"),
-  //   ifContext: "Token",
-  // },
-  // {
-  //   path: Paths.absolute("earnPool"),
-  //   component: EarnPool,
-  //   title: translate("sidebar.liquidityPools"),
-  //   merge: true,
-  // },
-  // {
-  //   path: Paths.absolute("poolOpportunityDetails", [":provider"]),
-  //   component: Opportunities,
-  //   title: translate("sidebar.liquidityPools"),
-  //   merge: true,
-  // },
-  // {
-  //   path: Paths.absolute("poolPositionDetails", [":provider"]),
-  //   component: DepositedPools,
-  //   title: translate("sidebar.liquidityPools"),
-  //   merge: true,
-  // },
-  // {
-  //   path: Paths.absolute("earnLend"),
-  //   component: EarnLend,
-  //   title: translate("sidebar.lending"),
-  //   merge: true,
-  // },
-  // {
-  //   path: Paths.absolute("lendOpportunityDetails", [":protocol"]),
-  //   component: EarnLendOpportunities,
-  //   title: translate("sidebar.lending"),
-  //   parent:Paths.absolute("earnLend"),
-  //   merge: true,
-  // },
-  // {
-  //   path: Paths.absolute("lendPositionDetails", [":protocol"]),
-  //   component: LentPositions,
-  //   title: translate("sidebar.lending"),
-  //   parent:Paths.absolute("earnLend"),
-  //   merge: true,
-  // },
-  // {
-  //   path: Paths.absolute("farmOpportunityPoolDetails", [":type", ":slug"]),
-  //   component: EarnFarms,
-  //   title: translate("sidebar.farms"),
-  //   merge: true,
-  // },
-  // {
-  //   path: Paths.absolute("earnFarms"),
-  //   component: EarnFarms,
-  //   title: translate("sidebar.farms"),
-  //   merge: true,
-  // },
-  // {
-  //   path: Paths.absolute("earnStake"),
-  //   component: EarnStake,
-  //   title: translate("sidebar.stake"),
-  //   merge: true,
-  // },
-  // {
-  //   path: Paths.absolute("exchangeSwap"),
-  //   component: ExchangeSwap,
-  //   title: translate("sidebar.swap"),
-  //   merge: true,
-  // },
-  // {
-  //   path: Paths.absolute("exchangeBridge"),
-  //   component: ExchangeBridge,
-  //   title: translate("sidebar.bridge"),
-  //   merge: true,
-  // },
+  {
+    path: '/more-actions',
+    component: Approvals,
+    title: 'Approvals',
+    icon: <MoreActions />,
+    disable: false,
+  },
 ];
 
 export default routes;

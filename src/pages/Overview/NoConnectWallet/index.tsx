@@ -12,19 +12,24 @@ import NoWallet from '../../../components/svg/NoWallet';
 const NoConnectWallet = () => {
   return (
     <Flex
-      justifyContent='center'
-      className='overview-page'
       width='100%'
       height='100%'
+      justifyContent='center'
+      className='overview-page'
     >
-      <Box h='224px' w='428px' mt='30vh' textAlign='center'>
+      <Box
+        h='224px'
+        mt={{ base: '68px', md: '132px', xl: '215px' }}
+        textAlign='center'
+        w={{ base: '285px', md: '428px' }}
+      >
         <FlexCenter
           h='96px'
           w='96px'
+          m='0 auto'
           bg='#EFF0F2'
           borderRadius='50%'
           position='relative'
-          m='0 auto'
         >
           <NoWallet />
           <IconCloseBlue position='absolute' top='10px' right='0px' />
@@ -39,10 +44,15 @@ const NoConnectWallet = () => {
           mt='8px'
           fontSize={16}
           fontWeight={400}
-          txt='Get started by connecting your wallet'
           color='#505052'
+          txt='Get started by connecting your wallet'
         />
-        <Flex mt='16px' justifyContent='space-between'>
+        <Flex
+          mt='16px'
+          w={{ base: '100%' }}
+          flexWrap={{ base: 'wrap', md: 'nowrap' }}
+          justifyContent={{ base: 'center', md: 'space-between' }}
+        >
           <ButtonConnectWallet
             h='40px'
             w='206px'
@@ -53,11 +63,13 @@ const NoConnectWallet = () => {
           <ButtonBase
             fsText={16}
             fwText={500}
+            w='206px'
             bg='white'
-            leftIcon={<DemoWallet />}
             colorText='black'
+            leftIcon={<DemoWallet />}
             content='Try Demo Wallet'
             border='1px solid #D4D4D6'
+            mt={{ base: '16px', md: '0px' }}
           />
         </Flex>
       </Box>
