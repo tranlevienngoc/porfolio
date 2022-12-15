@@ -1,7 +1,6 @@
 import Activity from '../components/svg/Activity';
 import Bridge from '../components/svg/Bridge';
 import Earn from '../components/svg/Earn';
-import MoreActions from '../components/svg/MoreActions';
 import Portfolio from '../components/svg/Portfolio';
 import Send from '../components/svg/Send';
 import Setting from '../components/svg/Setting';
@@ -9,6 +8,11 @@ import Swap from '../components/svg/Swap';
 import YourWallet from '../components/svg/YourWallet';
 import Approvals from '../pages/Approvals';
 import History from '../pages/History';
+import PoolTab from '../pages/History/PoolTab';
+import ReceivedTab from '../pages/History/ReceivedTab';
+import SendTab from '../pages/History/SendTab';
+import SwapTab from '../pages/History/SwapTab';
+import WithdrawTab from '../pages/History/WithdrawTab';
 import NFT from '../pages/NFT';
 import Overview from '../pages/Overview';
 import Settings from '../pages/Settings';
@@ -76,17 +80,41 @@ const routes = [
     disable: false,
   },
   {
-    path: '/your-wallet',
+    path: '/approvals',
     component: Approvals,
     title: 'Approvals',
     icon: <YourWallet />,
     disable: false,
   },
+
   {
-    path: '/more-actions',
-    component: Approvals,
-    title: 'Approvals',
-    icon: <MoreActions />,
+    path: '/history/send',
+    component: SendTab,
+    title: 'Send',
+    disable: false,
+  },
+  {
+    path: '/history/received',
+    component: ReceivedTab,
+    title: 'Received',
+    disable: false,
+  },
+  {
+    path: '/history/swap',
+    component: SwapTab,
+    title: 'Swap',
+    disable: false,
+  },
+  {
+    path: '/history/pool',
+    component: PoolTab,
+    title: 'Pool',
+    disable: false,
+  },
+  {
+    path: '/history/withdraw',
+    component: WithdrawTab,
+    title: 'Withdraw',
     disable: false,
   },
 ];

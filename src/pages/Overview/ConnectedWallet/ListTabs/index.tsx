@@ -12,7 +12,7 @@ import useColorModeValueItem from '../../../../hook/useColorModeValueItem/useCol
 export default function ListTabs() {
   const router = useLocation();
 
-  const [selected, setSelected] = useState(router.pathname);
+  const [selected, setSelected] = useState(router.pathname.split('/')[1]);
 
   const [getindex] = useState(
     LIST_TAB.findIndex((item) => item.url === selected)
@@ -61,14 +61,14 @@ export default function ListTabs() {
                     fontSize={14}
                     fontWeight={700}
                     txt={item.label}
-                    color={item.url === selected ? '#106CFF' : '#7C7C7E'}
+                    color={item.value === selected ? '#106CFF' : '#7C7C7E'}
                   />
                 </Box>
               </a>
               <Box
                 w='100%'
                 h='2px'
-                bg={item.url === selected ? ' #106CFF' : 'unset'}
+                bg={item.value === selected ? ' #106CFF' : 'unset'}
               />
             </Link>
           ))}

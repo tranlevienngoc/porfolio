@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 
 import ReactTable from '../../../../components/common/ReactTable';
 import TemplateText from '../../../../components/common/Text/TemplateText';
+import TextStatistical from '../../../../components/common/Text/TextStatistical';
 import Sign from '../../../../components/svg/Sign';
 import Token from '../../../../components/svg/Token';
 import { CellOfTable } from '../../../../constants/types';
@@ -88,12 +89,9 @@ const Wallet = () => {
             alignItems='center'
           >
             <TemplateText txt={original.value} fontSize={14} />
-            <TemplateText
-              fontWeight={400}
-              txt={
-                index % 2 == 0 ? `+${original.change}` : `-${original.change}`
-              }
-              color={index % 2 == 0 ? '#009A51' : '#E53A35'}
+            <TextStatistical
+              txt={original.change}
+              isIncrease={index % 2 == 0}
             />
           </Box>
         ),

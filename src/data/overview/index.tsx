@@ -54,22 +54,22 @@ export const LIST_TAB = [
   {
     label: 'OverView',
     url: '/',
-    value: 'OverView',
+    value: '',
   },
   {
     label: 'NFT',
     url: '/nft',
-    value: 'NFT',
+    value: 'nft',
   },
   {
     label: 'History',
     url: '/history',
-    value: 'History',
+    value: 'history',
   },
   {
     label: 'Approvals',
     url: '/approvals',
-    value: 'Approvals',
+    value: 'approvals',
   },
 ];
 

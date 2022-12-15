@@ -38,11 +38,7 @@ const Layout = () => {
                       key={route.path}
                       path={route.path}
                       element={
-                        <Flex width='100%' height='100vh' overflowY='scroll'>
-                          <Box flexGrow={1}>
-                            {React.createElement(route.component)}
-                          </Box>
-                        </Flex>
+                        <Box>{React.createElement(route.component)}</Box>
                       }
                     />
                   );

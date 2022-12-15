@@ -21,3 +21,19 @@ body {
   margin: 0 auto;
   max-width: 1256px;
 }
+
+::-webkit-scrollbar {
+  height: 0px;
+  width: 8px;
+  border: 1px solid #fff;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: #EEEEEE;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: #B0B0B0;
+}

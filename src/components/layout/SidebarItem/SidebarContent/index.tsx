@@ -13,7 +13,17 @@ const SidebarContent = ({ ...props }: BoxProps) => {
     return location.pathname === path ? 'blue.100' : 'text.100';
   };
   const newRoutes = routes.filter(
-    (item) => !['/nft', '/history', '/approvals'].includes(item.path)
+    (item) =>
+      ![
+        '/nft',
+        '/history',
+        '/approvals',
+        '/history/send',
+        '/history/received',
+        '/history/swap',
+        '/history/pool',
+        '/history/withdraw',
+      ].includes(item.path)
   );
   return (
     <Box {...props}>

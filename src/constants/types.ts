@@ -179,6 +179,7 @@ export type DatasTable = {
   value: string;
   name: string;
   pairs: string;
+  time: string;
   price: string;
   depth2Plus: string;
   depth2: string;
@@ -207,4 +208,17 @@ export type DatasTable = {
   marketcap: string;
   percent: string;
   isIncrease: boolean;
+  wallet: string;
+  last_update: string;
+  approved_spender: string;
+  allowance: string;
+  txn_hash: string;
+};
+
+export type ProductItem = {
+  image: string;
+  name: string;
+  author: string;
+  label: string;
+  price: string;
 };

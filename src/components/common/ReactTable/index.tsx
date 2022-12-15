@@ -38,9 +38,10 @@ interface Props {
   currentPage?: number;
   isShowPaging?: boolean;
   hiddenItems?: string[];
-
+  isShowHeader?: boolean;
   isTableMarkets?: boolean;
   isTopGainersLosersTable?: boolean;
+  isBorder?: boolean;
 }
 export default function ReactTable({
   columns = [],
@@ -57,9 +58,10 @@ export default function ReactTable({
   // total = 0,
   isShowPaging = true,
   hiddenItems = [],
-
+  isShowHeader = true,
   isTableMarkets = false,
   isTopGainersLosersTable = false,
+  isBorder,
 }: Props) {
   const {
     getTableProps,
@@ -116,76 +118,85 @@ export default function ReactTable({
   };
 
   return (
-    <Box overflowX='auto'>
+    <Box
+      overflowX='auto'
+      border={isBorder ? '1px solid #EFF0F2' : 'unset'}
+      borderRadius={isBorder ? '16px' : 'unset'}
+    >
       <TableContainer>
-        <Table {...getTableProps()} variant='unstyled'>
-          <Thead>
-            {headerGroups.map((headerGroup: any, index: number) => (
-              <Tr
-                h={h}
-                key={index}
-                {...headerGroup.getHeaderGroupProps()}
-                bg={darkmodeColors.bg950}
-                borderBottom={darkmodeColors.border450}
-              >
-                {headerGroup.headers.map((column: any, i: number) => {
-                  return (
-                    <Th
-                      key={i}
-                      padding='16px 10px'
-                      isNumeric={column.isNumeric}
-                      textTransform='unset'
-                      fontSize='16px'
-                      className='table-th'
-                      background='inherit'
-                      {...column.getHeaderProps()}
-                      title=''
-                    >
-                      <Flex alignItems='center' justifyContent='start'>
-                        <TemplateText
-                          fontFamily={`${fontFamily}`}
-                          txt={column.render('Header')}
-                          fs={13}
-                          fw={500}
-                          mr={column.render('Header') === '#' ? '10px' : '0px'}
-                          {...column.getHeaderProps(
-                            column.getSortByToggleProps()
-                          )}
-                          pl={paddingLeft(
-                            [
-                              'header_h1',
-                              'header_h24',
-                              'header_d',
-                              'header_icon',
-                            ],
-                            column.getHeaderProps(column.getSortByToggleProps())
-                              .key
-                          )}
-                          ml={{
-                            base: 'unset',
-                            md:
-                              isTableMarkets &&
-                              ['header_name', 'header_label'].includes(
-                                column.getHeaderProps(
-                                  column.getSortByToggleProps()
-                                ).key
-                              )
-                                ? '-20px'
-                                : '0px',
-                          }}
-                          color={darkmodeColors.text125}
-                        />
+        <Table {...getTableProps()} variant='unstyled' bg='#F9FAFC'>
+          {isShowHeader && (
+            <Thead>
+              {headerGroups.map((headerGroup: any, index: number) => (
+                <Tr
+                  h={h}
+                  key={index}
+                  {...headerGroup.getHeaderGroupProps()}
+                  bg={darkmodeColors.bg950}
+                  borderBottom={darkmodeColors.border450}
+                >
+                  {headerGroup.headers.map((column: any, i: number) => {
+                    return (
+                      <Th
+                        key={i}
+                        padding='16px 10px'
+                        isNumeric={column.isNumeric}
+                        textTransform='unset'
+                        fontSize='16px'
+                        className='table-th'
+                        background='inherit'
+                        {...column.getHeaderProps()}
+                        title=''
+                      >
+                        <Flex alignItems='center' justifyContent='start'>
+                          <TemplateText
+                            fontFamily={`${fontFamily}`}
+                            txt={column.render('Header')}
+                            fs={13}
+                            fw={500}
+                            mr={
+                              column.render('Header') === '#' ? '10px' : '0px'
+                            }
+                            {...column.getHeaderProps(
+                              column.getSortByToggleProps()
+                            )}
+                            pl={paddingLeft(
+                              [
+                                'header_h1',
+                                'header_h24',
+                                'header_d',
+                                'header_icon',
+                              ],
+                              column.getHeaderProps(
+                                column.getSortByToggleProps()
+                              ).key
+                            )}
+                            ml={{
+                              base: 'unset',
+                              md:
+                                isTableMarkets &&
+                                ['header_name', 'header_label'].includes(
+                                  column.getHeaderProps(
+                                    column.getSortByToggleProps()
+                                  ).key
+                                )
+                                  ? '-20px'
+                                  : '0px',
+                            }}
+                            color={darkmodeColors.text125}
+                          />
 
-                        <chakra.span color={darkmodeColors.text100} pl='1.5'>
-                          {column.isSorted ? showTriangleIcon(column) : null}
-                        </chakra.span>
-                      </Flex>
-                    </Th>
-                  );
-                })}
-              </Tr>
-            ))}
-          </Thead>
+                          <chakra.span color={darkmodeColors.text100} pl='1.5'>
+                            {column.isSorted ? showTriangleIcon(column) : null}
+                          </chakra.span>
+                        </Flex>
+                      </Th>
+                    );
+                  })}
+                </Tr>
+              ))}
+            </Thead>
+          )}
           <Tbody zIndex={0} {...getTableBodyProps()}>
             {rows.map((row: any, index: number) => {
               prepareRow(row);

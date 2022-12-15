@@ -6,7 +6,7 @@ import { Connected } from '../../constants';
 
 const Overview = () => {
   return (
-    <Box w='100%'>{!Connected ? <ConnectedWallet /> : <NoConnectWallet />}</Box>
+    <Box w='100%'>{Connected ? <ConnectedWallet /> : <NoConnectWallet />}</Box>
   );
 };
 
