@@ -1,11 +1,21 @@
 import { Box } from '@chakra-ui/react';
 
-export default function Chain() {
+interface props {
+  isSendPage?: boolean;
+}
+
+export default function Chain({ isSendPage = false }: props) {
   return (
     <Box
       as='svg'
-      w={{ base: '32px', xl: '48px' }}
-      h={{ base: '32px', xl: '48px' }}
+      w={{
+        base: isSendPage ? '24px' : '32px',
+        xl: isSendPage ? '24px' : '48px',
+      }}
+      h={{
+        base: isSendPage ? '24px' : '32px',
+        xl: isSendPage ? '24px' : '48px',
+      }}
       viewBox='0 0 48 48'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'

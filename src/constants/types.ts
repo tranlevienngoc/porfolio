@@ -67,8 +67,8 @@ export type ChangeTypeCoin = {
 
 export type ChildrenConvertCoin = {
   name: string;
-  label: string;
   value: string;
+  label?: string;
   icon: ReactNode;
 };
 

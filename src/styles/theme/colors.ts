@@ -6,6 +6,7 @@ const extendedColors: DeepPartial<
 > = {
   text: {
     100: '#1E1E1E',
+    200: '#7C7C7E',
   },
   black: {
     100: '#505052',
@@ -23,6 +24,7 @@ const extendedColors: DeepPartial<
     200: '#E5E5E5',
     300: '#9B9B9E',
     400: '#252A3F',
+    500: '#7C7C7E',
   },
   white: {
     100: '#FFFF',

@@ -61,14 +61,14 @@ export default function ListTabs() {
                     fontSize={14}
                     fontWeight={700}
                     txt={item.label}
-                    color={item.value === selected ? '#106CFF' : '#7C7C7E'}
+                    color={item.value === selected ? 'blue.100' : 'gray.500'}
                   />
                 </Box>
               </a>
               <Box
                 w='100%'
                 h='2px'
-                bg={item.value === selected ? ' #106CFF' : 'unset'}
+                bg={item.value === selected ? ' blue.100' : 'unset'}
               />
             </Link>
           ))}

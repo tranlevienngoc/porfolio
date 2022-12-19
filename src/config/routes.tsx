@@ -16,6 +16,7 @@ import WithdrawTab from '../pages/History/WithdrawTab';
 import NFT from '../pages/NFT';
 import Overview from '../pages/Overview';
 import Settings from '../pages/Settings';
+import Sends from '../pages/Sends';
 
 const routes = [
   {
@@ -34,7 +35,7 @@ const routes = [
   },
   {
     path: '/send',
-    component: Settings,
+    component: Sends,
     title: 'Send',
     icon: <Send />,
     disable: false,
