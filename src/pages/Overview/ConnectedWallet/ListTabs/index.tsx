@@ -45,32 +45,38 @@ export default function ListTabs() {
         display={{ base: 'block', md: 'flex' }}
         mb='-1px'
       >
-        <Flex w='100%' gap='6px'>
+        <Flex
+          w='100%'
+          gap='6px'
+          borderBottom={{ base: '1px solid #E6E6E8', md: 'none' }}
+        >
           {LIST_TAB.map((item) => (
-            <Link to={item.url} key={item.label}>
-              <a>
+            <Box textAlign='center' w={{ base: 'calc(100%/4)', md: 'unset' }}>
+              <Link to={item.url} key={item.label}>
+                <a>
+                  <Box
+                    p='12px'
+                    cursor='pointer'
+                    key={item.value}
+                    onClick={() => {
+                      setSelected(item.url);
+                    }}
+                  >
+                    <TemplateText
+                      fontSize={14}
+                      fontWeight={700}
+                      txt={item.label}
+                      color={item.value === selected ? 'blue.100' : 'gray.500'}
+                    />
+                  </Box>
+                </a>
                 <Box
-                  p='12px'
-                  cursor='pointer'
-                  key={item.value}
-                  onClick={() => {
-                    setSelected(item.url);
-                  }}
-                >
-                  <TemplateText
-                    fontSize={14}
-                    fontWeight={700}
-                    txt={item.label}
-                    color={item.value === selected ? 'blue.100' : 'gray.500'}
-                  />
-                </Box>
-              </a>
-              <Box
-                w='100%'
-                h='2px'
-                bg={item.value === selected ? ' blue.100' : 'unset'}
-              />
-            </Link>
+                  w='100%'
+                  h='2px'
+                  bg={item.value === selected ? ' blue.100' : 'unset'}
+                />
+              </Link>
+            </Box>
           ))}
         </Flex>
         <TagBox
@@ -83,7 +89,12 @@ export default function ListTabs() {
           iconRight={<ArrowBottom />}
         />
       </Box>
-      <Box w='100%' h='1px' bg='#E6E6E8' />
+      <Box
+        w='100%'
+        h='1px'
+        bg='#E6E6E8'
+        display={{ base: 'none', md: 'block' }}
+      />
     </>
   );
 }

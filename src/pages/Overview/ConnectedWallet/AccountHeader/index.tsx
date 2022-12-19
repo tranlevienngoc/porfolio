@@ -28,7 +28,7 @@ const AccountHeader = ({ children }: Props) => {
         mt='16px'
       >
         {FOLLOW.map((item, index) => (
-          <Flex alignItems='center' gap='4px' key={index}>
+          <Flex ml='-3px' alignItems='center' gap='4px' key={index}>
             {item.icon}
             <TemplateText
               fontWeight={{ base: 500, md: 400 }}

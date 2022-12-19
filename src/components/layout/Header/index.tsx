@@ -34,14 +34,14 @@ const Header = ({
   };
 
   return (
-    <Flex p='24px' alignItems='center' flexWrap='wrap'>
+    <Flex p='16px' alignItems='center' flexWrap='wrap'>
       {showSidebarButton && (
         <Flex
           w='100%'
           justifyContent='space-between'
           mb={{ base: '24px', lg: '0px' }}
         >
-          <Box w='auto' onClick={() => handleClick(true)}>
+          <Box w='auto' ml='-2px' onClick={() => handleClick(true)}>
             <HamburgerIcon />
           </Box>
           <Logo w={117} h={28} />
