@@ -23,7 +23,7 @@ const AccountHeader = ({ children }: Props) => {
       </Flex>
       <Flex
         justifyContent={{ base: 'space-between', md: 'unset' }}
-        w='90%'
+        w='100%'
         gap={{ base: '32px', md: '24px' }}
         mt='16px'
       >
