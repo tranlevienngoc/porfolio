@@ -7,11 +7,10 @@ import {
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
+import TemplateText from 'components/common/Text/TemplateText';
+import ChevronDownIcon from 'components/svg/ChevronDownIcon';
+import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 import React, { ReactNode } from 'react';
-
-import TemplateText from '../../../../components/common/Text/TemplateText';
-import ChevronDownIcon from '../../../../components/svg/ChevronDownIcon';
-import useColorModeValueItem from '../../../../hook/useColorModeValueItem/useColorModeValueItem';
 
 interface props {
   icon?: ReactNode;

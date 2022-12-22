@@ -1,13 +1,12 @@
 import { Box, Flex } from '@chakra-ui/react';
+import ButtonBase from 'components/common/Buttons/ButtonBase';
+import ButtonConnectWallet from 'components/common/Buttons/ButtonConnectWallet';
+import FlexCenter from 'components/common/Flex/FlexCenter';
+import TemplateText from 'components/common/Text/TemplateText';
+import DemoWallet from 'components/svg/DemoWallet';
+import IconCloseBlue from 'components/svg/IconCloseBlue';
+import NoWallet from 'components/svg/NoWallet';
 import React from 'react';
-
-import ButtonBase from '../../../components/common/Buttons/ButtonBase';
-import ButtonConnectWallet from '../../../components/common/Buttons/ButtonConnectWallet';
-import FlexCenter from '../../../components/common/Flex/FlexCenter';
-import TemplateText from '../../../components/common/Text/TemplateText';
-import DemoWallet from '../../../components/svg/DemoWallet';
-import IconCloseBlue from '../../../components/svg/IconCloseBlue';
-import NoWallet from '../../../components/svg/NoWallet';
 
 const NoConnectWallet = () => {
   return (

@@ -1,13 +1,13 @@
 import { Box, Flex, SimpleGrid } from '@chakra-ui/react';
+import TagBox from 'components/common/TagBox';
+import TemplateText from 'components/common/Text/TemplateText';
+import Ava from 'components/svg/Ava';
+import { FOLLOW, TAGS } from 'data/overview';
+import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 import { ReactNode } from 'react';
 
 import Balance from './Balance';
 import ListTabs from '../ListTabs';
-import TagBox from '../../../../components/common/TagBox';
-import TemplateText from '../../../../components/common/Text/TemplateText';
-import Ava from '../../../../components/svg/Ava';
-import { FOLLOW, TAGS } from '../../../../data/overview';
-import useColorModeValueItem from '../../../../hook/useColorModeValueItem/useColorModeValueItem';
 
 interface Props {
   children?: ReactNode;

@@ -1,16 +1,15 @@
 import { Box, Flex, Image } from '@chakra-ui/react';
+import ReactTable from 'components/common/ReactTable';
+import TemplateText from 'components/common/Text/TemplateText';
+import TextStatistical from 'components/common/Text/TextStatistical';
+import DeCrease from 'components/svg/DeCrease';
+import Gas from 'components/svg/Gas';
+import InCrease from 'components/svg/InCrease';
+import { addressWallet } from 'constants/app';
+import { CellOfTable } from 'constants/types';
+import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 import { useMemo } from 'react';
-
-import ReactTable from '../../../components/common/ReactTable';
-import TemplateText from '../../../components/common/Text/TemplateText';
-import TextStatistical from '../../../components/common/Text/TextStatistical';
-import DeCrease from '../../../components/svg/DeCrease';
-import Gas from '../../../components/svg/Gas';
-import InCrease from '../../../components/svg/InCrease';
-import { addressWallet } from '../../../constants';
-import { CellOfTable } from '../../../constants/types';
-import useColorModeValueItem from '../../../hook/useColorModeValueItem/useColorModeValueItem';
-import truncateEthAddress from '../../../utils/truncateEthAddress';
+import truncateEthAddress from 'utils/truncateEthAddress';
 
 interface props {
   length: number;

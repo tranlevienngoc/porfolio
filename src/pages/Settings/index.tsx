@@ -1,14 +1,13 @@
 import { Box, Flex, Popover, Radio, RadioGroup, Stack } from '@chakra-ui/react';
-import { useState } from 'react';
-
-import PopupItem from '../../components/common/PopupItem';
-import SelectItem from '../../components/common/SelectItem';
-import TemplateText from '../../components/common/Text/TemplateText';
+import PopupItem from 'components/common/PopupItem';
+import SelectItem from 'components/common/SelectItem';
+import TemplateText from 'components/common/Text/TemplateText';
 import {
   LANGUAGE_CURRENCY,
   LIST_PLATFORM_DOWNLOAD,
   THEME,
-} from '../../data/setting/setting';
+} from 'data/setting/setting';
+import { useState } from 'react';
 
 const Settings = () => {
   const [value, setValue] = useState('');

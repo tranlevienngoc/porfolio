@@ -7,14 +7,13 @@ import {
   Portal,
   useDisclosure,
 } from '@chakra-ui/react';
+import TemplateText from 'components/common/Text/TemplateText';
+import TextStatistical from 'components/common/Text/TextStatistical';
+import ArrowBottom from 'components/svg/ArrowBottom';
+import RefeshCircle from 'components/svg/RefeshCircle';
+import { addressWallet } from 'constants/app';
 import React from 'react';
-
-import TemplateText from '../../../../../components/common/Text/TemplateText';
-import TextStatistical from '../../../../../components/common/Text/TextStatistical';
-import ArrowBottom from '../../../../../components/svg/ArrowBottom';
-import RefeshCircle from '../../../../../components/svg/RefeshCircle';
-import { addressWallet } from '../../../../../constants';
-import truncateEthAddress from '../../../../../utils/truncateEthAddress';
+import truncateEthAddress from 'utils/truncateEthAddress';
 
 export default function Balance() {
   const { isOpen, onToggle, onClose } = useDisclosure();

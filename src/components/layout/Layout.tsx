@@ -1,9 +1,10 @@
-import { Box, Flex, useMediaQuery } from '@chakra-ui/react';
+import { Box, useMediaQuery } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Header from './Header';
 import SidebarItem from './SidebarItem';
+import AllSymbol from '../svg/AllSymbol';
 import routes from '../../config/routes';
 
 const Layout = () => {
@@ -48,6 +49,7 @@ const Layout = () => {
           </Box>
         </Box>
       </Router>
+      <AllSymbol />
     </Box>
   );
 };

@@ -1,12 +1,11 @@
 import { Box, Flex } from '@chakra-ui/react';
+import ReactTable from 'components/common/ReactTable';
+import TemplateText from 'components/common/Text/TemplateText';
+import TextStatistical from 'components/common/Text/TextStatistical';
+import Sign from 'components/svg/Sign';
+import Token from 'components/svg/Token';
+import { CellOfTable } from 'constants/types';
 import { useMemo } from 'react';
-
-import ReactTable from '../../../../components/common/ReactTable';
-import TemplateText from '../../../../components/common/Text/TemplateText';
-import TextStatistical from '../../../../components/common/Text/TextStatistical';
-import Sign from '../../../../components/svg/Sign';
-import Token from '../../../../components/svg/Token';
-import { CellOfTable } from '../../../../constants/types';
 
 const Wallet = () => {
   const datas = useMemo(

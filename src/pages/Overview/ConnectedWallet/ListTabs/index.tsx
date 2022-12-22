@@ -1,13 +1,12 @@
 import { Box, Flex } from '@chakra-ui/react';
+import TagBox from 'components/common/TagBox';
+import TemplateText from 'components/common/Text/TemplateText';
+import ArrowBottom from 'components/svg/ArrowBottom';
+import Category from 'components/svg/Category';
+import { LIST_TAB } from 'data/overview';
+import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-
-import TagBox from '../../../../components/common/TagBox';
-import TemplateText from '../../../../components/common/Text/TemplateText';
-import ArrowBottom from '../../../../components/svg/ArrowBottom';
-import Category from '../../../../components/svg/Category';
-import { LIST_TAB } from '../../../../data/overview';
-import useColorModeValueItem from '../../../../hook/useColorModeValueItem/useColorModeValueItem';
 
 export default function ListTabs() {
   const router = useLocation();

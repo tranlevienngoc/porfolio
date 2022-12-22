@@ -8,15 +8,14 @@ import {
   PopoverTrigger,
   Portal,
 } from '@chakra-ui/react';
+import ButtonBase from 'components/common/Buttons/ButtonBase';
+import TemplateText from 'components/common/Text/TemplateText';
+import WrapSelectCoin from 'components/common/WrapSelectCoin';
+import ArrowBottom from 'components/svg/ArrowBottom';
+import PersonCard from 'components/svg/PersonCard';
+import { LIST_COIN, LIST_WALLET } from 'data/send/send';
 import React, { useCallback, useState } from 'react';
-
-import ButtonBase from '../../../components/common/Buttons/ButtonBase';
-import TemplateText from '../../../components/common/Text/TemplateText';
-import WrapSelectCoin from '../../../components/common/WrapSelectCoin';
-import ArrowBottom from '../../../components/svg/ArrowBottom';
-import PersonCard from '../../../components/svg/PersonCard';
-import { LIST_COIN, LIST_WALLET } from '../../../data/send/send';
-import truncateEthAddress from '../../../utils/truncateEthAddress';
+import truncateEthAddress from 'utils/truncateEthAddress';
 
 export default function TokenTab() {
   const [valueSearch, setValueSearch] = useState('');

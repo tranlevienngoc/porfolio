@@ -1,9 +1,8 @@
 import { Box, Flex, Image } from '@chakra-ui/react';
-
-import ButtonBase from '../../../components/common/Buttons/ButtonBase';
-import TemplateText from '../../../components/common/Text/TemplateText';
-import Ethereum from '../../../components/svg/Ethereum';
-import { ProductItem } from '../../../constants/types';
+import ButtonBase from 'components/common/Buttons/ButtonBase';
+import TemplateText from 'components/common/Text/TemplateText';
+import Ethereum from 'components/svg/Ethereum';
+import { ProductItem } from 'constants/types';
 
 interface props {
   Product: ProductItem;

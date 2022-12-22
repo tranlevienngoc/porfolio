@@ -1,6 +1,7 @@
+import { LIST_TAB_OVERVIEW } from 'data/overview';
+
 import AccountHeader from './AccountHeader';
 import ListTabOverview from './ListTabOverview/ListTabOverview';
-import { LIST_TAB_OVERVIEW } from '../../../data/overview';
 
 const ConnectedWallet = () => {
   return (

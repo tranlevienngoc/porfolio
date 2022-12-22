@@ -1,8 +1,7 @@
 import { Box, Flex, SimpleGrid } from '@chakra-ui/react';
-
-import TemplateText from '../../../../components/common/Text/TemplateText';
-import { LIST_NETWORK_BALANCE } from '../../../../data/overview';
-import useColorModeValueItem from '../../../../hook/useColorModeValueItem/useColorModeValueItem';
+import TemplateText from 'components/common/Text/TemplateText';
+import { LIST_NETWORK_BALANCE } from 'data/overview';
+import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 
 export default function NetWorkBalance() {
   const { darkmodeColors } = useColorModeValueItem();

@@ -1,15 +1,15 @@
 import { Box } from '@chakra-ui/react';
+import ArrowBottom from 'components/svg/ArrowBottom';
+import Category from 'components/svg/Category';
+import { OptionFilters } from 'constants/types';
+import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 import { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import ButtonBase from '../Buttons/ButtonBase';
 import FlexScroll from '../Flex/FlexScroll';
-import ArrowBottom from '../../svg/ArrowBottom';
-import Category from '../../svg/Category';
-import { OptionFilters } from '../../../constants/types';
-import useColorModeValueItem from '../../../hook/useColorModeValueItem/useColorModeValueItem';
-import TemplateText from '../Text/TemplateText';
 import SearchInput from '../Input/SearchInput';
+import TemplateText from '../Text/TemplateText';
 
 interface Props {
   selected?: string;

@@ -1,8 +1,8 @@
 import { Box } from '@chakra-ui/react';
+import { Connected } from 'constants/app';
 
 import ConnectedWallet from './ConnectedWallet';
 import NoConnectWallet from './NoConnectWallet';
-import { Connected } from '../../constants';
 
 const Overview = () => {
   return (

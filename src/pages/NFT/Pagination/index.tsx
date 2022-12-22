@@ -1,9 +1,8 @@
 import { Box, Flex } from '@chakra-ui/react';
+import ArrowLeft from 'components/common/ReactTable/icon/ArrowLeft';
+import ArrowRight from 'components/common/ReactTable/icon/ArrowRight';
+import TemplateText from 'components/common/Text/TemplateText';
 import React, { useState } from 'react';
-
-import ArrowLeft from '../../../components/common/ReactTable/icon/ArrowLeft';
-import ArrowRight from '../../../components/common/ReactTable/icon/ArrowRight';
-import TemplateText from '../../../components/common/Text/TemplateText';
 
 interface props {
   lenght: number;

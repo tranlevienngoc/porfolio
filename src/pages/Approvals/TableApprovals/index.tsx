@@ -1,13 +1,12 @@
 import { Box, Flex } from '@chakra-ui/react';
+import ButtonBase from 'components/common/Buttons/ButtonBase';
+import ReactTable from 'components/common/ReactTable';
+import TemplateText from 'components/common/Text/TemplateText';
+import LinkIcon from 'components/svg/LinkIcon';
+import LiteCoin from 'components/svg/LiteCoin';
+import { addressWallet } from 'constants/app';
+import { CellOfTable } from 'constants/types';
 import { useMemo } from 'react';
-
-import ButtonBase from '../../../components/common/Buttons/ButtonBase';
-import ReactTable from '../../../components/common/ReactTable';
-import TemplateText from '../../../components/common/Text/TemplateText';
-import LinkIcon from '../../../components/svg/LinkIcon';
-import LiteCoin from '../../../components/svg/LiteCoin';
-import { addressWallet } from '../../../constants';
-import { CellOfTable } from '../../../constants/types';
 
 const TableApprovals = () => {
   const datas = useMemo(

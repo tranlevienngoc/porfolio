@@ -1,10 +1,10 @@
 import { Box, Flex, SimpleGrid } from '@chakra-ui/react';
+import TemplateText from 'components/common/Text/TemplateText';
+import { CARD_NFTS, PRODUCT_CARD } from 'data/nft';
+import AccountHeader from 'pages/Overview/ConnectedWallet/AccountHeader';
 
 import Pagination from './Pagination';
 import ProductCard from './ProductCard';
-import AccountHeader from '../Overview/ConnectedWallet/AccountHeader';
-import TemplateText from '../../components/common/Text/TemplateText';
-import { CARD_NFTS, PRODUCT_CARD } from '../../data/nft';
 
 export default function NFT() {
   return (

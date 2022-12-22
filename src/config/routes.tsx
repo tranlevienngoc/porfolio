@@ -1,22 +1,23 @@
-import Activity from '../components/svg/Activity';
-import Bridge from '../components/svg/Bridge';
-import Earn from '../components/svg/Earn';
-import Portfolio from '../components/svg/Portfolio';
-import Send from '../components/svg/Send';
-import Setting from '../components/svg/Setting';
-import Swap from '../components/svg/Swap';
-import YourWallet from '../components/svg/YourWallet';
-import Approvals from '../pages/Approvals';
-import History from '../pages/History';
-import PoolTab from '../pages/History/PoolTab';
-import ReceivedTab from '../pages/History/ReceivedTab';
-import SendTab from '../pages/History/SendTab';
-import SwapTab from '../pages/History/SwapTab';
-import WithdrawTab from '../pages/History/WithdrawTab';
-import NFT from '../pages/NFT';
-import Overview from '../pages/Overview';
-import Settings from '../pages/Settings';
-import Sends from '../pages/Sends';
+import Activity from 'components/svg/Activity';
+import Bridge from 'components/svg/Bridge';
+import Earn from 'components/svg/Earn';
+import Portfolio from 'components/svg/Portfolio';
+import Send from 'components/svg/Send';
+import Setting from 'components/svg/Setting';
+import Swap from 'components/svg/Swap';
+import YourWallet from 'components/svg/YourWallet';
+import Approvals from 'pages/Approvals';
+import History from 'pages/History';
+import PoolTab from 'pages/History/PoolTab';
+import ReceivedTab from 'pages/History/ReceivedTab';
+import SendTab from 'pages/History/SendTab';
+import SwapTab from 'pages/History/SwapTab';
+import WithdrawTab from 'pages/History/WithdrawTab';
+import NFT from 'pages/NFT';
+import Overview from 'pages/Overview';
+import Sends from 'pages/Sends';
+import Settings from 'pages/Settings';
+import YourWalletPage from 'pages/YourWallet';
 
 const routes = [
   {
@@ -116,6 +117,13 @@ const routes = [
     path: '/history/withdraw',
     component: WithdrawTab,
     title: 'Withdraw',
+    disable: false,
+  },
+  {
+    path: '/your-wallet',
+    component: YourWalletPage,
+    title: 'Your Wallet',
+    icon: <YourWallet />,
     disable: false,
   },
 ];

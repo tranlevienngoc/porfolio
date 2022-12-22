@@ -1,9 +1,9 @@
 import { Box } from '@chakra-ui/react';
+import TemplateText from 'components/common/Text/TemplateText';
+import { LIST_TABLE } from 'data/history';
 import React from 'react';
 
 import WrapHistoryTab from './WrapHistoryTab';
-import TemplateText from '../../components/common/Text/TemplateText';
-import { LIST_TABLE } from '../../data/history';
 
 export default function History() {
   return (

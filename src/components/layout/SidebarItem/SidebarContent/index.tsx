@@ -29,7 +29,7 @@ const SidebarContent = ({ ...props }: BoxProps) => {
     <Box {...props}>
       {newRoutes.map((item) => (
         <Link key={item.path} to={item.path}>
-          {item.path === '/your-wallet' && <Divider mt="20px" />}
+          {item.path === '/your-wallet' && <Divider mt='20px' />}
           <BoxRound
             h='40px'
             mt='12px'

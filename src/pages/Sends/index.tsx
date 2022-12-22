@@ -7,10 +7,10 @@ import {
   TabPanels,
   Tabs,
 } from '@chakra-ui/react';
+import TemplateText from 'components/common/Text/TemplateText';
 import React from 'react';
 
 import TokenTab from './TokenTab';
-import TemplateText from '../../components/common/Text/TemplateText';
 
 export default function Sends() {
   return (
