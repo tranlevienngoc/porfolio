@@ -43,16 +43,14 @@ export default function ModalItem({
       motionPreset='slideInBottom'
     >
       <ModalOverlay />
-      <ModalContent {...props} p={p}>
+      <ModalContent {...props} p={p} borderRadius='20px'>
         <ModalHeader as='h4' p={pheader} color={darkmodeColors.text100}>
           {title}
         </ModalHeader>
         <ModalCloseButton boxShadow='none !important'>
           <IconClose />
         </ModalCloseButton>
-        <ModalBody p={pbody} borderRadius='8px'>
-          {children}
-        </ModalBody>
+        <ModalBody p={pbody}>{children}</ModalBody>
       </ModalContent>
     </Modal>
   );

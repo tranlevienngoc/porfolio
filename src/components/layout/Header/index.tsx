@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, useDisclosure } from '@chakra-ui/react';
 import { useCallback, useState } from 'react';
 
 import ButtonConnectWallet from '../../common/Buttons/ButtonConnectWallet';
@@ -8,6 +8,8 @@ import Logo from '../../svg/Logo';
 import MoreIcon from '../../svg/MoreIcon';
 import NoWalletChildren from '../../svg/NoWalletChildren';
 import useColorModeValueItem from '../../../hook/useColorModeValueItem/useColorModeValueItem';
+import ModalItem from 'components/common/ModalItem';
+import ConnectWallet from 'components/common/ConnectWallet';
 
 interface Props {
   onShowSidebar: () => void;
@@ -23,6 +25,8 @@ const Header = ({
   const [valueSearch, setValueSearch] = useState('');
 
   const { darkmodeColors } = useColorModeValueItem();
+
+  const connectwallet = useDisclosure();
 
   const handleChangeInput = useCallback((value: string) => {
     setValueSearch(value);
@@ -67,9 +71,23 @@ const Header = ({
           hIcon={24}
           wIcon={24}
           p='8px 24px 8px 24px'
+          onClick={() => connectwallet.onToggle()}
         />
         <MoreIcon ml='20px' />
       </Flex>
+
+      <ModalItem
+        maxW='720px'
+        h='450px'
+        onClose={connectwallet.onClose}
+        isOpen={connectwallet.isOpen}
+        bg={darkmodeColors.bg900}
+        pheader='0px'
+        pbody='0px'
+        p='0px'
+      >
+        <ConnectWallet />
+      </ModalItem>
     </Flex>
   );
 };

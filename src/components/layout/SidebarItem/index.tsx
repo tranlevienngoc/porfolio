@@ -1,9 +1,10 @@
 import {
   Box,
   Drawer,
-  DrawerBody, DrawerContent,
+  DrawerBody,
+  DrawerContent,
   DrawerOverlay,
-  Flex
+  Flex,
 } from '@chakra-ui/react';
 
 import SidebarContent from './SidebarContent';
@@ -58,7 +59,7 @@ const SidebarItem = ({ isOpen, variant, onClose, showLeftItem }: Props) => {
               </Box>
             ) : (
               <Box mt='180px'>
-                <Web3Portal />
+                <Web3Portal onClose={onClose} />
               </Box>
             )}
           </DrawerBody>

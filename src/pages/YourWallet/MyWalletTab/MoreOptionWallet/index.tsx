@@ -1,5 +1,4 @@
 import { Box, Divider, Flex } from '@chakra-ui/react';
-
 import FlexCenter from 'components/common/Flex/FlexCenter';
 import PopoverItem from 'components/common/PopoverItem/PopoverItem';
 import TemplateText from 'components/common/Text/TemplateText';

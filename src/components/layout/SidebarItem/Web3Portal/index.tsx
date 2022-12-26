@@ -1,12 +1,19 @@
-import { Box, BoxProps, useMediaQuery } from '@chakra-ui/react';
+import { Box, BoxProps, useDisclosure, useMediaQuery } from '@chakra-ui/react';
+import ButtonConnectWallet from 'components/common/Buttons/ButtonConnectWallet';
+import ConnectWallet from 'components/common/ConnectWallet';
+import DrawerItem from 'components/common/DrawerItem';
+import FlexCenter from 'components/common/Flex/FlexCenter';
+import TemplateText from 'components/common/Text/TemplateText';
+import Logo from 'components/svg/Logo';
 
-import ButtonConnectWallet from '../../../common/Buttons/ButtonConnectWallet';
-import FlexCenter from '../../../common/Flex/FlexCenter';
-import TemplateText from '../../../common/Text/TemplateText';
-import Logo from '../../../svg/Logo';
+interface props extends BoxProps {
+  onClose?: () => void;
+}
 
-const Web3Portal = ({ ...props }: BoxProps) => {
+const Web3Portal = ({ onClose = () => ({}), ...props }: props) => {
   const [isLargerThan1024] = useMediaQuery('(min-width: 1024px)');
+
+  const connectwallet = useDisclosure();
 
   return (
     <Box
@@ -33,9 +40,22 @@ const Web3Portal = ({ ...props }: BoxProps) => {
       <ButtonConnectWallet
         h='28px'
         w='147px'
+        _focusVisible={{ boxShadow: 'none !important' }}
         p='4px 16px 5px 16px'
         mt={{ base: '16px', lg: '24px' }}
+        onClick={() => {
+          connectwallet.onToggle();
+        }}
       />
+
+      <DrawerItem
+        onCloseRightSideBar={onClose}
+        onClose={connectwallet.onClose}
+        isOpen={connectwallet.isOpen}
+        pbody='0px'
+      >
+        <ConnectWallet />
+      </DrawerItem>
     </Box>
   );
 };

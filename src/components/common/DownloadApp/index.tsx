@@ -33,7 +33,7 @@ const DownloadApp = ({ ...props }: Props) => {
           mt='16px'
           fontSize={12}
           fontWeight={400}
-          color='#505052'
+          color='black.100'
           txt='Terms of Service - Privacy Policy'
         />
       </Box>

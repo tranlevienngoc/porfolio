@@ -59,7 +59,7 @@ export default function WrapSelectCoin({ item, index }: Props) {
                   {coin.icon}
                   <TemplateText
                     fontSize='16px'
-                    color='#505052'
+                    color='black.100'
                     txt={coin.name}
                   />
                   <TemplateText
