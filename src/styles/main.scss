@@ -44,3 +44,23 @@ body {
   background-color: #106CFF !important;
   border-color: #106CFF !important;
 }
+
+.header {
+  .menu-right-header{
+    .gas-fee-item,.fiat-item, .helps-item, .toggle-balance-big, .more-actions-item{
+      svg {
+        path {
+          fill: #106cff !important;
+        }
+      }
+      .border-box{
+        border: 1px  #106cff solid ;
+      }
+    }
+    .currency-item{
+      .border-box{
+        border: 1px  #106cff solid ;
+      }
+    }
+  }
+}

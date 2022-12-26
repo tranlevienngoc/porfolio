@@ -10,7 +10,7 @@ interface Props extends FlexProps {
 }
 const DownloadApp = ({ ...props }: Props) => {
   return (
-    <Flex {...props} w='100%' bottom='16px' position='absolute'>
+    <Flex {...props} w='100%' mb='10px'>
       <Box w='204px' textAlign='center'>
         <Flex
           w='204px'

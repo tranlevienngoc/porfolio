@@ -3,11 +3,19 @@
   .portfolio,
   .activity,
   .send,
-  .setting {
+  .setting,
+  .more-actions {
     svg {
       path {
         fill: #106cff !important;
       }
     }
   }
+  .more-actions {
+    p {
+      color:  #106cff;
+    }
+  }
+
 }
+

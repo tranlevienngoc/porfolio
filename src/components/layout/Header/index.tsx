@@ -1,15 +1,14 @@
-import { Box, Flex, useDisclosure } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import { useCallback, useState } from 'react';
 
-import ButtonConnectWallet from '../../common/Buttons/ButtonConnectWallet';
+import RightMenuConnect from './RightMenuConnect';
+import RightMenuNotConnect from './RightMenuNotConnect';
 import SearchInput from '../../common/Input/SearchInput';
 import HamburgerIcon from '../../svg/HamburgerIcon';
 import Logo from '../../svg/Logo';
-import MoreIcon from '../../svg/MoreIcon';
 import NoWalletChildren from '../../svg/NoWalletChildren';
+import { Connected } from '../../../constants';
 import useColorModeValueItem from '../../../hook/useColorModeValueItem/useColorModeValueItem';
-import ModalItem from 'components/common/ModalItem';
-import ConnectWallet from 'components/common/ConnectWallet';
 
 interface Props {
   onShowSidebar: () => void;
@@ -25,9 +24,6 @@ const Header = ({
   const [valueSearch, setValueSearch] = useState('');
 
   const { darkmodeColors } = useColorModeValueItem();
-
-  const connectwallet = useDisclosure();
-
   const handleChangeInput = useCallback((value: string) => {
     setValueSearch(value);
   }, []);
@@ -38,7 +34,7 @@ const Header = ({
   };
 
   return (
-    <Flex p='16px' alignItems='center' flexWrap='wrap'>
+    <Flex p='16px' alignItems='center' flexWrap='wrap' className='header'>
       {showSidebarButton && (
         <Flex
           w='100%'
@@ -60,34 +56,16 @@ const Header = ({
         onChange={(value) => handleChangeInput(value)}
         placeholder='Search accounts, wallets, domains...'
       />
+
       <Flex
         ml='auto'
         alignItems='center'
         display={{ base: 'none', lg: 'flex' }}
+        gap='12px'
+        className='menu-right-header'
       >
-        <ButtonConnectWallet
-          h='40px'
-          w='197px'
-          hIcon={24}
-          wIcon={24}
-          p='8px 24px 8px 24px'
-          onClick={() => connectwallet.onToggle()}
-        />
-        <MoreIcon ml='20px' />
+        {Connected ? <RightMenuConnect /> : <RightMenuNotConnect />}
       </Flex>
-
-      <ModalItem
-        maxW='720px'
-        h='450px'
-        onClose={connectwallet.onClose}
-        isOpen={connectwallet.isOpen}
-        bg={darkmodeColors.bg900}
-        pheader='0px'
-        pbody='0px'
-        p='0px'
-      >
-        <ConnectWallet />
-      </ModalItem>
     </Flex>
   );
 };

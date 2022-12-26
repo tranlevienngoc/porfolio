@@ -9,7 +9,7 @@ interface Props extends FlexProps {
   fsText?: ChakraType;
 
   fwText?: number;
-  content: string;
+  content?: string;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
   colorText?: string;

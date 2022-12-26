@@ -4,13 +4,10 @@ import {
   ModalCloseButton,
   ModalContent,
   ModalContentProps,
-  ModalHeader,
   ModalOverlay,
 } from '@chakra-ui/react';
+import IconCloseBold from 'components/svg/IconCloseBold';
 import { ReactNode } from 'react';
-
-import IconClose from '../../svg/IconClose';
-import useColorModeValueItem from '../../../hook/useColorModeValueItem/useColorModeValueItem';
 
 interface PopoverItemProps extends ModalContentProps {
   title?: string;
@@ -33,8 +30,6 @@ export default function ModalItem({
   pbody,
   ...props
 }: PopoverItemProps) {
-  const { darkmodeColors } = useColorModeValueItem();
-
   return (
     <Modal
       isCentered
@@ -43,12 +38,14 @@ export default function ModalItem({
       motionPreset='slideInBottom'
     >
       <ModalOverlay />
-      <ModalContent {...props} p={p} borderRadius='20px'>
-        <ModalHeader as='h4' p={pheader} color={darkmodeColors.text100}>
-          {title}
-        </ModalHeader>
-        <ModalCloseButton boxShadow='none !important'>
-          <IconClose />
+      <ModalContent {...props} p={p} position='relative'>
+        <ModalCloseButton
+          boxShadow='none !important'
+          position='absolute'
+          top='16px'
+          right='16px'
+        >
+          <IconCloseBold />
         </ModalCloseButton>
         <ModalBody p={pbody}>{children}</ModalBody>
       </ModalContent>
