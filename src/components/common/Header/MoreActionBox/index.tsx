@@ -31,7 +31,7 @@ const MoreActionBox = () => {
     >
       <Box w='235px' p='16px' borderRadius='4px'>
         {MORE_ACTION_NOT_CONNECT.map((item) => (
-          <Flex alignItems='center' mb='16px' cursor='pointer'>
+          <Flex alignItems='center' key={item.value} mb='16px' cursor='pointer'>
             {item.icon}
             <TemplateText ml='12px' txt={item.title} fontSize={16} mr='auto' />
             {item.children.length > 0 && <ArrowRight />}

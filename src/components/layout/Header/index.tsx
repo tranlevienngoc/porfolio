@@ -34,7 +34,12 @@ const Header = ({
   };
 
   return (
-    <Flex p='16px' alignItems='center' flexWrap='wrap' className='header'>
+    <Flex
+      p='16px'
+      alignItems='center'
+      flexWrap={{ base: 'wrap', lg: 'unset' }}
+      className='header'
+    >
       {showSidebarButton && (
         <Flex
           w='100%'
@@ -50,7 +55,7 @@ const Header = ({
       )}
       <SearchInput
         h='40px'
-        w={{ base: '100%', lg: '60%', xl: '645px' }}
+        w={{ base: '100%', lg: '80%', xl: '645px' }}
         value={valueSearch}
         backgroundColor={darkmodeColors.bg900}
         onChange={(value) => handleChangeInput(value)}

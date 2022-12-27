@@ -1,4 +1,5 @@
 import { Box, BoxProps, Flex } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 import Divider from '../../../common/Divider';
 import TemplateText from '../../../common/Text/TemplateText';
@@ -8,7 +9,11 @@ import ConnectWallet from '../../../svg/ConnectWallet';
 import NoWalletChildren from '../../../svg/NoWalletChildren';
 import Tick from '../../../svg/Tick';
 
-const MyWallet = ({ ...props }: BoxProps) => {
+interface props extends BoxProps {
+  onClose?: () => void;
+}
+
+const MyWallet = ({ onClose = () => ({}), ...props }: props) => {
   const menu = [
     {
       icon: <ConnectWallet h={24} w={24} color='#343436' />,
@@ -19,6 +24,7 @@ const MyWallet = ({ ...props }: BoxProps) => {
       icon: <NoWalletChildren />,
       name: 'manageWallets',
       label: 'Manage Wallets',
+      href: '/your-wallet',
     },
   ];
   return (
@@ -44,10 +50,17 @@ const MyWallet = ({ ...props }: BoxProps) => {
       <Divider m='15px 0' />
       <Box>
         {menu.map((item) => (
-          <Flex mt='16px' key={item.name} alignItems='center'>
-            <Box w='30px'>{item.icon}</Box>
-            <TextBold fontWeight={500} txt={item.label} />
-          </Flex>
+          <Link to={item.href || ''}>
+            <Flex
+              mt='16px'
+              key={item.name}
+              alignItems='center'
+              onClick={() => onClose()}
+            >
+              <Box w='30px'>{item.icon}</Box>
+              <TextBold fontWeight={500} txt={item.label} />
+            </Flex>
+          </Link>
         ))}
       </Box>
     </Box>

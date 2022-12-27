@@ -1,10 +1,12 @@
-import { Box, BoxProps, useDisclosure } from '@chakra-ui/react';
+import { Box, BoxProps, useDisclosure, useMediaQuery } from '@chakra-ui/react';
 import ConnectWallet from 'components/common/ConnectWallet';
 import DrawerItem from 'components/common/DrawerItem';
 
 import WrapWallet from '../WrapWallet';
 import ButtonConnectWallet from '../../../common/Buttons/ButtonConnectWallet';
 import TemplateText from '../../../common/Text/TemplateText';
+import FlexCenter from 'components/common/Flex/FlexCenter';
+import Logo from 'components/svg/Logo';
 
 interface props extends BoxProps {
   onClose?: () => void;
@@ -12,9 +14,12 @@ interface props extends BoxProps {
 
 const Web3Portal = ({ onClose = () => ({}), ...props }: props) => {
   const connectwallet = useDisclosure();
-
+  const [isLargerThan1024] = useMediaQuery('(min-width: 1024px)');
   return (
     <Box>
+      <FlexCenter mt='24px'>
+        <Logo w={isLargerThan1024 ? 150 : 118} h={isLargerThan1024 ? 36 : 28} />
+      </FlexCenter>
       <WrapWallet {...props}>
         <TemplateText
           fontSize={16}

@@ -48,6 +48,7 @@ const RightMenuConnect = () => {
     <>
       {menus.map((it) => (
         <Box
+          key={it.class}
           onClick={() => setSeleted(it.class)}
           className={selected === it.class ? it.class : ''}
         >

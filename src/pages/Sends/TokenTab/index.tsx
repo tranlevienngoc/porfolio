@@ -39,7 +39,7 @@ export default function TokenTab() {
             gap='16px'
           >
             {LIST_COIN.map((item, index) => (
-              <Box mt='20px' w='100%'>
+              <Box mt='20px' w='100%' key={index}>
                 <TemplateText mb='4px' fontSize='13px' txt={item.name} />
                 <WrapSelectCoin key={item.name} item={item} index={index} />
               </Box>

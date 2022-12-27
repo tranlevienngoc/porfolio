@@ -30,30 +30,43 @@ const FiatBox = () => {
     },
   ];
   return (
-    <Flex textAlign='center' flexDirection='column' gap='16px'>
-      <TextBold mt='5px' txt='Buy Crypto With Fiat' fontSize={18} />
-      <Flex alignItems='center' bg='bg.600' p='16px' borderRadius={16}>
-        <Chain />
-        <Box ml='16px' mr='auto' textAlign='start'>
-          <TemplateText color='text.200' txt='Network' />
-          <TextBold txt='Ethereum' />
-        </Box>
-        <ArrowBottomBold />
-      </Flex>
-
-      <TextBold txt='Choose one of the available options' fontSize={18} />
-      {options.map((item) => (
-        <Flex borderRadius={16} gap='16px' p='16px' border='1px solid #9B9B9E'>
-          {item.icon}
-          <TextBold txt={item.label} />
+    <Flex justifyContent='center'>
+      <Flex
+        w={{ base: '100%', md: '50%', xl: '100%' }}
+        textAlign='center'
+        flexDirection='column'
+        gap='16px'
+      >
+        <TextBold mt='5px' txt='Buy Crypto With Fiat' fontSize={18} />
+        <Flex alignItems='center' bg='bg.600' p='16px' borderRadius={16}>
+          <Chain />
+          <Box ml='16px' mr='auto' textAlign='start'>
+            <TemplateText color='text.200' txt='Network' />
+            <TextBold txt='Ethereum' />
+          </Box>
+          <ArrowBottomBold />
         </Flex>
-      ))}
-      <Divider />
-      <FlexCenter gap='16px'>
-        <TextBold txt='Pay with' />
-        <DoubleCircle />
-        <Visa />
-      </FlexCenter>
+
+        <TextBold txt='Choose one of the available options' fontSize={18} />
+        {options.map((item) => (
+          <Flex
+            key={item.label}
+            borderRadius={16}
+            gap='16px'
+            p='16px'
+            border='1px solid #9B9B9E'
+          >
+            {item.icon}
+            <TextBold txt={item.label} />
+          </Flex>
+        ))}
+        <Divider />
+        <FlexCenter gap='16px'>
+          <TextBold txt='Pay with' />
+          <DoubleCircle />
+          <Visa />
+        </FlexCenter>
+      </Flex>
     </Flex>
   );
 };

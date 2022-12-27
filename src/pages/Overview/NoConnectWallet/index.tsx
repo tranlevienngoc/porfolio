@@ -1,6 +1,8 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, useDisclosure } from '@chakra-ui/react';
 import ButtonBase from 'components/common/Buttons/ButtonBase';
 import ButtonConnectWallet from 'components/common/Buttons/ButtonConnectWallet';
+import ConnectWallet from 'components/common/ConnectWallet';
+import DrawerItem from 'components/common/DrawerItem';
 import FlexCenter from 'components/common/Flex/FlexCenter';
 import TemplateText from 'components/common/Text/TemplateText';
 import DemoWallet from 'components/svg/DemoWallet';
@@ -9,6 +11,7 @@ import NoWallet from 'components/svg/NoWallet';
 import React from 'react';
 
 const NoConnectWallet = () => {
+  const connectwallet = useDisclosure();
   return (
     <Flex
       width='100%'
@@ -58,6 +61,9 @@ const NoConnectWallet = () => {
             hIcon={24}
             wIcon={24}
             p='8px 24px 8px 24px'
+            onClick={() => {
+              connectwallet.onToggle();
+            }}
           />
           <ButtonBase
             fsText={16}
@@ -72,6 +78,13 @@ const NoConnectWallet = () => {
           />
         </Flex>
       </Box>
+      <DrawerItem
+        onClose={connectwallet.onClose}
+        isOpen={connectwallet.isOpen}
+        pbody='0px'
+      >
+        <ConnectWallet />
+      </DrawerItem>
     </Flex>
   );
 };

@@ -49,7 +49,6 @@ const GasFeeItem = () => {
           borderRadius={8}
           border='1px solid #7C7C7E'
           cursor='pointer'
-          ref={ref}
         >
           {coin.icon}
           <TextBold ml='4px' mr='auto' txt={coin.name} fontWeight={500} />
@@ -57,6 +56,7 @@ const GasFeeItem = () => {
         </Flex>
         {selected && (
           <Box
+            ref={ref}
             position='absolute'
             mt='4px'
             w='205px'
@@ -77,6 +77,7 @@ const GasFeeItem = () => {
                   gap='8px'
                   onClick={() => {
                     setCoin(item);
+                    setSeleted(!selected);
                   }}
                   borderRadius='8px'
                   _hover={{
@@ -103,7 +104,7 @@ const GasFeeItem = () => {
 
         <Flex flexDirection='column' gap='20px' mt='20px'>
           {LIST_GAS.map((it) => (
-            <Flex>
+            <Flex key={it.value}>
               {it.icon}
               <TextBold ml='8px' fontWeight={500} txt={it.name} mr='auto' />
               <TemplateText fontWeight={500} txt={it.value} />

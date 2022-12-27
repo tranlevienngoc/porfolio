@@ -50,8 +50,12 @@ export default function ListTabs() {
           borderBottom={{ base: '1px solid #E6E6E8', md: 'none' }}
         >
           {LIST_TAB.map((item) => (
-            <Box textAlign='center' w={{ base: 'calc(100%/4)', md: 'unset' }}>
-              <Link to={item.url} key={item.label}>
+            <Box
+              textAlign='center'
+              key={item.label}
+              w={{ base: 'calc(100%/4)', md: 'unset' }}
+            >
+              <Link to={item.url}>
                 <a>
                   <Box
                     p='12px'

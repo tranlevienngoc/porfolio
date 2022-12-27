@@ -230,3 +230,9 @@ export type ListSelect = {
   label?: string;
   lang?: string;
 };
+
+export type MenuChildren = {
+  icon?: ReactNode;
+  title?: string;
+  value?: string;
+}[];

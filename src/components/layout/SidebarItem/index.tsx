@@ -25,9 +25,9 @@ interface Props {
 }
 
 const SidebarItem = ({ isOpen, variant, onClose, showLeftItem }: Props) => {
-  const renderMyWallet = () => {
+  const renderMyWallet = (onClose) => {
     return Connected ? (
-      <MyWallet />
+      <MyWallet onClose={onClose} />
     ) : (
       <Box mt='180px'>
         <Web3Portal />
@@ -74,13 +74,13 @@ const SidebarItem = ({ isOpen, variant, onClose, showLeftItem }: Props) => {
                 className='sidebar-box'
                 justifyContent='space-between'
               >
-                <SidebarContent />
+                <SidebarContent onClose={onClose} />
                 <Divider mt='20px' />
-                <MenuBottom />
+                <MenuBottom onCloseMenuBottom={onClose} />
                 <DownloadApp mt='auto' />
               </Flex>
             ) : (
-              renderMyWallet()
+              renderMyWallet(onClose)
             )}
           </DrawerBody>
         </DrawerContent>

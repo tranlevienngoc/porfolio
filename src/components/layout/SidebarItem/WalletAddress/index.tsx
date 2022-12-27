@@ -1,12 +1,15 @@
-import { Box, BoxProps, Flex } from '@chakra-ui/react';
+import { Box, BoxProps, Flex, useMediaQuery } from '@chakra-ui/react';
+import FlexCenter from 'components/common/Flex/FlexCenter';
 import PopoverItem from 'components/common/PopoverItem/PopoverItem';
+import TemplateText from 'components/common/Text/TemplateText';
+import TextBold from 'components/common/Text/TextBold';
+import ArrowBottom from 'components/svg/ArrowBottom';
+import CoinIcon from 'components/svg/CoinIcon';
+import Logo from 'components/svg/Logo';
 
 import MyWallet from '../MyWallet';
 import WrapWallet from '../WrapWallet';
-import TemplateText from '../../../common/Text/TemplateText';
-import TextBold from '../../../common/Text/TextBold';
-import ArrowBottom from '../../../svg/ArrowBottom';
-import CoinIcon from '../../../svg/CoinIcon';
+
 interface Props extends BoxProps {
   fsAddressWallet?: number;
   fwAddressWallet?: number;
@@ -20,8 +23,12 @@ const WalletAddress = ({
   fwMoney = 600,
   ...props
 }: Props) => {
+  const [isLargerThan1024] = useMediaQuery('(min-width: 1024px)');
   return (
     <Box>
+      <FlexCenter mt='24px'>
+        <Logo w={isLargerThan1024 ? 150 : 118} h={isLargerThan1024 ? 36 : 28} />
+      </FlexCenter>
       <PopoverItem
         m='5px 5px 0px 0px'
         ml='20px'

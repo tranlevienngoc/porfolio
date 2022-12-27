@@ -11,6 +11,7 @@ export default function MyWalletTab() {
     <Box mt='16px'>
       {LIST_YOUR_WALLET.map((item, index) => (
         <Flex
+          key={index}
           p='12px'
           justifyContent='space-between'
           alignItems='center'

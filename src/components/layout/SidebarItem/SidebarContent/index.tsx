@@ -6,12 +6,17 @@ import BoxRound from '../../../common/BoxRound';
 import Divider from '../../../common/Divider';
 import TemplateText from '../../../common/Text/TemplateText';
 
-const SidebarContent = ({ ...props }: BoxProps) => {
+interface props extends BoxProps {
+  onClose?: () => void;
+}
+
+const SidebarContent = ({ onClose = () => ({}), ...props }: props) => {
   const location = useLocation();
   const renderColor = (path: string, disable: boolean) => {
     if (disable) return '#BDBDBF';
     return location.pathname === path ? 'blue.100' : 'text.100';
   };
+
   const newRoutes = routes.filter(
     (item) =>
       ![
@@ -29,7 +34,7 @@ const SidebarContent = ({ ...props }: BoxProps) => {
     <Box {...props}>
       {newRoutes.map((item) => (
         <Link key={item.path} to={item.path}>
-          {item.path === '/your-wallet' && <Divider mt='20px' />}
+          {item.path === '/your-wallet' && <Divider h='0.1px' mt='20px' />}
           <BoxRound
             h='40px'
             mt='12px'
@@ -38,6 +43,7 @@ const SidebarContent = ({ ...props }: BoxProps) => {
             borderRadius={8}
             alignItems='center'
             _hover={{ background: 'bg.600' }}
+            onClick={() => onClose()}
             className={
               location.pathname === item.path
                 ? item.title.toLocaleLowerCase()

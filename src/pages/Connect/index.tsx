@@ -1,6 +1,8 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, useDisclosure } from '@chakra-ui/react';
 import ButtonBase from 'components/common/Buttons/ButtonBase';
 import ButtonConnectWallet from 'components/common/Buttons/ButtonConnectWallet';
+import ConnectWallet from 'components/common/ConnectWallet';
+import DrawerItem from 'components/common/DrawerItem';
 import FlexCenter from 'components/common/Flex/FlexCenter';
 import TemplateText from 'components/common/Text/TemplateText';
 import DemoWallet from 'components/svg/DemoWallet';

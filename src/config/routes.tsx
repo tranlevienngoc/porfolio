@@ -30,7 +30,7 @@ const routes = [
   },
   {
     path: '/activity',
-    component: Settings,
+    component: History,
     title: 'Activity',
     icon: <Activity />,
     disable: false,

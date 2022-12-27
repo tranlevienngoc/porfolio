@@ -26,7 +26,7 @@ export default function InCrease() {
       <path
         d='M31.9985 26.6667V30.6089L35.3305 32.0978L31.9985 26.6667Z'
         fill='white'
-        fill-opacity='0.602'
+        fillOpacity='0.602'
       />
       <path
         d='M31.9989 26.6667L28.6665 32.0978L31.9989 30.6089V26.6667Z'
@@ -35,7 +35,7 @@ export default function InCrease() {
       <path
         d='M31.9985 34.6525V37.3311L35.3328 32.7182L31.9985 34.6525Z'
         fill='white'
-        fill-opacity='0.602'
+        fillOpacity='0.602'
       />
       <path
         d='M31.9989 37.3311V34.652L28.6665 32.7182L31.9989 37.3311Z'
@@ -44,12 +44,12 @@ export default function InCrease() {
       <path
         d='M31.9985 34.0325L35.3305 32.0979L31.9985 30.6099V34.0325Z'
         fill='white'
-        fill-opacity='0.2'
+        fillOpacity='0.2'
       />
       <path
         d='M28.6665 32.0979L31.9989 34.0325V30.6099L28.6665 32.0979Z'
         fill='white'
-        fill-opacity='0.602'
+        fillOpacity='0.602'
       />
     </Box>
   );
