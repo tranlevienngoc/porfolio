@@ -26,7 +26,10 @@ export default function NFT() {
           </Box>
         ))}
       </SimpleGrid>
-      <SimpleGrid columns={{ base: 1, md: 2, xl: 4 }} gridGap='16px'>
+      <SimpleGrid
+        columns={{ base: 1, md: 2, xl: 4 }}
+        gridGap={{ base: 'unset', md: '16px' }}
+      >
         {PRODUCT_CARD.map((item, index) => (
           <ProductCard key={index} Product={item} />
         ))}

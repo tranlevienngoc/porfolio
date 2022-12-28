@@ -52,22 +52,18 @@ export default function Balance() {
             w='200px'
             mr='50px'
             mt='-10px'
+            p='10px'
           >
             <TemplateText txt={addressWallet} />
           </PopoverContent>
         </Portal>
       </Popover>
-      <Flex mt='8px' alignItems='center' gap='16px'>
+      <Flex alignItems='center' gap='16px'>
         <TemplateText fontSize='24px' fontWeight={600} txt='$ 3,424.95' />
         <RefeshCircle />
       </Flex>
 
-      <TextStatistical
-        fontSize='16px'
-        mt='8px'
-        txt='0,22% ($7,57)'
-        isIncrease={false}
-      />
+      <TextStatistical fontSize='16px' txt='0,22% ($7,57)' isIncrease={false} />
     </Box>
   );
 }

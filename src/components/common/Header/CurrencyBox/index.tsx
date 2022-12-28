@@ -9,7 +9,11 @@ const CurrencyBox = () => {
   const [selected, setSelected] = useState('');
 
   return (
-    <Box w='317px' p='16px' borderRadius='4px'>
+    <Box
+      w={{ base: '280px', xl: '317px' }}
+      p={{ base: '0px', xl: '16px' }}
+      borderRadius='4px'
+    >
       {LIST_CURRENCY.map((item, index) => (
         <Box key={index} mb={index % 2 == 0 ? '20px' : ''}>
           <TextBold txt={item.name} />

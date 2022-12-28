@@ -1,8 +1,6 @@
-import { Box, BoxProps, useMediaQuery } from '@chakra-ui/react';
+import { Box, BoxProps } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
-import FlexCenter from '../../../common/Flex/FlexCenter';
-import Logo from '../../../svg/Logo';
 interface props extends BoxProps {
   children?: ReactNode;
 }

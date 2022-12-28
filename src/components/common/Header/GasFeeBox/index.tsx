@@ -7,7 +7,7 @@ import { LIST_CHAIN, LIST_GAS } from 'data/menu/menu';
 import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 import React, { useRef, useState } from 'react';
 
-export default function GasFeeItemMobile() {
+export default function GasFeeBox() {
   const { darkmodeColors } = useColorModeValueItem();
   const [selected, setSeleted] = useState(false);
   const [coin, setCoin] = useState(LIST_CHAIN[0]);
@@ -16,8 +16,13 @@ export default function GasFeeItemMobile() {
     ref: ref,
     handler: () => setSeleted(false),
   });
+
   return (
-    <Box w='100%' borderRadius='16px'>
+    <Box
+      w={{ base: '100%', xl: '235px' }}
+      p={{ base: '0px', xl: '16px' }}
+      borderRadius='16px'
+    >
       <TextBold txt='Realtime gas price' mb='16px' />
       <Flex
         alignItems='center'
@@ -33,15 +38,15 @@ export default function GasFeeItemMobile() {
       </Flex>
       {selected && (
         <Box
+          ref={ref}
           position='absolute'
           mt='4px'
-          w='287px'
+          w='205px'
           p='16px'
           borderRadius={8}
           bg='white'
           boxShadow='0px 2px 6px -1px rgba(0, 0, 0, 0.1), 0px 6px 24px rgba(0, 0, 0, 0.1)'
           flexDirection='column'
-          ref={ref}
         >
           <TextBold txt='Select chain' mb='20px' />
           {LIST_CHAIN.map((item, index) => (

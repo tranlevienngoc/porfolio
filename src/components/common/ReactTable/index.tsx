@@ -145,6 +145,7 @@ export default function ReactTable({
                         fontSize='16px'
                         className='table-th'
                         background='inherit'
+                        w='25%'
                         {...column.getHeaderProps()}
                         title=''
                       >

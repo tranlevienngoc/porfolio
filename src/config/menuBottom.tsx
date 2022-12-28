@@ -1,9 +1,8 @@
 import { Box } from '@chakra-ui/react';
+import CurrencyBox from 'components/common/Header/CurrencyBox';
 import FiatBox from 'components/common/Header/FiatBox';
+import GasFeeBox from 'components/common/Header/GasFeeBox';
 
-import CurrencyMobile from 'components/layout/SidebarItem/CurrencyMobile';
-
-import GasFeeItemMobile from 'components/layout/SidebarItem/GasFeeItemMobile';
 import AddressBook from '../components/svg/AddressBook';
 import BuyWithFiat from '../components/svg/BuyWithFiat';
 import Developer from '../components/svg/Developer';
@@ -109,7 +108,7 @@ export const MENU_CONNECT = [
     icon: <GasFee />,
     title: 'Gas fee',
     value: 'gas-fee',
-    item: <GasFeeItemMobile />,
+    item: <GasFeeBox />,
 
     children: [],
   },
@@ -123,14 +122,14 @@ export const MENU_CONNECT = [
   {
     icon: <ToggleBalance />,
     title: 'Toggle balance',
-    item: <GasFeeItemMobile />,
+    item: <GasFeeBox />,
     value: 'toggle-balance',
     children: [],
   },
   {
     icon: '',
     title: 'Currency',
-    item: <CurrencyMobile />,
+    item: <CurrencyBox />,
     value: 'currency',
     children: [],
   },
@@ -174,7 +173,7 @@ export const MENU_CONNECT = [
 export const MENU_NOT_CONNECT = [
   {
     icon: <YourWallet />,
-    item: <GasFeeItemMobile />,
+    item: <GasFeeBox />,
     title: 'Your Wallet',
     value: 'yourWallet',
     children: [],

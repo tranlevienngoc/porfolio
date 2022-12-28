@@ -80,6 +80,7 @@ const TableApprovals = () => {
       {
         Header: 'Allowance',
         accessor: 'Allowance',
+
         Cell: ({
           cell: {
             row: { original },
@@ -103,6 +104,7 @@ const TableApprovals = () => {
           },
         }: CellOfTable) => (
           <Box
+            w='200px'
             display={{ base: 'block', md: 'flex' }}
             gap='4px'
             alignItems='center'
@@ -112,7 +114,7 @@ const TableApprovals = () => {
               overflow='hidden'
               textOverflow='ellipsis'
               whiteSpace='nowrap'
-              w='90px'
+              w='100%'
               fontSize={14}
             />
           </Box>
@@ -142,7 +144,7 @@ const TableApprovals = () => {
 
   return (
     <Box>
-      <Box display={{ base: 'none', xl: 'unset' }}>
+      <Box display={{ base: 'none', lg: 'unset' }}>
         <ReactTable
           data={datas}
           columns={columns}
@@ -151,7 +153,7 @@ const TableApprovals = () => {
           isShowPaging={false}
         />
       </Box>
-      <Box display={{ base: 'none', md: 'unset', xl: 'none' }}>
+      <Box display={{ base: 'none', md: 'unset', lg: 'none' }}>
         <ReactTable
           data={datas}
           columns={columns}

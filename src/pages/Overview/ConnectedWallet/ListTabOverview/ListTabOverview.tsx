@@ -28,13 +28,10 @@ export default function ListTabOverview({ icon, title, children }: props) {
         border={darkmodeColors.border400}
         borderRadius='16px'
         bg='#F9FAFC'
-        p='24px'
         mt='unset'
       >
         <Flex
-          h='auto'
           cursor='pointer'
-          mt='-8px'
           align='center'
           justify='space-between'
           alignItems='center'
@@ -42,6 +39,7 @@ export default function ListTabOverview({ icon, title, children }: props) {
             textDecoration: 'none',
           }}
           onClick={onToggle}
+          p='24px'
         >
           <Flex gap='6px'>
             {icon}
@@ -66,6 +64,8 @@ export default function ListTabOverview({ icon, title, children }: props) {
             borderLeft={1}
             borderColor={useColorModeValue('gray.200', 'gray.700')}
             bg='#F9FAFC'
+            p='0px 24px 24px 24px '
+            borderRadius='16px'
           >
             {children}
           </Stack>

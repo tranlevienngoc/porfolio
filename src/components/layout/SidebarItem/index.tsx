@@ -25,7 +25,7 @@ interface Props {
 }
 
 const SidebarItem = ({ isOpen, variant, onClose, showLeftItem }: Props) => {
-  const renderMyWallet = (onClose) => {
+  const renderMyWallet = (onClose: () => void) => {
     return Connected ? (
       <MyWallet onClose={onClose} />
     ) : (

@@ -2,6 +2,7 @@ import { Box, Flex, Image } from '@chakra-ui/react';
 import ButtonBase from 'components/common/Buttons/ButtonBase';
 import TemplateText from 'components/common/Text/TemplateText';
 import Ethereum from 'components/svg/Ethereum';
+import HeartIcon from 'components/svg/HeartIcon';
 import { ProductItem } from 'constants/types';
 
 interface props {
@@ -18,8 +19,12 @@ export default function ProductCard({ Product }: props) {
       p='16px'
       border='1px solid #EFF0F2'
       _hover={{ boxShadow: '0px 8px 16px rgba(16, 108, 255, 0.25)' }}
+      position='relative'
     >
       <Image w='100%' src={Product.image} />
+      <Box position='absolute' top='15px' right='15px'>
+        <HeartIcon />
+      </Box>
       <Box mt='16px'>
         <TemplateText fontSize='16px' fontWeight={600} txt={Product.name} />
         <TemplateText
