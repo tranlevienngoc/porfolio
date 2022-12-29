@@ -25,7 +25,7 @@ const RightMenuConnect = () => {
     },
     {
       item: (
-        <Box p='8px'>
+        <Box p='8px' cursor='pointer'>
           <Helps h='24px' w='24px' />
         </Box>
       ),
@@ -33,7 +33,7 @@ const RightMenuConnect = () => {
     },
     {
       item: (
-        <Box p='8px'>
+        <Box p='8px' cursor='pointer'>
           <ToggleBalanceBig />
         </Box>
       ),

@@ -13,8 +13,9 @@ interface props extends BoxProps {
 }
 
 const Web3Portal = ({ onClose = () => ({}), ...props }: props) => {
-  const connectwallet = useDisclosure();
+  const connectWallet = useDisclosure();
   const [isLargerThan1024] = useMediaQuery('(min-width: 1024px)');
+
   return (
     <Box>
       <FlexCenter mt='24px'>
@@ -40,15 +41,15 @@ const Web3Portal = ({ onClose = () => ({}), ...props }: props) => {
           p='4px 16px 5px 16px'
           mt={{ base: '16px', lg: '24px' }}
           onClick={() => {
-            connectwallet.onToggle();
+            connectWallet.onToggle();
           }}
         />
       </WrapWallet>
 
       <DrawerItem
         onCloseRightSideBar={onClose}
-        onClose={connectwallet.onClose}
-        isOpen={connectwallet.isOpen}
+        onClose={connectWallet.onClose}
+        isOpen={connectWallet.isOpen}
         pbody='0px'
       >
         <ConnectWallet />

@@ -168,8 +168,6 @@ export const MENU_CONNECT = [
   },
 ];
 
-// export const MENU_CONNECT = [...a, ...MORE_ACTION];
-
 export const MENU_NOT_CONNECT = [
   {
     icon: <YourWallet />,

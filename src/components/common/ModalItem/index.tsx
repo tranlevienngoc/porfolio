@@ -16,18 +16,16 @@ interface PopoverItemProps extends ModalContentProps {
   onClose?: () => void;
   children?: ReactNode;
   p?: string;
-  pheader?: string;
-  pbody?: string;
+  pHeader?: string;
+  pBody?: string;
 }
 
 export default function ModalItem({
   children,
-  title,
   isOpen = false,
   onClose = () => ({}),
   p = '16px',
-  pheader,
-  pbody,
+  pBody,
   ...props
 }: PopoverItemProps) {
   return (
@@ -47,7 +45,7 @@ export default function ModalItem({
         >
           <IconCloseBold />
         </ModalCloseButton>
-        <ModalBody p={pbody}>{children}</ModalBody>
+        <ModalBody p={pBody}>{children}</ModalBody>
       </ModalContent>
     </Modal>
   );

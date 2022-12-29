@@ -1,9 +1,4 @@
-import { Box, BoxProps } from '@chakra-ui/react';
-
-interface Props extends BoxProps {
-  size?: string;
-}
-export default function CoinIcon({ size = '48px', ...props }: Props) {
+export default function CoinIcon() {
   return (
     <svg
       width='48'

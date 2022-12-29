@@ -21,6 +21,7 @@ const MoreActionBox = () => {
             borderRadius={8}
             iconLeft={<MoreIcon />}
             className='border-box'
+            bd='none'
           />
         </Box>
       }
@@ -29,15 +30,21 @@ const MoreActionBox = () => {
       bg={darkmodeColors.bg200}
       border='none'
     >
-      <Box w='235px' p='16px' borderRadius='4px'>
+      <Flex
+        flexDirection='column'
+        gap='16px'
+        w='235px'
+        p='16px'
+        borderRadius='4px'
+      >
         {MORE_ACTION_NOT_CONNECT.map((item) => (
-          <Flex alignItems='center' key={item.value} mb='16px' cursor='pointer'>
+          <Flex alignItems='center' key={item.value} cursor='pointer'>
             {item.icon}
             <TemplateText ml='12px' txt={item.title} fontSize={16} mr='auto' />
             {item.children.length > 0 && <ArrowRight />}
           </Flex>
         ))}
-      </Box>
+      </Flex>
     </PopoverItem>
   );
 };

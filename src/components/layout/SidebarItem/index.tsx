@@ -20,7 +20,7 @@ import { Connected } from '../../../constants';
 interface Props {
   onClose: () => void;
   isOpen: boolean;
-  variant: 'drawer' | 'sidebar';
+  variant: string;
   showLeftItem: boolean;
 }
 

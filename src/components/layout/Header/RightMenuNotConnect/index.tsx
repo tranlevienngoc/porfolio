@@ -2,7 +2,6 @@ import { useDisclosure } from '@chakra-ui/react';
 import ButtonConnectWallet from 'components/common/Buttons/ButtonConnectWallet';
 import ConnectWallet from 'components/common/ConnectWallet';
 import DrawerItem from 'components/common/DrawerItem';
-
 import MoreIcon from 'components/svg/MoreIcon';
 
 const RightMenuNotConnect = () => {

@@ -46,7 +46,7 @@ const SidebarContent = ({ onClose = () => ({}), ...props }: props) => {
             onClick={() => onClose()}
             className={
               location.pathname === item.path
-                ? item.title.toLocaleLowerCase()
+                ? item.title.toLocaleLowerCase().replace(' ', '-')
                 : ''
             }
           >

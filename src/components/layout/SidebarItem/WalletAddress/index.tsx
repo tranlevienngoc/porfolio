@@ -1,4 +1,4 @@
-import { Box, BoxProps, Flex, useMediaQuery } from '@chakra-ui/react';
+import { Box, BoxProps, Flex, useBreakpointValue } from '@chakra-ui/react';
 import FlexCenter from 'components/common/Flex/FlexCenter';
 import PopoverItem from 'components/common/PopoverItem/PopoverItem';
 import TemplateText from 'components/common/Text/TemplateText';
@@ -23,7 +23,13 @@ const WalletAddress = ({
   fwMoney = 600,
   ...props
 }: Props) => {
-  const [isLargerThan1024] = useMediaQuery('(min-width: 1024px)');
+  const isLargerThan1024 = useBreakpointValue(
+    {
+      base: false,
+      lg: true,
+    },
+    { ssr: false }
+  );
   return (
     <Box>
       <FlexCenter mt='24px'>

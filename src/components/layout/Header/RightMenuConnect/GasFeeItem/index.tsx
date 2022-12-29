@@ -21,6 +21,7 @@ const GasFeeItem = () => {
             p='8px'
             borderRadius={8}
             className='border-box'
+            bd='none'
           />
         </Box>
       }

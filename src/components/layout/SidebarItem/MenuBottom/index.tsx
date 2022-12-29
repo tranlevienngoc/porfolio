@@ -25,8 +25,8 @@ interface props extends BoxProps {
 }
 
 const MenuBottom = ({ onCloseMenuBottom = () => ({}), ...props }: props) => {
-  const [isselected, setIsSelected] = useState(false);
-  const [renderitem, setRenderItem] = useState(null);
+  const [isSelected, setIsSelected] = useState(false);
+  const [renderItem, setRenderItem] = useState(null);
   const [chooseItem, setChooseItem] = useState('');
   const MENU = Connected ? MENU_CONNECT : MENU_NOT_CONNECT;
 
@@ -39,11 +39,11 @@ const MenuBottom = ({ onCloseMenuBottom = () => ({}), ...props }: props) => {
               <AccordionButton
                 ml='-15px'
                 onClick={() => {
-                  setIsSelected(!isselected);
+                  setIsSelected(!isSelected);
                   setRenderItem(item.item);
                   setChooseItem(item.value);
                 }}
-                className={isselected ? item.value : ''}
+                className={isSelected ? item.value : ''}
               >
                 <Flex mr='auto' alignItems='center'>
                   <Box w='20px'>{item.icon}</Box>
@@ -84,7 +84,7 @@ const MenuBottom = ({ onCloseMenuBottom = () => ({}), ...props }: props) => {
                 <Close onClick={() => onCloseMenuBottom()} />
               </Flex>
             </Box>
-            <DrawerBody p='16px'>{renderitem}</DrawerBody>
+            <DrawerBody p='16px'>{renderItem}</DrawerBody>
           </DrawerContent>
         </DrawerOverlay>
       </Drawer>

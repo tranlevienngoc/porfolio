@@ -1,5 +1,3 @@
-import useLightMode from '../../helpers/lightMode/isLightMode';
-
 export default function IconClose() {
   return (
     <svg
