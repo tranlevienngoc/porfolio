@@ -1,6 +1,5 @@
 import Chain from '../../components/svg/Chain';
 import Token from '../../components/svg/Token';
-import { addressWallet } from '../../constants';
 
 export const LIST_COIN = [
   {
@@ -37,32 +36,5 @@ export const LIST_COIN = [
         icon: <Token isSendPage={true} />,
       },
     ],
-  },
-];
-
-export const LIST_WALLET = [
-  {
-    name: 'Trust Wallet',
-    addresswallet: addressWallet,
-    value: '$3,429.65',
-    img: './svg/Image-Wallet.svg',
-  },
-  {
-    name: 'CoinBase Wallet',
-    addresswallet: addressWallet,
-    value: '$3,429.65',
-    img: './svg/Image-Wallet.svg',
-  },
-  {
-    name: 'Trust Wallet',
-    addresswallet: addressWallet,
-    value: '$3,429.65',
-    img: './svg/Image-Wallet.svg',
-  },
-  {
-    name: 'Metamask',
-    addresswallet: addressWallet,
-    value: '$3,429.65',
-    img: './svg/Image-Wallet.svg',
   },
 ];

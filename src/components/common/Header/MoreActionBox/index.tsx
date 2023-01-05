@@ -1,14 +1,27 @@
 import { Box, Flex } from '@chakra-ui/react';
+import { useWeb3React } from '@web3-react/core';
 import PopoverItem from 'components/common/PopoverItem/PopoverItem';
 import TagBox from 'components/common/TagBox';
 import TemplateText from 'components/common/Text/TemplateText';
 import ArrowRight from 'components/svg/ArrowRight';
 import MoreIcon from 'components/svg/MoreIcon';
 import { MORE_ACTION_NOT_CONNECT } from 'config/menuBottom';
+import { AppContext } from 'Context/AppContext';
 import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
+import { useContext } from 'react';
 
 const MoreActionBox = () => {
   const { darkmodeColors } = useColorModeValueItem();
+
+  const { setIsConnect } = useContext(AppContext);
+
+  const { deactivate } = useWeb3React();
+
+  const onLogout = () => {
+    localStorage.removeItem('connected');
+    setIsConnect(false);
+    deactivate();
+  };
   return (
     <PopoverItem
       m='5px 5px 0px 0px'
@@ -38,7 +51,17 @@ const MoreActionBox = () => {
         borderRadius='4px'
       >
         {MORE_ACTION_NOT_CONNECT.map((item) => (
-          <Flex alignItems='center' key={item.value} cursor='pointer'>
+          <Flex
+            alignItems='center'
+            key={item.value}
+            mb='16px'
+            cursor='pointer'
+            onClick={() => {
+              if (item.value === 'log-out') {
+                onLogout();
+              }
+            }}
+          >
             {item.icon}
             <TemplateText ml='12px' txt={item.title} fontSize={16} mr='auto' />
             {item.children.length > 0 && <ArrowRight />}

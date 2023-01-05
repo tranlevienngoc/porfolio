@@ -15,9 +15,9 @@ import {
 import ArrowLeft from 'components/svg/ArrowLeft';
 import Close from 'components/svg/Close';
 import { MENU_CONNECT, MENU_NOT_CONNECT } from 'config/menuBottom';
-import { useState } from 'react';
+import { AppContext } from 'Context/AppContext';
+import { useContext, useState } from 'react';
 
-import { Connected } from '../../../../constants';
 import TemplateText from '../../../common/Text/TemplateText';
 
 interface props extends BoxProps {
@@ -28,7 +28,8 @@ const MenuBottom = ({ onCloseMenuBottom = () => ({}), ...props }: props) => {
   const [isSelected, setIsSelected] = useState(false);
   const [renderItem, setRenderItem] = useState(null);
   const [chooseItem, setChooseItem] = useState('');
-  const MENU = Connected ? MENU_CONNECT : MENU_NOT_CONNECT;
+  const { isConnect } = useContext(AppContext);
+  const MENU = isConnect ? MENU_CONNECT : MENU_NOT_CONNECT;
 
   return (
     <Box {...props}>

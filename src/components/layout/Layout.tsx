@@ -1,5 +1,7 @@
 import { Box, useBreakpointValue } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import { AppContext } from 'Context/AppContext';
+import NoConnectWallet from 'pages/Overview/NoConnectWallet';
+import React, { useContext, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Header from './Header';
@@ -28,6 +30,8 @@ const Layout = () => {
     { ssr: false }
   );
 
+  const { isConnect } = useContext(AppContext);
+
   return (
     <Box>
       <Router>
@@ -52,7 +56,11 @@ const Layout = () => {
                       key={route.path}
                       path={route.path}
                       element={
-                        <Box>{React.createElement(route.component)}</Box>
+                        isConnect ? (
+                          <Box>{React.createElement(route.component)}</Box>
+                        ) : (
+                          <NoConnectWallet />
+                        )
                       }
                     />
                   );

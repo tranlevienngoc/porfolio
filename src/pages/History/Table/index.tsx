@@ -5,10 +5,10 @@ import TextStatistical from 'components/common/Text/TextStatistical';
 import DeCrease from 'components/svg/DeCrease';
 import Gas from 'components/svg/Gas';
 import InCrease from 'components/svg/InCrease';
-import { addressWallet } from 'constants/app';
 import { CellOfTable } from 'constants/types';
+import { AppContext } from 'Context/AppContext';
 import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
-import { useMemo } from 'react';
+import { useContext, useMemo } from 'react';
 import truncateEthAddress from 'utils/truncateEthAddress';
 
 interface props {
@@ -16,6 +16,7 @@ interface props {
 }
 
 const TableHistory = ({ length }: props) => {
+  const { addressWallet } = useContext(AppContext);
   const datas = useMemo(
     () =>
       Array.from({ length: length || 3 }).map(() => ({

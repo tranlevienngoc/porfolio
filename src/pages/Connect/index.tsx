@@ -1,8 +1,6 @@
-import { Box, Flex, useDisclosure } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import ButtonBase from 'components/common/Buttons/ButtonBase';
 import ButtonConnectWallet from 'components/common/Buttons/ButtonConnectWallet';
-import ConnectWallet from 'components/common/ConnectWallet';
-import DrawerItem from 'components/common/DrawerItem';
 import FlexCenter from 'components/common/Flex/FlexCenter';
 import TemplateText from 'components/common/Text/TemplateText';
 import DemoWallet from 'components/svg/DemoWallet';
@@ -15,7 +13,7 @@ const Connect = () => {
       justifyContent='center'
       className='connect-page'
       width='100%'
-      height='100%'
+      height='100vh'
     >
       <Box h='224px' w='428px' mt='25vh' textAlign='center'>
         <FlexCenter

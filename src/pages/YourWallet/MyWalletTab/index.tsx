@@ -1,12 +1,52 @@
 import { Box, Flex, Image } from '@chakra-ui/react';
 import TemplateText from 'components/common/Text/TemplateText';
-import { LIST_YOUR_WALLET } from 'data/your-wallet/your-wallet';
-import React from 'react';
+import { AppContext } from 'Context/AppContext';
+import React, { useContext } from 'react';
 import truncateEthAddress from 'utils/truncateEthAddress';
 
 import MoreOptionWallet from './MoreOptionWallet';
 
 export default function MyWalletTab() {
+  const { addressWallet } = useContext(AppContext);
+
+  const LIST_YOUR_WALLET = [
+    {
+      label: 'Metamask',
+      address: addressWallet,
+      value: '$3,429.65',
+      img: './svg/Image-Wallet.svg',
+    },
+    {
+      label: 'Metamask',
+      address: addressWallet,
+      value: '$3,429.65',
+      img: './svg/Image-Wallet.svg',
+    },
+    {
+      label: 'Metamask',
+      address: addressWallet,
+      value: '$3,429.65',
+      img: './svg/Image-Wallet.svg',
+    },
+    {
+      label: 'Metamask',
+      address: addressWallet,
+      value: '$3,429.65',
+      img: './svg/Image-Wallet.svg',
+    },
+    {
+      label: 'Metamask',
+      address: addressWallet,
+      value: '$3,429.65',
+      img: './svg/Image-Wallet.svg',
+    },
+    {
+      label: 'Metamask',
+      address: addressWallet,
+      value: '$3,429.65',
+      img: './svg/Image-Wallet.svg',
+    },
+  ];
   return (
     <Box mt='16px'>
       {LIST_YOUR_WALLET.map((item, index) => (

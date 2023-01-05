@@ -37,9 +37,9 @@ export default function DrawerItem({
 
   return (
     <Drawer onClose={onClose} isOpen={isOpen} size='full'>
-      <DrawerOverlay />
-      <DrawerContent p='16px' bg={darkmodeColors.bg100}>
-        <DrawerBody mt={mt} p={pbody}>
+      <DrawerOverlay zIndex={20} />
+      <DrawerContent zIndex={20} p='16px' bg={darkmodeColors.bg100}>
+        <DrawerBody zIndex={20} mt={mt} p={pbody}>
           <FlexBox justifyContent='space-between' mb={mb}>
             <DrawerCloseButton
               onClick={() => onCloseRightSideBar()}

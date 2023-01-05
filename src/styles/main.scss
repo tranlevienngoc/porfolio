@@ -46,21 +46,75 @@ body {
 }
 
 .header {
-  .menu-right-header{
-    .gas-fee-item,.fiat-item, .helps-item, .toggle-balance-big, .more-actions-item{
+  .menu-right-header {
+
+    .gas-fee-item,
+    .fiat-item,
+    .helps-item,
+    .toggle-balance-big,
+    .more-actions-item {
       svg {
         path {
           fill: #106cff !important;
         }
       }
-      .border-box{
-        border: 1px  #106cff solid ;
+
+      .border-box {
+        border: 1px #106cff solid;
       }
     }
-    .currency-item{
-      .border-box{
-        border: 1px  #106cff solid ;
+
+    .currency-item {
+      .border-box {
+        border: 1px #106cff solid;
       }
     }
+  }
+}
+
+// w3m-modal {
+// #w3m-modal {
+//   z-index: 9000 !important;
+//   background-color: red !important;
+
+// }
+
+// .w3m-overlay {
+//   z-index: 9000 !important;
+//   background-color: red !important;
+
+// }
+
+// // }
+
+// .w3m-container1 {
+//   z-index: 9000 !important;
+//   background-color: red !important;
+// }
+
+
+w3m-modal {
+  #w3m-modal {
+    inset: 0px !important;
+    position: fixed !important;
+    z-index: 9000 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: rgba(0, 0, 0, 0.3) !important;
+
+  }
+
+  .w3m-overlay {
+    inset: 0px !important;
+    position: fixed !important;
+    z-index: 9000 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: rgba(0, 0, 0, 0.3) !important;
+
   }
 }

@@ -1,5 +1,8 @@
 import { Box, BoxProps, Flex } from '@chakra-ui/react';
+import { AppContext } from 'Context/AppContext';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import truncateEthAddress from 'utils/truncateEthAddress';
 
 import Divider from '../../../common/Divider';
 import TemplateText from '../../../common/Text/TemplateText';
@@ -14,6 +17,7 @@ interface props extends BoxProps {
 }
 
 const MyWallet = ({ onClose = () => ({}), ...props }: props) => {
+  const { addressWallet } = useContext(AppContext);
   const menu = [
     {
       icon: <ConnectWallet h={24} w={24} color='#343436' />,
@@ -38,7 +42,7 @@ const MyWallet = ({ onClose = () => ({}), ...props }: props) => {
       >
         <CoinIcon />
         <Box mr='auto'>
-          <TextBold txt='Ox9a4e1...1eea' />
+          <TextBold txt={truncateEthAddress(addressWallet)} />
           <TemplateText
             fontSize={13}
             txt='$3,413 - Metamask'

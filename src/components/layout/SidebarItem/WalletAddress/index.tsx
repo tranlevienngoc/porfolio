@@ -6,6 +6,9 @@ import TextBold from 'components/common/Text/TextBold';
 import ArrowBottom from 'components/svg/ArrowBottom';
 import CoinIcon from 'components/svg/CoinIcon';
 import Logo from 'components/svg/Logo';
+import { AppContext } from 'Context/AppContext';
+import { useContext } from 'react';
+import truncateEthAddress from 'utils/truncateEthAddress';
 
 import MyWallet from '../MyWallet';
 import WrapWallet from '../WrapWallet';
@@ -23,6 +26,7 @@ const WalletAddress = ({
   fwMoney = 600,
   ...props
 }: Props) => {
+  const { addressWallet } = useContext(AppContext);
   const isLargerThan1024 = useBreakpointValue(
     {
       base: false,
@@ -45,9 +49,10 @@ const WalletAddress = ({
               <Flex alignItems='center' gap='10px'>
                 <Box>
                   <TextBold
+                    w='auto'
                     fontSize={fsAddressWallet}
                     fontWeight={fwAddressWallet}
-                    txt='Ox9a4e1...1eea'
+                    txt={truncateEthAddress(addressWallet)}
                   />
                   <TemplateText
                     fontSize={fsMoney}

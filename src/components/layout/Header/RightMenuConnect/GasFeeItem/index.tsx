@@ -1,4 +1,4 @@
-import { Box, Flex, useOutsideClick } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import GasFeeBox from 'components/common/Header/GasFeeBox';
 import PopoverItem from 'components/common/PopoverItem/PopoverItem';
 import TagBox from 'components/common/TagBox';

@@ -6,6 +6,8 @@ import {
   DrawerOverlay,
   Flex,
 } from '@chakra-ui/react';
+import { AppContext } from 'Context/AppContext';
+import { useContext } from 'react';
 
 import MenuBottom from './MenuBottom';
 import MyWallet from './MyWallet';
@@ -15,7 +17,6 @@ import Web3Portal from './Web3Portal';
 import Divider from '../../common/Divider';
 import DownloadApp from '../../common/DownloadApp';
 import Close from '../../svg/Close';
-import { Connected } from '../../../constants';
 
 interface Props {
   onClose: () => void;
@@ -25,8 +26,9 @@ interface Props {
 }
 
 const SidebarItem = ({ isOpen, variant, onClose, showLeftItem }: Props) => {
+  const { isConnect } = useContext(AppContext);
   const renderMyWallet = (onClose: () => void) => {
-    return Connected ? (
+    return isConnect ? (
       <MyWallet onClose={onClose} />
     ) : (
       <Box mt='180px'>
@@ -47,7 +49,7 @@ const SidebarItem = ({ isOpen, variant, onClose, showLeftItem }: Props) => {
       justifyContent='space-between'
     >
       <Box p='0 22px'>
-        {Connected ? <WalletAddress /> : <Web3Portal />}
+        {isConnect ? <WalletAddress /> : <Web3Portal />}
         <Divider w='180px' m='24px 0' />
         <SidebarContent />
       </Box>

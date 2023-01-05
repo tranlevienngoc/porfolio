@@ -32,6 +32,7 @@ const Web3Portal = ({ onClose = () => ({}), ...props }: props) => {
           mt='8px'
           fontSize={13}
           fontWeight={400}
+          className='abc'
           txt='Connect a Web3 wallet to manage your Defi portfolio'
         />
         <ButtonConnectWallet

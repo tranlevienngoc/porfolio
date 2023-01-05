@@ -13,8 +13,9 @@ import TemplateText from 'components/common/Text/TemplateText';
 import WrapSelectCoin from 'components/common/WrapSelectCoin';
 import ArrowBottom from 'components/svg/ArrowBottom';
 import PersonCard from 'components/svg/PersonCard';
-import { LIST_COIN, LIST_WALLET } from 'data/send/send';
-import React, { useCallback, useState } from 'react';
+import { AppContext } from 'Context/AppContext';
+import { LIST_COIN } from 'data/send/send';
+import React, { useCallback, useContext, useState } from 'react';
 import truncateEthAddress from 'utils/truncateEthAddress';
 
 export default function TokenTab() {
@@ -27,6 +28,34 @@ export default function TokenTab() {
   const handleChangeTrading = useCallback((value: string) => {
     setvalueTrading(value);
   }, []);
+
+  const { addressWallet } = useContext(AppContext);
+  const LIST_WALLET = [
+    {
+      name: 'Trust Wallet',
+      addresswallet: addressWallet,
+      value: '$3,429.65',
+      img: './svg/Image-Wallet.svg',
+    },
+    {
+      name: 'CoinBase Wallet',
+      addresswallet: addressWallet,
+      value: '$3,429.65',
+      img: './svg/Image-Wallet.svg',
+    },
+    {
+      name: 'Trust Wallet',
+      addresswallet: addressWallet,
+      value: '$3,429.65',
+      img: './svg/Image-Wallet.svg',
+    },
+    {
+      name: 'Metamask',
+      addresswallet: addressWallet,
+      value: '$3,429.65',
+      img: './svg/Image-Wallet.svg',
+    },
+  ];
   return (
     <>
       <Flex w='100%'>

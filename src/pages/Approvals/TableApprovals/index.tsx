@@ -4,11 +4,12 @@ import ReactTable from 'components/common/ReactTable';
 import TemplateText from 'components/common/Text/TemplateText';
 import LinkIcon from 'components/svg/LinkIcon';
 import LiteCoin from 'components/svg/LiteCoin';
-import { addressWallet } from 'constants/app';
 import { CellOfTable } from 'constants/types';
-import { useMemo } from 'react';
+import { AppContext } from 'Context/AppContext';
+import { useContext, useMemo } from 'react';
 
 const TableApprovals = () => {
+  const { addressWallet } = useContext(AppContext);
   const datas = useMemo(
     () =>
       Array.from({ length: 5 }).map(() => ({

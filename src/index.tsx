@@ -1,4 +1,6 @@
 import { ColorModeScript } from '@chakra-ui/react';
+import { Web3Provider } from '@ethersproject/providers';
+import { Web3ReactProvider } from '@web3-react/core';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 
@@ -10,10 +12,16 @@ const container = document.getElementById('root');
 if (!container) throw new Error('Failed to find the root element');
 const root = ReactDOM.createRoot(container);
 
+function getLibrary(provider) {
+  return new Web3Provider(provider);
+}
+
 root.render(
   <React.StrictMode>
     <ColorModeScript />
-    <App />
+    <Web3ReactProvider getLibrary={getLibrary}>
+      <App />
+    </Web3ReactProvider>
   </React.StrictMode>
 );
 

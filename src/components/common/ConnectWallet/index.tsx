@@ -6,7 +6,7 @@ import RightModalConnect from './RightModalConnect';
 
 export default function ConnectWallet() {
   return (
-    <Box w='100%' h='100%'>
+    <Box zIndex={2} w='100%' h='100%'>
       <Flex h='100%'>
         <LeftModalConnect />
         <RightModalConnect />

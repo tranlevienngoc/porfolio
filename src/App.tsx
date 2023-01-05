@@ -1,4 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react';
+import { AppProvider } from 'Context/AppContext';
 
 import '../src/styles/main.scss';
 
@@ -8,7 +9,9 @@ import customTheme from './styles/theme';
 export const App = () => {
   return (
     <ChakraProvider theme={customTheme}>
-      <Layout />
+      <AppProvider>
+        <Layout />
+      </AppProvider>
     </ChakraProvider>
   );
 };

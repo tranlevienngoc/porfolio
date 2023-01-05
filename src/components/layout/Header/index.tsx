@@ -1,5 +1,6 @@
 import { Box, Flex } from '@chakra-ui/react';
-import { useCallback, useState } from 'react';
+import { AppContext } from 'Context/AppContext';
+import { useCallback, useContext, useState } from 'react';
 
 import RightMenuConnect from './RightMenuConnect';
 import RightMenuNotConnect from './RightMenuNotConnect';
@@ -7,7 +8,6 @@ import SearchInput from '../../common/Input/SearchInput';
 import HamburgerIcon from '../../svg/HamburgerIcon';
 import Logo from '../../svg/Logo';
 import NoWalletChildren from '../../svg/NoWalletChildren';
-import { Connected } from '../../../constants';
 import useColorModeValueItem from '../../../hook/useColorModeValueItem/useColorModeValueItem';
 
 interface Props {
@@ -24,6 +24,8 @@ const Header = ({
   const [valueSearch, setValueSearch] = useState('');
 
   const { darkmodeColors } = useColorModeValueItem();
+
+  const { isConnect } = useContext(AppContext);
   const handleChangeInput = useCallback((value: string) => {
     setValueSearch(value);
   }, []);
@@ -69,7 +71,7 @@ const Header = ({
         gap='12px'
         className='menu-right-header'
       >
-        {Connected ? <RightMenuConnect /> : <RightMenuNotConnect />}
+        {isConnect ? <RightMenuConnect /> : <RightMenuNotConnect />}
       </Flex>
     </Flex>
   );

@@ -11,12 +11,14 @@ import TemplateText from 'components/common/Text/TemplateText';
 import TextStatistical from 'components/common/Text/TextStatistical';
 import ArrowBottom from 'components/svg/ArrowBottom';
 import RefeshCircle from 'components/svg/RefeshCircle';
-import { addressWallet } from 'constants/app';
-import React from 'react';
+import { AppContext } from 'Context/AppContext';
+import React, { useContext } from 'react';
 import truncateEthAddress from 'utils/truncateEthAddress';
 
 export default function Balance() {
   const { isOpen, onToggle, onClose } = useDisclosure();
+
+  const { addressWallet } = useContext(AppContext);
   return (
     <Box ml='16px'>
       <Popover

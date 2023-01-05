@@ -1,6 +1,4 @@
-import { type } from 'os';
 import { ReactNode } from 'react';
-import { string } from 'yup';
 
 export type Merge<P, T> = Omit<P, keyof T> & T;
 export type Nullable<T> = T | null;
