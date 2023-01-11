@@ -56,23 +56,22 @@ export default function ListTabs() {
               w={{ base: 'calc(100%/4)', md: 'unset' }}
             >
               <Link to={item.url}>
-                <a>
-                  <Box
-                    p='12px'
-                    cursor='pointer'
-                    key={item.value}
-                    onClick={() => {
-                      setSelected(item.url);
-                    }}
-                  >
-                    <TemplateText
-                      fontSize={14}
-                      fontWeight={700}
-                      txt={item.label}
-                      color={item.value === selected ? 'blue.100' : 'gray.500'}
-                    />
-                  </Box>
-                </a>
+                <Box
+                  p='12px'
+                  cursor='pointer'
+                  key={item.value}
+                  onClick={() => {
+                    setSelected(item.url);
+                  }}
+                >
+                  <TemplateText
+                    fontSize={14}
+                    fontWeight={700}
+                    txt={item.label}
+                    color={item.value === selected ? 'blue.100' : 'gray.500'}
+                  />
+                </Box>
+
                 <Box
                   w='100%'
                   h='2px'
@@ -92,6 +91,7 @@ export default function ListTabs() {
           iconRight={<ArrowBottom />}
         />
       </Box>
+
       <Box
         w='100%'
         h='1px'

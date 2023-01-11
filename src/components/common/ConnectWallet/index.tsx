@@ -4,12 +4,22 @@ import React from 'react';
 import LeftModalConnect from './LeftModalConnect';
 import RightModalConnect from './RightModalConnect';
 
-export default function ConnectWallet() {
+interface props {
+  onCloseRightSideBar?: () => void;
+}
+
+export default function ConnectWallet({
+  onCloseRightSideBar = () => ({}),
+}: props) {
   return (
-    <Box zIndex={2} w='100%' h='100%'>
+    <Box
+      zIndex={2}
+      w={{ base: '100%', lg: '720px' }}
+      h={{ base: '100%', lg: '450px' }}
+    >
       <Flex h='100%'>
         <LeftModalConnect />
-        <RightModalConnect />
+        <RightModalConnect onCloseRightSideBar={onCloseRightSideBar} />
       </Flex>
     </Box>
   );

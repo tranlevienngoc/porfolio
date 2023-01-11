@@ -5,9 +5,13 @@ import TagBox from 'components/common/TagBox';
 import ArrowBottom from 'components/svg/ArrowBottom';
 import Currency from 'components/svg/Currency';
 import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
+import { ReactNode, useState } from 'react';
 
 const CurrencyItem = () => {
   const { darkmodeColors } = useColorModeValueItem();
+
+  const [content, setContent] = useState('USD');
+  const [icon, setIcon] = useState<ReactNode>(<Currency />);
 
   return (
     <PopoverItem
@@ -15,9 +19,13 @@ const CurrencyItem = () => {
       buttonItem={
         <Box>
           <TagBox
-            content='USD'
-            iconLeft={<Currency />}
-            iconRight={<ArrowBottom />}
+            content={content}
+            iconLeft={icon}
+            iconRight={
+              <Box mt='-4px'>
+                <ArrowBottom />
+              </Box>
+            }
             p='8px'
             borderRadius={8}
             bd='none'
@@ -30,7 +38,7 @@ const CurrencyItem = () => {
       bg={darkmodeColors.bg200}
       border='none'
     >
-      <CurrencyBox />
+      <CurrencyBox setContent={setContent} setIcon={setIcon} />
     </PopoverItem>
   );
 };

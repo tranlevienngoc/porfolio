@@ -34,7 +34,13 @@ const Injected = new InjectedConnector({
   supportedChainIds: [1, 3, 4, 5, 42],
 });
 
-export default function RightModalConnect() {
+interface props {
+  onCloseRightSideBar: () => void;
+}
+
+export default function RightModalConnect({
+  onCloseRightSideBar = () => ({}),
+}: props) {
   window.Buffer = Buffer;
   const { setAddressWallet } = useContext(AppContext);
 
@@ -52,20 +58,20 @@ export default function RightModalConnect() {
   return (
     <Flex
       flexDirection='column'
-      justifyContent={{ base: 'unset', xl: 'space-between' }}
-      p={{ base: '0px', xl: '16px' }}
+      justifyContent={{ base: 'unset', lg: 'space-between' }}
+      p={{ base: '0px', lg: '16px' }}
       w='100%'
     >
       <Box>
         <TemplateText txt='Connect Wallet' fontSize='16px' fontWeight={600} />
         <TemplateText
-          display={{ base: 'block', xl: 'none' }}
+          display={{ base: 'block', lg: 'none' }}
           mt='8px'
           fontSize='13px'
           fontWeight={400}
           txt='Connecting your wallet is like “logging in” to Web3. Please select your wallet from the options to get started.'
         />
-        <Box display={{ base: 'none', xl: 'block' }}>
+        <Box display={{ base: 'none', lg: 'block' }}>
           {TEXT_GUIDE.map((item, index) => (
             <TemplateText
               key={index}
@@ -76,39 +82,42 @@ export default function RightModalConnect() {
             />
           ))}
         </Box>
-        <SimpleGrid mt='16px' columns={{ base: 2, md: 4, xl: 2 }} gap='10px'>
+        <SimpleGrid mt='16px' columns={{ base: 2, md: 4, lg: 2 }} gap='10px'>
           {LIST_OPTION_WALLET.map((item, index) => (
             <Box
               key={index}
               textAlign='center'
-              display={{ base: 'block', xl: 'flex' }}
+              display={{ base: 'block', lg: 'flex' }}
               alignItems='center'
               borderRadius='12px'
-              border={{ base: 'none', xl: '1px solid #EFF0F2' }}
+              border={{ base: 'none', lg: '1px solid #EFF0F2' }}
               p='8px 12px'
-              justifyContent={{ base: 'center', xl: 'space-between' }}
+              justifyContent={{ base: 'center', lg: 'space-between' }}
               opacity={item.disable ? 0.5 : 1}
               onClick={() => {
                 if (item.label === 'MetaMask') {
                   activate(Injected);
+                  onCloseRightSideBar();
                 }
                 if (item.label === 'WalletConnect') {
                   activate(ConnectWalletConnect);
+                  onCloseRightSideBar();
                 }
                 if (item.label === 'Coinbase Wallet') {
                   activate(ConnectCoinbaseWallet);
+                  onCloseRightSideBar();
                 }
               }}
               cursor='pointer'
             >
               <Box
-                display={{ base: 'block', xl: 'flex' }}
+                display={{ base: 'block', lg: 'flex' }}
                 alignItems='center'
                 gap='5px'
               >
                 <FlexCenter>{item.icon}</FlexCenter>
                 <TemplateText
-                  fontSize={{ base: '13px', xl: '16px' }}
+                  fontSize={{ base: '13px', lg: '16px' }}
                   txt={item.label}
                 />
               </Box>
@@ -117,7 +126,7 @@ export default function RightModalConnect() {
                   <BoxRound
                     bg='#E2F4FD'
                     fontSize='13px'
-                    w={{ base: '40%', xl: 'unset' }}
+                    w={{ base: '40%', lg: 'unset' }}
                     p='2px 4px'
                   >
                     soon
@@ -128,7 +137,7 @@ export default function RightModalConnect() {
           ))}
         </SimpleGrid>
       </Box>
-      <Box mt={{ base: '20px', xl: 'unset' }}>
+      <Box mt={{ base: '20px', lg: 'unset' }}>
         <TemplateText txt='Track any wallet' fontSize='16px' fontWeight={600} />
         <TemplateText
           txt='Copy address from any body which you want to figure out their wallet'

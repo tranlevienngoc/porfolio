@@ -54,13 +54,8 @@ const MyWallet = ({ onClose = () => ({}), ...props }: props) => {
       <Divider m='15px 0' />
       <Box>
         {menu.map((item) => (
-          <Link to={item.href || ''}>
-            <Flex
-              mt='16px'
-              key={item.name}
-              alignItems='center'
-              onClick={() => onClose()}
-            >
+          <Link to={item.href || ''} key={item.name}>
+            <Flex mt='16px' alignItems='center' onClick={() => onClose()}>
               <Box w='30px'>{item.icon}</Box>
               <TextBold fontWeight={500} txt={item.label} />
             </Flex>

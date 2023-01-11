@@ -12,6 +12,7 @@ import {
   DrawerOverlay,
   Flex,
 } from '@chakra-ui/react';
+import { useWeb3React } from '@web3-react/core';
 import ArrowLeft from 'components/svg/ArrowLeft';
 import Close from 'components/svg/Close';
 import { MENU_CONNECT, MENU_NOT_CONNECT } from 'config/menuBottom';
@@ -60,7 +61,10 @@ const MenuBottom = ({ onCloseMenuBottom = () => ({}), ...props }: props) => {
               {item.children.length > 0 && (
                 <AccordionPanel pb={4}>
                   <>
-                    <MenuChildren menuChildren={item.children} />
+                    <MenuChildren
+                      menuChildren={item.children}
+                      onclose={onCloseMenuBottom}
+                    />
                   </>
                 </AccordionPanel>
               )}
@@ -93,7 +97,16 @@ const MenuBottom = ({ onCloseMenuBottom = () => ({}), ...props }: props) => {
   );
 };
 
-const MenuChildren = ({ menuChildren }) => {
+const MenuChildren = ({ menuChildren, onclose }) => {
+  const { setIsConnect } = useContext(AppContext);
+
+  const { deactivate } = useWeb3React();
+  const onLogout = () => {
+    localStorage.removeItem('connected');
+    setIsConnect(false);
+    deactivate();
+    onclose();
+  };
   return (
     <Box ml='15px' w='200px'>
       {menuChildren.map((item) => (
@@ -104,6 +117,11 @@ const MenuChildren = ({ menuChildren }) => {
           display='flex'
           cursor='pointer'
           alignItems='center'
+          onClick={() => {
+            if (item.title === 'Log out') {
+              onLogout();
+            }
+          }}
         >
           {item.icon}
           <TemplateText fontSize={13} txt={item.title} ml='12px' />

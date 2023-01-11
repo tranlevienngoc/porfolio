@@ -26,7 +26,15 @@ export default function Sends() {
         fontWeight={400}
       />
       <Flex justifyContent='center'>
-        <Box w='574px' h='100%' bg='#F9FAFC' mt='20px' p='20px'>
+        <Box
+          w='574px'
+          h='100%'
+          bg='#F9FAFC'
+          border='1px solid #EFF0F2'
+          borderRadius='16px'
+          mt='20px'
+          p='20px'
+        >
           <Tabs>
             <TabList w='100%'>
               <Tab

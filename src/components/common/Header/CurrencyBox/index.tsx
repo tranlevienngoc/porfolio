@@ -3,9 +3,17 @@ import TemplateText from 'components/common/Text/TemplateText';
 import TextBold from 'components/common/Text/TextBold';
 import IconCheck from 'components/svg/IconCheck';
 import { LIST_CURRENCY } from 'data/menu/menu';
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 
-const CurrencyBox = () => {
+interface props {
+  setContent?: (value: string) => void;
+  setIcon?: (value: ReactNode) => void;
+}
+
+const CurrencyBox = ({
+  setContent = () => ({}),
+  setIcon = () => ({}),
+}: props) => {
   const [selected, setSelected] = useState('');
 
   return (
@@ -23,7 +31,11 @@ const CurrencyBox = () => {
                 key={idx}
                 mt='16px'
                 cursor='pointer'
-                onClick={() => setSelected(it.sign)}
+                onClick={() => {
+                  setSelected(it.sign);
+                  setContent(it.sign);
+                  setIcon(it.icon);
+                }}
               >
                 {it.icon}
                 <TextBold txt={it.sign} m='0 12px 0 8px' />

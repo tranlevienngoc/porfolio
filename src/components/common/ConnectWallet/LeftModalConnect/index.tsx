@@ -13,7 +13,7 @@ export default function LeftModalConnect() {
       bg='#F6F7F9'
       w='30%'
       borderRadius='20px 0px 0px 20px'
-      display={{ base: 'none', xl: 'flex' }}
+      display={{ base: 'none', lg: 'flex' }}
     >
       <Box>
         <Box mb='28px'>

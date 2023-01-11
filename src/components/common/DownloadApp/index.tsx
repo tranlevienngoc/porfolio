@@ -18,6 +18,7 @@ const DownloadApp = ({ ...props }: Props) => {
           p='8px 16px'
           cursor='pointer'
           borderRadius='8px'
+          bg='#EFF0F2'
           border='1px solid #D4D4D6'
         >
           <TemplateText
@@ -33,7 +34,7 @@ const DownloadApp = ({ ...props }: Props) => {
           mt='16px'
           fontSize={12}
           fontWeight={400}
-          color='black.100'
+          color='text.200'
           txt='Terms of Service - Privacy Policy'
         />
       </Box>

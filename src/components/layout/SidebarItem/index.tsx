@@ -32,7 +32,7 @@ const SidebarItem = ({ isOpen, variant, onClose, showLeftItem }: Props) => {
       <MyWallet onClose={onClose} />
     ) : (
       <Box mt='180px'>
-        <Web3Portal />
+        <Web3Portal onClose={onClose} />
       </Box>
     );
   };
