@@ -6,6 +6,7 @@ import EditIcon from 'components/svg/EditIcon';
 import EditIconBlue from 'components/svg/EditIconBlue';
 import { LIST_MORE_OPTION } from 'data/your-wallet/your-wallet';
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 function MoreOptionWallet() {
   const [useDisclosure, setUseDisclosure] = useState(false);
@@ -34,11 +35,11 @@ function MoreOptionWallet() {
         mr='24px'
       >
         <Box w='197px'>
-          {LIST_MORE_OPTION.map((item, index) => (
+          {LIST_MORE_OPTION.map((item) => (
             <>
               {item.lable === 'Remove' && <Divider h='1px' m='5px 0' />}
               <Flex
-                key={index}
+                key={uuidv4()}
                 cursor='pointer'
                 p='8px'
                 gap='16px'

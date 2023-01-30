@@ -16,8 +16,8 @@ interface props extends BoxProps {
   onClose?: () => void;
 }
 
-const MyWallet = ({ onClose = () => ({}), ...props }: props) => {
-  const { addressWallet } = useContext(AppContext);
+const MyWallet = ({ onClose, ...props }: props) => {
+  const { walletAddress } = useContext(AppContext);
   const menu = [
     {
       icon: <ConnectWallet h={24} w={24} color='#343436' />,
@@ -42,7 +42,7 @@ const MyWallet = ({ onClose = () => ({}), ...props }: props) => {
       >
         <CoinIcon />
         <Box mr='auto'>
-          <TextBold txt={truncateEthAddress(addressWallet)} />
+          <TextBold txt={truncateEthAddress(walletAddress)} />
           <TemplateText
             fontSize={13}
             txt='$3,413 - Metamask'
@@ -55,7 +55,7 @@ const MyWallet = ({ onClose = () => ({}), ...props }: props) => {
       <Box>
         {menu.map((item) => (
           <Link to={item.href || ''} key={item.name}>
-            <Flex mt='16px' alignItems='center' onClick={() => onClose()}>
+            <Flex mt='16px' alignItems='center' onClick={onClose}>
               <Box w='30px'>{item.icon}</Box>
               <TextBold fontWeight={500} txt={item.label} />
             </Flex>

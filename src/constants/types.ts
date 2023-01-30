@@ -223,7 +223,7 @@ export type ProductItem = {
   price: string;
 };
 
-export type ListSelect = {
+export type SelectOption = {
   value: string;
   label?: string;
   lang?: string;

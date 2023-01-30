@@ -16,14 +16,14 @@ interface props {
 }
 
 const TableHistory = ({ length }: props) => {
-  const { addressWallet } = useContext(AppContext);
+  const { walletAddress } = useContext(AppContext);
   const datas = useMemo(
     () =>
       Array.from({ length: length || 3 }).map(() => ({
         time: '7:07 AM',
         price: '-0,01 ETH',
         value: '10,000.00',
-        wallet: addressWallet,
+        wallet: walletAddress,
       })),
     []
   );

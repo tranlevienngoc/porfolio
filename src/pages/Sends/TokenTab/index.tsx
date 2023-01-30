@@ -17,6 +17,7 @@ import { AppContext } from 'Context/AppContext';
 import { LIST_COIN } from 'data/send/send';
 import React, { useCallback, useContext, useState } from 'react';
 import truncateEthAddress from 'utils/truncateEthAddress';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function TokenTab() {
   const [valueSearch, setValueSearch] = useState('');
@@ -29,29 +30,29 @@ export default function TokenTab() {
     setvalueTrading(value);
   }, []);
 
-  const { addressWallet } = useContext(AppContext);
+  const { walletAddress } = useContext(AppContext);
   const LIST_WALLET = [
     {
       name: 'Trust Wallet',
-      addresswallet: addressWallet,
+      walletAddress: walletAddress,
       value: '$3,429.65',
       img: './svg/Image-Wallet.svg',
     },
     {
       name: 'CoinBase Wallet',
-      addresswallet: addressWallet,
+      walletAddress: walletAddress,
       value: '$3,429.65',
       img: './svg/Image-Wallet.svg',
     },
     {
       name: 'Trust Wallet',
-      addresswallet: addressWallet,
+      walletAddress: walletAddress,
       value: '$3,429.65',
       img: './svg/Image-Wallet.svg',
     },
     {
       name: 'Metamask',
-      addresswallet: addressWallet,
+      walletAddress: walletAddress,
       value: '$3,429.65',
       img: './svg/Image-Wallet.svg',
     },
@@ -68,7 +69,7 @@ export default function TokenTab() {
             gap='16px'
           >
             {LIST_COIN.map((item, index) => (
-              <Box mt='20px' w='100%' key={index}>
+              <Box mt='20px' w='100%' key={uuidv4()}>
                 <TemplateText mb='4px' fontSize='13px' txt={item.name} />
                 <WrapSelectCoin key={item.name} item={item} index={index} />
               </Box>
@@ -125,7 +126,7 @@ export default function TokenTab() {
                   >
                     {LIST_WALLET.map((item, index) => (
                       <Box
-                        key={index}
+                        key={uuidv4()}
                         _hover={{ border: '1px solid #106CFF' }}
                         p={{ base: '12px', md: '16px' }}
                         borderRadius='16px'
@@ -136,7 +137,7 @@ export default function TokenTab() {
                           md: 'unset',
                         }}
                         onClick={() => {
-                          setValueSearch(item.addresswallet);
+                          setValueSearch(item.walletAddress);
                           onClose();
                         }}
                       >
@@ -148,7 +149,7 @@ export default function TokenTab() {
                             <Image h='48px' w='48px' src={item.img} />
                             <Box>
                               <TemplateText
-                                txt={truncateEthAddress(item.addresswallet)}
+                                txt={truncateEthAddress(item.walletAddress)}
                               />
                               <TemplateText txt={item.name} />
                             </Box>

@@ -5,6 +5,7 @@ import Ava from 'components/svg/Ava';
 import { FOLLOW, TAGS } from 'data/overview';
 import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 import { ReactNode } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import Balance from './Balance';
 import ListTabs from '../ListTabs';
@@ -27,8 +28,8 @@ const AccountHeader = ({ children }: Props) => {
         gap={{ base: '32px', md: '24px' }}
         mt='16px'
       >
-        {FOLLOW.map((item, index) => (
-          <Flex ml='-3px' alignItems='center' gap='4px' key={index}>
+        {FOLLOW.map((item) => (
+          <Flex ml='-3px' alignItems='center' gap='4px' key={uuidv4()}>
             {item.icon}
             <TemplateText
               fontWeight={{ base: 500, md: 400 }}
@@ -49,11 +50,11 @@ const AccountHeader = ({ children }: Props) => {
         gap='8px'
         mt='16px'
       >
-        {TAGS.map((item, index) => (
+        {TAGS.map((item) => (
           <TagBox
             w='100%'
             h='40px'
-            key={index}
+            key={uuidv4()}
             borderRadius='8px'
             bd='1px solid #D4D4D6'
             content={item.label}

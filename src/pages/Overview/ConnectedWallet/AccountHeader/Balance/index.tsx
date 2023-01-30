@@ -18,7 +18,7 @@ import truncateEthAddress from 'utils/truncateEthAddress';
 export default function Balance() {
   const { isOpen, onToggle, onClose } = useDisclosure();
 
-  const { addressWallet } = useContext(AppContext);
+  const { walletAddress } = useContext(AppContext);
   return (
     <Box ml='16px'>
       <Popover
@@ -40,7 +40,7 @@ export default function Balance() {
             >
               <TemplateText
                 mr='3.5px'
-                txt={truncateEthAddress(addressWallet)}
+                txt={truncateEthAddress(walletAddress)}
                 fontSize={11}
               />
               <ArrowBottom />
@@ -56,7 +56,7 @@ export default function Balance() {
             mt='-10px'
             p='10px'
           >
-            <TemplateText txt={addressWallet} />
+            <TemplateText txt={walletAddress} />
           </PopoverContent>
         </Portal>
       </Popover>

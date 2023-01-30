@@ -11,3 +11,9 @@ export enum NUMBER {
 }
 
 export default COLOR;
+
+export enum TYPE_WALLETCONNECT {
+  MetaMask = 'MetaMask',
+  WalletConnect = 'WalletConnect',
+  CoinBase = 'Coinbase Wallet',
+}

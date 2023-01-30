@@ -21,7 +21,6 @@ export default function WrapHistoryTab({ children }: props) {
         optionFilters={LIST_OPTION_HISTORY}
         isShowButtonFilter={false}
       />
-
       <Box>{children}</Box>
     </AccountHeader>
   );

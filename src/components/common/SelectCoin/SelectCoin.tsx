@@ -19,7 +19,10 @@ export default function SelectCoin({
   name,
 }: Props) {
   const { darkmodeColors } = useColorModeValueItem();
-
+  const handleSelectOption = (item: ChildrenConvertCoin) => {
+    setCoin(item);
+    onClose();
+  };
   return (
     <Box
       p='16px'
@@ -44,10 +47,7 @@ export default function SelectCoin({
             <Flex
               mb={index === arrCoin.length - 1 ? 'unset' : '16px'}
               gap='8px'
-              onClick={() => {
-                setCoin(item);
-                onClose();
-              }}
+              onClick={() => handleSelectOption(item)}
               borderRadius='8px'
               _hover={{
                 backgroundColor: darkmodeColors.bg50,

@@ -42,7 +42,7 @@ export default function DrawerItem({
         <DrawerBody zIndex={20} mt={mt} p={pbody}>
           <FlexBox justifyContent='space-between' mb={mb}>
             <DrawerCloseButton
-              onClick={() => onCloseRightSideBar()}
+              onClick={onCloseRightSideBar}
               _focusVisible={{ boxShadow: 'none !important' }}
             >
               <IconClose />

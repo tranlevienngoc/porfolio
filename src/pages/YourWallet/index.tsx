@@ -11,6 +11,7 @@ import BoxRound from 'components/common/BoxRound';
 import TemplateText from 'components/common/Text/TemplateText';
 import { LIST_TAB_YOUR_WALLET } from 'data/your-wallet/your-wallet';
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import MyWalletTab from './MyWalletTab';
 
@@ -30,9 +31,9 @@ export default function YourWalletPage() {
       <Box>
         <Tabs>
           <TabList w={{ base: '100%', md: '45%', xl: '35%' }}>
-            {LIST_TAB_YOUR_WALLET.map((item, index) => (
+            {LIST_TAB_YOUR_WALLET.map((item) => (
               <Tab
-                key={index}
+                key={uuidv4()}
                 _selected={{
                   color: 'blue.100',
                   borderBottom: '2px solid  #106CFF',

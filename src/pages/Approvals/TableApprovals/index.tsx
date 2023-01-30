@@ -9,7 +9,7 @@ import { AppContext } from 'Context/AppContext';
 import { useContext, useMemo } from 'react';
 
 const TableApprovals = () => {
-  const { addressWallet } = useContext(AppContext);
+  const { walletAddress } = useContext(AppContext);
   const datas = useMemo(
     () =>
       Array.from({ length: 5 }).map(() => ({
@@ -18,7 +18,7 @@ const TableApprovals = () => {
         last_update: '2022-10-26 16:61:11',
         approved_spender: 'Uniswap V3: Router 2',
         allowance: 'Unlimited',
-        txn_hash: addressWallet,
+        txn_hash: walletAddress,
       })),
     []
   );

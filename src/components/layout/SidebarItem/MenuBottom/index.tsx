@@ -16,16 +16,17 @@ import { useWeb3React } from '@web3-react/core';
 import ArrowLeft from 'components/svg/ArrowLeft';
 import Close from 'components/svg/Close';
 import { MENU_CONNECT, MENU_NOT_CONNECT } from 'config/menuBottom';
+import { KeyConnect } from 'constants/app';
 import { AppContext } from 'Context/AppContext';
 import { useContext, useState } from 'react';
 
 import TemplateText from '../../../common/Text/TemplateText';
 
 interface props extends BoxProps {
-  onCloseMenuBottom?: () => void;
+  onClose?: () => void;
 }
 
-const MenuBottom = ({ onCloseMenuBottom = () => ({}), ...props }: props) => {
+const MenuBottom = ({ onClose = () => ({}), ...props }: props) => {
   const [isSelected, setIsSelected] = useState(false);
   const [renderItem, setRenderItem] = useState(null);
   const [chooseItem, setChooseItem] = useState('');
@@ -63,7 +64,7 @@ const MenuBottom = ({ onCloseMenuBottom = () => ({}), ...props }: props) => {
                   <>
                     <MenuChildren
                       menuChildren={item.children}
-                      onclose={onCloseMenuBottom}
+                      onclose={onClose}
                     />
                   </>
                 </AccordionPanel>
@@ -77,7 +78,7 @@ const MenuBottom = ({ onCloseMenuBottom = () => ({}), ...props }: props) => {
         placement='left'
         size={chooseItem === 'buy-with-fiat' ? 'full' : 'xs'}
         isOpen={chooseItem !== 'more-actions' && chooseItem !== ''}
-        onClose={() => onCloseMenuBottom()}
+        onClose={onClose}
       >
         <DrawerOverlay bg='transparent'>
           <DrawerContent bg='white'>
@@ -86,7 +87,7 @@ const MenuBottom = ({ onCloseMenuBottom = () => ({}), ...props }: props) => {
                 <Box onClick={() => setChooseItem('')}>
                   <ArrowLeft />
                 </Box>
-                <Close onClick={() => onCloseMenuBottom()} />
+                <Close onClick={onClose} />
               </Flex>
             </Box>
             <DrawerBody p='16px'>{renderItem}</DrawerBody>
@@ -98,13 +99,12 @@ const MenuBottom = ({ onCloseMenuBottom = () => ({}), ...props }: props) => {
 };
 
 const MenuChildren = ({ menuChildren, onclose }) => {
-  const { setIsConnect } = useContext(AppContext);
-
   const { deactivate } = useWeb3React();
+  const { setIsConnect } = useContext(AppContext);
   const onLogout = () => {
-    localStorage.removeItem('connected');
-    setIsConnect(false);
+    localStorage.removeItem(KeyConnect);
     deactivate();
+    setIsConnect(false);
     onclose();
   };
   return (

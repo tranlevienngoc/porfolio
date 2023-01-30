@@ -6,6 +6,7 @@ import TemplateText from 'components/common/Text/TemplateText';
 import ArrowRight from 'components/svg/ArrowRight';
 import MoreIcon from 'components/svg/MoreIcon';
 import { MORE_ACTION_NOT_CONNECT } from 'config/menuBottom';
+import { KeyConnect } from 'constants/app';
 import { AppContext } from 'Context/AppContext';
 import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 import { useContext } from 'react';
@@ -18,9 +19,15 @@ const MoreActionBox = () => {
   const { deactivate } = useWeb3React();
 
   const onLogout = () => {
-    localStorage.removeItem('connected');
+    localStorage.removeItem(KeyConnect);
     setIsConnect(false);
     deactivate();
+  };
+
+  const handleCheckOption = (value: string) => {
+    if (value === 'log-out') {
+      onLogout();
+    }
   };
   return (
     <PopoverItem
@@ -56,11 +63,7 @@ const MoreActionBox = () => {
             key={item.value}
             mb='16px'
             cursor='pointer'
-            onClick={() => {
-              if (item.value === 'log-out') {
-                onLogout();
-              }
-            }}
+            onClick={() => handleCheckOption(item.value)}
           >
             {item.icon}
             <TemplateText ml='12px' txt={item.title} fontSize={16} mr='auto' />

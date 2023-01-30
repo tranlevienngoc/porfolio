@@ -18,6 +18,7 @@ interface Props extends BoxProps {
   fwAddressWallet?: number;
   fsMoney?: number;
   fwMoney?: number;
+  onClose?: () => void;
 }
 const WalletAddress = ({
   fsAddressWallet = 13,
@@ -26,7 +27,7 @@ const WalletAddress = ({
   fwMoney = 600,
   ...props
 }: Props) => {
-  const { addressWallet } = useContext(AppContext);
+  const { walletAddress } = useContext(AppContext);
   const isLargerThan1024 = useBreakpointValue(
     {
       base: false,
@@ -52,7 +53,7 @@ const WalletAddress = ({
                     w='auto'
                     fontSize={fsAddressWallet}
                     fontWeight={fwAddressWallet}
-                    txt={truncateEthAddress(addressWallet)}
+                    txt={truncateEthAddress(walletAddress)}
                   />
                   <TemplateText
                     fontSize={fsMoney}

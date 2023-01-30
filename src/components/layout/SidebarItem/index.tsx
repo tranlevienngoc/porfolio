@@ -78,7 +78,7 @@ const SidebarItem = ({ isOpen, variant, onClose, showLeftItem }: Props) => {
               >
                 <SidebarContent onClose={onClose} />
                 <Divider mt='20px' />
-                <MenuBottom onCloseMenuBottom={onClose} />
+                <MenuBottom onClose={onClose} />
                 <DownloadApp mt='auto' />
               </Flex>
             ) : (

@@ -43,7 +43,7 @@ const SidebarContent = ({ onClose = () => ({}), ...props }: props) => {
             borderRadius={8}
             alignItems='center'
             _hover={{ background: 'bg.600' }}
-            onClick={() => onClose()}
+            onClick={onClose}
             className={
               location.pathname === item.path
                 ? item.title.toLocaleLowerCase().replace(' ', '-')

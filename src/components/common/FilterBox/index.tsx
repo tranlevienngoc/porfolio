@@ -5,6 +5,7 @@ import { OptionFilters } from 'constants/types';
 import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 import { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 import ButtonBase from '../Buttons/ButtonBase';
 import FlexScroll from '../Flex/FlexScroll';
@@ -53,14 +54,14 @@ const FilterBox = ({
         w={{ base: '100%', xl: 'unset' }}
         mb={{ base: '20px', xl: 'unset' }}
       >
-        {optionFilters.map((item, index) => (
+        {optionFilters.map((item) => (
           <Box
             w='auto'
             p='8px 24px'
             cursor='pointer'
             borderRadius='8px'
             border='1px solid #D4D4D6'
-            key={index}
+            key={uuidv4}
             bg={item.url === selected ? 'blue.200' : 'unset'}
             onClick={() => setSelected(item.value)}
             _hover={{
@@ -99,7 +100,7 @@ const FilterBox = ({
           w={{ base: '100%', xl: '359px' }}
           value={valueSearch}
           backgroundColor={darkmodeColors.bg900}
-          onChange={(value) => handleChangeInput(value)}
+          onChange={handleChangeInput}
           placeholder='Search Transaction'
         />
       )}

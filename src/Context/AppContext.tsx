@@ -1,3 +1,4 @@
+import { KeyConnect } from 'constants/app';
 import { createContext, ReactNode, useEffect, useState } from 'react';
 
 interface props {
@@ -5,15 +6,15 @@ interface props {
 }
 
 interface ValueContext {
-  addressWallet: string;
-  setAddressWallet: (value: string) => void;
+  walletAddress: string;
+  setwalletAddress: (value: string) => void;
   isConnect: boolean;
   setIsConnect: (value: boolean) => void;
 }
 
 const value: ValueContext = {
-  addressWallet: '',
-  setAddressWallet: () => ({}),
+  walletAddress: '',
+  setwalletAddress: () => ({}),
   isConnect: false,
   setIsConnect: () => ({}),
 };
@@ -21,23 +22,23 @@ const value: ValueContext = {
 export const AppContext = createContext(value);
 
 export const AppProvider = ({ children }: props) => {
-  const [addressWallet, setAddressWallet] = useState(
-    localStorage.getItem('connected') || ''
+  const [walletAddress, setwalletAddress] = useState(
+    localStorage.getItem(KeyConnect) || ''
   );
 
   const [isConnect, setIsConnect] = useState(false);
 
   useEffect(() => {
-    if (addressWallet) {
+    if (walletAddress) {
       setIsConnect(true);
     } else {
-      setIsConnect(false);
+      setIsConnect(!!walletAddress);
     }
-  }, [addressWallet]);
+  }, [walletAddress]);
 
   const value = {
-    addressWallet,
-    setAddressWallet,
+    walletAddress,
+    setwalletAddress,
     isConnect,
     setIsConnect,
   };

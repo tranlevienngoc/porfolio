@@ -3,7 +3,7 @@ import TemplateText from 'components/common/Text/TemplateText';
 import Logo from 'components/svg/Logo';
 import StepIcon from 'components/svg/StepIcon';
 import { STEP_CONNECT_FINISH } from 'data/connectwallet/connectwalet';
-
+import { v4 as uuidv4 } from 'uuid';
 export default function LeftModalConnect() {
   return (
     <Flex
@@ -34,8 +34,11 @@ export default function LeftModalConnect() {
         />
       </Box>
       <Flex gap='10px'>
-        {STEP_CONNECT_FINISH.map((item, index) => (
-          <StepIcon key={index} color={item.finished ? '#106CFF' : '#D4D4D6'} />
+        {STEP_CONNECT_FINISH.map((item) => (
+          <StepIcon
+            key={uuidv4()}
+            color={item.finished ? '#106CFF' : '#D4D4D6'}
+          />
         ))}
       </Flex>
     </Flex>

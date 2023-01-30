@@ -1,27 +1,32 @@
 import { Box, Flex } from '@chakra-ui/react';
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import TemplateText from '../Text/TemplateText';
-import { ListSelect } from '../../../constants/types';
+import { SelectOption } from '../../../constants/types';
 
 interface props {
   onClose?: () => void;
   setValue?: (value: string) => void;
   setLang?: (value: string) => void;
   onChange?: (value: string) => void;
-  LIST_SELECT: ListSelect[];
+  options: SelectOption[];
 }
 
 export default function SelectItem({
   onClose = () => ({}),
   onChange = () => ({}),
-
-  LIST_SELECT,
+  options,
 }: props) {
+  const handleSelectOption = (value: string) => {
+    onClose();
+
+    onChange(value);
+  };
   return (
     <Box w='153px'>
-      {LIST_SELECT.map((item, index) => (
-        <Box key={index}>
+      {options.map((item) => (
+        <Box key={uuidv4()}>
           <Box>
             <Flex
               cursor='pointer'
@@ -31,11 +36,7 @@ export default function SelectItem({
               borderRadius='4px'
               p='4px 8px'
               h='30px'
-              onClick={() => {
-                onClose();
-
-                onChange(item.label || '');
-              }}
+              onClick={() => handleSelectOption(item.label || '')}
             >
               <TemplateText fontSize='13px' txt={item.label || ''} />
             </Flex>

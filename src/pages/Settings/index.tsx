@@ -8,6 +8,7 @@ import {
   THEME,
 } from 'data/setting/setting';
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const Settings = () => {
   const [value, setValue] = useState('');
@@ -42,8 +43,8 @@ const Settings = () => {
           mt='16px'
           flexWrap='wrap'
         >
-          {THEME.map((item, index) => (
-            <Box key={index}>
+          {THEME.map((item) => (
+            <Box key={uuidv4()}>
               <Box>{item.theme}</Box>
 
               <RadioGroup mt='12px' onChange={setValue} value={value}>
@@ -65,8 +66,8 @@ const Settings = () => {
             txt='Set your app with your prefrences'
           />
 
-          {LANGUAGE_CURRENCY.map((item, index) => (
-            <Flex key={index} mt='16px' gap='75px' alignItems='center'>
+          {LANGUAGE_CURRENCY.map((item) => (
+            <Flex key={uuidv4()} mt='16px' gap='75px' alignItems='center'>
               <TemplateText
                 w='70px'
                 fontSize='13px'
@@ -86,7 +87,7 @@ const Settings = () => {
                         text={item.name === 'Language' ? lang : currency}
                       >
                         <SelectItem
-                          LIST_SELECT={item.options}
+                          options={item.options}
                           onClose={onClose}
                           onChange={handleSelelect}
                         />
@@ -107,8 +108,8 @@ const Settings = () => {
               txt='Choose your version to download'
             />
             <Flex mt='16px' gap={{ base: '10px', md: '20px' }} flexWrap='wrap'>
-              {LIST_PLATFORM_DOWNLOAD.map((item, index) => (
-                <Box key={index}>{item.icon}</Box>
+              {LIST_PLATFORM_DOWNLOAD.map((item) => (
+                <Box key={uuidv4()}>{item.icon}</Box>
               ))}
             </Flex>
           </Box>

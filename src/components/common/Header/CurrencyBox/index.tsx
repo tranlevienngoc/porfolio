@@ -3,7 +3,8 @@ import TemplateText from 'components/common/Text/TemplateText';
 import TextBold from 'components/common/Text/TextBold';
 import IconCheck from 'components/svg/IconCheck';
 import { LIST_CURRENCY } from 'data/menu/menu';
-import { ReactNode, useState } from 'react';
+import React, { ReactNode, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 interface props {
   setContent?: (value: string) => void;
@@ -16,6 +17,16 @@ const CurrencyBox = ({
 }: props) => {
   const [selected, setSelected] = useState('');
 
+  const handleSetItem = (it: {
+    name: string;
+    sign: string;
+    icon: ReactNode;
+  }) => {
+    setSelected(it.sign);
+    setContent(it.sign);
+    setIcon(it.icon);
+  };
+
   return (
     <Box
       w={{ base: '280px', xl: '317px' }}
@@ -23,7 +34,7 @@ const CurrencyBox = ({
       borderRadius='4px'
     >
       {LIST_CURRENCY.map((item, index) => (
-        <Box key={index} mb={index % 2 == 0 ? '20px' : ''}>
+        <Box key={uuidv4()} mb={index % 2 == 0 ? '20px' : ''}>
           <TextBold txt={item.name} />
           <Box>
             {item.children.map((it, idx) => (
@@ -31,11 +42,7 @@ const CurrencyBox = ({
                 key={idx}
                 mt='16px'
                 cursor='pointer'
-                onClick={() => {
-                  setSelected(it.sign);
-                  setContent(it.sign);
-                  setIcon(it.icon);
-                }}
+                onClick={() => handleSetItem(it)}
               >
                 {it.icon}
                 <TextBold txt={it.sign} m='0 12px 0 8px' />

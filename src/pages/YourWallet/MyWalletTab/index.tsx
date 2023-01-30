@@ -3,46 +3,47 @@ import TemplateText from 'components/common/Text/TemplateText';
 import { AppContext } from 'Context/AppContext';
 import React, { useContext } from 'react';
 import truncateEthAddress from 'utils/truncateEthAddress';
+import { v4 as uuidv4 } from 'uuid';
 
 import MoreOptionWallet from './MoreOptionWallet';
 
 export default function MyWalletTab() {
-  const { addressWallet } = useContext(AppContext);
+  const { walletAddress } = useContext(AppContext);
 
   const LIST_YOUR_WALLET = [
     {
       label: 'Metamask',
-      address: addressWallet,
+      walletAddress: walletAddress,
       value: '$3,429.65',
       img: './svg/Image-Wallet.svg',
     },
     {
       label: 'Metamask',
-      address: addressWallet,
+      walletAddress: walletAddress,
       value: '$3,429.65',
       img: './svg/Image-Wallet.svg',
     },
     {
       label: 'Metamask',
-      address: addressWallet,
+      walletAddress: walletAddress,
       value: '$3,429.65',
       img: './svg/Image-Wallet.svg',
     },
     {
       label: 'Metamask',
-      address: addressWallet,
+      walletAddress: walletAddress,
       value: '$3,429.65',
       img: './svg/Image-Wallet.svg',
     },
     {
       label: 'Metamask',
-      address: addressWallet,
+      walletAddress: walletAddress,
       value: '$3,429.65',
       img: './svg/Image-Wallet.svg',
     },
     {
       label: 'Metamask',
-      address: addressWallet,
+      walletAddress: walletAddress,
       value: '$3,429.65',
       img: './svg/Image-Wallet.svg',
     },
@@ -51,7 +52,7 @@ export default function MyWalletTab() {
     <Box mt='16px'>
       {LIST_YOUR_WALLET.map((item, index) => (
         <Flex
-          key={index}
+          key={uuidv4()}
           p='12px'
           justifyContent='space-between'
           alignItems='center'
@@ -64,7 +65,7 @@ export default function MyWalletTab() {
             <Box>
               <TemplateText
                 fontSize='13px'
-                txt={truncateEthAddress(item.address)}
+                txt={truncateEthAddress(item.walletAddress)}
               />
               <TemplateText
                 fontSize='13px'

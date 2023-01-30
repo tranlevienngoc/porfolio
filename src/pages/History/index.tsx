@@ -2,14 +2,15 @@ import { Box } from '@chakra-ui/react';
 import TemplateText from 'components/common/Text/TemplateText';
 import { LIST_TABLE } from 'data/history';
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import WrapHistoryTab from './WrapHistoryTab';
 
 export default function History() {
   return (
     <WrapHistoryTab>
-      {LIST_TABLE.map((item, index) => (
-        <Box key={index} mt='20px'>
+      {LIST_TABLE.map((item) => (
+        <Box key={uuidv4()} mt='20px'>
           <TemplateText txt={item.createAt} />
           <Box mt='20px'>{item.table}</Box>
         </Box>

@@ -10,25 +10,29 @@ import Mercuryo from 'components/svg/Mercuryo';
 import Moonpay from 'components/svg/Moonpay';
 import Ramp from 'components/svg/Ramp';
 import Visa from 'components/svg/Visa';
+import { useMemo } from 'react';
 
 const FiatBox = () => {
-  const options = [
-    {
-      value: 'moonpay',
-      label: 'Moonpay',
-      icon: <Moonpay />,
-    },
-    {
-      value: 'ramp',
-      label: 'Ramp',
-      icon: <Ramp />,
-    },
-    {
-      value: 'mercuryo',
-      label: 'Mercuryo',
-      icon: <Mercuryo />,
-    },
-  ];
+  const options = useMemo(
+    () => [
+      {
+        value: 'moonpay',
+        label: 'Moonpay',
+        icon: <Moonpay />,
+      },
+      {
+        value: 'ramp',
+        label: 'Ramp',
+        icon: <Ramp />,
+      },
+      {
+        value: 'mercuryo',
+        label: 'Mercuryo',
+        icon: <Mercuryo />,
+      },
+    ],
+    []
+  );
   return (
     <Flex justifyContent='center'>
       <Flex
