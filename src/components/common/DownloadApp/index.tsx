@@ -8,7 +8,7 @@ import CHPlay from '../../svg/CHPlay';
 interface Props extends FlexProps {
   children?: ReactNode;
 }
-const DownloadApp = ({ ...props }: Props) => {
+const DownloadApp = (props: Props) => {
   return (
     <Flex {...props} w='100%' mb='10px'>
       <Box w='204px' textAlign='center'>

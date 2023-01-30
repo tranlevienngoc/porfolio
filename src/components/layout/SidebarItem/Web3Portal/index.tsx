@@ -13,7 +13,7 @@ interface props extends BoxProps {
   onClose?: () => void;
 }
 
-const Web3Portal = ({ onClose = () => ({}), ...props }: props) => {
+const Web3Portal = ({ onClose, ...props }: props) => {
   const connectWallet = useDisclosure();
 
   const [isLargerThan1024] = useMediaQuery('(min-width: 1024px)');
@@ -56,7 +56,7 @@ const Web3Portal = ({ onClose = () => ({}), ...props }: props) => {
         isOpen={connectWallet.isOpen && !isLargerThan1024}
         pbody='0px'
       >
-        <ConnectWallet onCloseRightSideBar={onClose} />
+        <ConnectWallet />
       </DrawerItem>
       <ModalItem
         p='0px'

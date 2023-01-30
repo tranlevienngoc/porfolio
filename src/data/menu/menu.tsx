@@ -1,5 +1,6 @@
 import Average from 'components/svg/Average';
 import Bitcoin from 'components/svg/Bitcoin';
+import Currency from 'components/svg/Currency';
 import Fiat from 'components/svg/Fiat';
 
 import Chain from '../../components/svg/Chain';
@@ -70,9 +71,9 @@ export const LIST_CURRENCY = [
         icon: <Fiat />,
       },
       {
-        name: 'Canaidian Dollar',
-        sign: 'CAD',
-        icon: <Fiat />,
+        name: 'US Dollar',
+        sign: 'USD',
+        icon: <Currency />,
       },
     ],
   },

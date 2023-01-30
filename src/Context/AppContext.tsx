@@ -7,40 +7,36 @@ interface props {
 
 interface ValueContext {
   walletAddress: string;
-  setwalletAddress: (value: string) => void;
+  onSetWalletAddress: (value: string) => void;
   isConnect: boolean;
-  setIsConnect: (value: boolean) => void;
+  onSetConnectStatus: (value: boolean) => void;
 }
 
 const value: ValueContext = {
   walletAddress: '',
-  setwalletAddress: () => ({}),
+  onSetWalletAddress: () => ({}),
   isConnect: false,
-  setIsConnect: () => ({}),
+  onSetConnectStatus: () => ({}),
 };
 
 export const AppContext = createContext(value);
 
 export const AppProvider = ({ children }: props) => {
-  const [walletAddress, setwalletAddress] = useState(
+  const [walletAddress, onSetWalletAddress] = useState(
     localStorage.getItem(KeyConnect) || ''
   );
 
-  const [isConnect, setIsConnect] = useState(false);
+  const [isConnect, onSetConnectStatus] = useState(false);
 
   useEffect(() => {
-    if (walletAddress) {
-      setIsConnect(true);
-    } else {
-      setIsConnect(!!walletAddress);
-    }
-  }, [walletAddress]);
+    onSetConnectStatus(!!walletAddress);
+  }, [walletAddress, onSetConnectStatus]);
 
   const value = {
     walletAddress,
-    setwalletAddress,
+    onSetWalletAddress,
     isConnect,
-    setIsConnect,
+    onSetConnectStatus,
   };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };

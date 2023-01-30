@@ -14,13 +14,12 @@ interface props {
 }
 
 export default function SelectItem({
-  onClose = () => ({}),
+  onClose,
   onChange = () => ({}),
   options,
 }: props) {
   const handleSelectOption = (value: string) => {
-    onClose();
-
+    onClose;
     onChange(value);
   };
   return (

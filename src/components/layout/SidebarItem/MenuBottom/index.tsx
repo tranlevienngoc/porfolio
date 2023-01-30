@@ -100,11 +100,11 @@ const MenuBottom = ({ onClose = () => ({}), ...props }: props) => {
 
 const MenuChildren = ({ menuChildren, onclose }) => {
   const { deactivate } = useWeb3React();
-  const { setIsConnect } = useContext(AppContext);
+  const { onSetConnectStatus } = useContext(AppContext);
   const onLogout = () => {
     localStorage.removeItem(KeyConnect);
     deactivate();
-    setIsConnect(false);
+    onSetConnectStatus(false);
     onclose();
   };
   return (

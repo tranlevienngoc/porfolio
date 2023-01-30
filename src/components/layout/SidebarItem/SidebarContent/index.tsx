@@ -10,7 +10,7 @@ interface props extends BoxProps {
   onClose?: () => void;
 }
 
-const SidebarContent = ({ onClose = () => ({}), ...props }: props) => {
+const SidebarContent = ({ onClose, ...props }: props) => {
   const location = useLocation();
   const renderColor = (path: string, disable: boolean) => {
     if (disable) return '#BDBDBF';

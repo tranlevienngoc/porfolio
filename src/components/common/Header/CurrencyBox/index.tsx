@@ -15,7 +15,7 @@ const CurrencyBox = ({
   setContent = () => ({}),
   setIcon = () => ({}),
 }: props) => {
-  const [selected, setSelected] = useState('');
+  const [selected, setSelected] = useState('USD');
 
   const handleSetItem = (it: {
     name: string;

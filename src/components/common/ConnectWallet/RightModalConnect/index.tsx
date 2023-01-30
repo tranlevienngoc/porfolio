@@ -25,11 +25,11 @@ const ConnectCoinbaseWallet = new WalletLinkConnector({
   supportedChainIds: [1, 3, 4, 5, 42],
 });
 
-const ConnectWalletConnect = new WalletConnectConnector({
+const ConnectWithWalletConnect = new WalletConnectConnector({
   rpc: {
     1: process.env.URL_INFURA || '',
   },
-  bridge: 'https://bridge.walletconnect.org',
+  bridge: process.env.URL_BRIDGE,
   qrcode: true,
 });
 
@@ -37,20 +37,14 @@ const Injected = new InjectedConnector({
   supportedChainIds: [1, 3, 4, 5, 42],
 });
 
-interface props {
-  onCloseRightSideBar: () => void;
-}
-
-export default function RightModalConnect({
-  onCloseRightSideBar = () => ({}),
-}: props) {
+export default function RightModalConnect() {
   window.Buffer = Buffer;
-  const { setwalletAddress } = useContext(AppContext);
+  const { onSetWalletAddress } = useContext(AppContext);
 
   const { activate, account } = useWeb3React();
 
   useEffect(() => {
-    setwalletAddress(account || '');
+    onSetWalletAddress(account || '');
     localStorage.setItem(KeyConnect, account || '');
   }, [account]);
 
@@ -62,15 +56,12 @@ export default function RightModalConnect({
   const handleWalletConnect = (label: string) => {
     if (label === TYPE_WALLETCONNECT.MetaMask) {
       activate(Injected);
-      //onCloseRightSideBar();
     }
     if (label === TYPE_WALLETCONNECT.WalletConnect) {
-      activate(ConnectWalletConnect);
-      //onCloseRightSideBar();
+      activate(ConnectWithWalletConnect);
     }
     if (label === TYPE_WALLETCONNECT.CoinBase) {
       activate(ConnectCoinbaseWallet);
-      //onCloseRightSideBar();
     }
   };
   return (

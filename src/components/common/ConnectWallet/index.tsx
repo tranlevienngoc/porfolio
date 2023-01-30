@@ -4,13 +4,7 @@ import React from 'react';
 import LeftModalConnect from './LeftModalConnect';
 import RightModalConnect from './RightModalConnect';
 
-interface props {
-  onCloseRightSideBar?: () => void;
-}
-
-export default function ConnectWallet({
-  onCloseRightSideBar = () => ({}),
-}: props) {
+export default function ConnectWallet() {
   return (
     <Box
       zIndex={2}
@@ -19,7 +13,7 @@ export default function ConnectWallet({
     >
       <Flex h='100%'>
         <LeftModalConnect />
-        <RightModalConnect onCloseRightSideBar={onCloseRightSideBar} />
+        <RightModalConnect />
       </Flex>
     </Box>
   );

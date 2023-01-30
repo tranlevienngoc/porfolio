@@ -14,13 +14,13 @@ import { useContext } from 'react';
 const MoreActionBox = () => {
   const { darkmodeColors } = useColorModeValueItem();
 
-  const { setIsConnect } = useContext(AppContext);
+  const { onSetConnectStatus } = useContext(AppContext);
 
   const { deactivate } = useWeb3React();
 
   const onLogout = () => {
     localStorage.removeItem(KeyConnect);
-    setIsConnect(false);
+    onSetConnectStatus(false);
     deactivate();
   };
 

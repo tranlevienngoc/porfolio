@@ -25,7 +25,7 @@ interface Props {
 
 export default function DrawerItem({
   onClose,
-  onCloseRightSideBar = () => ({}),
+  onCloseRightSideBar,
   isOpen = false,
   txt,
   children,

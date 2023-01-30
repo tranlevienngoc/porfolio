@@ -18,8 +18,8 @@ interface Props {
 
 const Header = ({
   showSidebarButton = true,
-  onShowSidebar = () => ({}),
-  onShowLeftItem = () => ({}),
+  onShowSidebar,
+  onShowLeftItem,
 }: Props) => {
   const [valueSearch, setValueSearch] = useState('');
 
