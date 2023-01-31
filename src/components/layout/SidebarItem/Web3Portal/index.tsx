@@ -1,13 +1,13 @@
 import { Box, BoxProps, useDisclosure, useMediaQuery } from '@chakra-ui/react';
+import ButtonConnectWallet from 'components/common/Buttons/ButtonConnectWallet';
 import ConnectWallet from 'components/common/ConnectWallet';
 import DrawerItem from 'components/common/DrawerItem';
 import FlexCenter from 'components/common/Flex/FlexCenter';
 import ModalItem from 'components/common/ModalItem';
+import TemplateText from 'components/common/Text/TemplateText';
 import Logo from 'components/svg/Logo';
 
 import WrapWallet from '../WrapWallet';
-import ButtonConnectWallet from '../../../common/Buttons/ButtonConnectWallet';
-import TemplateText from '../../../common/Text/TemplateText';
 
 interface props extends BoxProps {
   onClose?: () => void;

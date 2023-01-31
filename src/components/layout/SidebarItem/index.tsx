@@ -6,6 +6,9 @@ import {
   DrawerOverlay,
   Flex,
 } from '@chakra-ui/react';
+import Divider from 'components/common/Divider';
+import DownloadApp from 'components/common/DownloadApp';
+import Close from 'components/svg/Close';
 import { AppContext } from 'Context/AppContext';
 import { useContext } from 'react';
 
@@ -14,9 +17,6 @@ import MyWallet from './MyWallet';
 import SidebarContent from './SidebarContent';
 import WalletAddress from './WalletAddress';
 import Web3Portal from './Web3Portal';
-import Divider from '../../common/Divider';
-import DownloadApp from '../../common/DownloadApp';
-import Close from '../../svg/Close';
 
 interface Props {
   onClose: () => void;
@@ -77,7 +77,6 @@ const SidebarItem = ({ isOpen, variant, onClose, showLeftItem }: Props) => {
                 justifyContent='space-between'
               >
                 <SidebarContent onClose={onClose} />
-                <Divider mt='20px' />
                 <MenuBottom onClose={onClose} />
                 <DownloadApp mt='auto' />
               </Flex>

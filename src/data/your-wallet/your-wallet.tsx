@@ -1,8 +1,8 @@
-import BellIcon from '../../components/svg/BellIcon';
-import ClipBoard from '../../components/svg/ClipBoard';
-import CloudChange from '../../components/svg/CloudChange';
-import RemoveIcon from '../../components/svg/RemoveIcon';
-import Rename from '../../components/svg/Rename';
+import BellIcon from 'components/svg/BellIcon';
+import ClipBoard from 'components/svg/ClipBoard';
+import CloudChange from 'components/svg/CloudChange';
+import RemoveIcon from 'components/svg/RemoveIcon';
+import Rename from 'components/svg/Rename';
 
 export const LIST_TAB_YOUR_WALLET = [
   {

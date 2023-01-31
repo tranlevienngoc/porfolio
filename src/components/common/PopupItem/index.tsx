@@ -1,8 +1,7 @@
 import { Flex, PopoverContent, PopoverTrigger, Portal } from '@chakra-ui/react';
+import TemplateText from 'components/common/Text/TemplateText';
+import ArrowBottom from 'components/svg/ArrowBottom';
 import React, { ReactNode } from 'react';
-
-import TemplateText from '../Text/TemplateText';
-import ArrowBottom from '../../svg/ArrowBottom';
 
 interface props {
   text?: string;

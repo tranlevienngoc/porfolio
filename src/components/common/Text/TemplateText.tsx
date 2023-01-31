@@ -1,6 +1,5 @@
 import { Text, TextProps } from '@chakra-ui/react';
-
-import useColorModeValueItem from '../../../hook/useColorModeValueItem/useColorModeValueItem';
+import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 
 interface Props extends TextProps {
   txt: string;

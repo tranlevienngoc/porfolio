@@ -12,15 +12,15 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
+import TemplateText from 'components/common/Text/TemplateText';
+import { fontFamily } from 'constants/app';
+import useLightMode from 'helpers/lightMode/isLightMode';
+import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 import { useEffect, useState } from 'react';
 import { usePagination, useSortBy, useTable } from 'react-table';
 
 import ArrowLeft from './icon/ArrowLeft';
 import ArrowRight from './icon/ArrowRight';
-import TemplateText from '../Text/TemplateText';
-import { fontFamily } from '../../../constants';
-import useLightMode from '../../../helpers/lightMode/isLightMode';
-import useColorModeValueItem from '../../../hook/useColorModeValueItem/useColorModeValueItem';
 
 interface Props {
   columns?: any[];

@@ -1,7 +1,7 @@
 import { ButtonProps } from '@chakra-ui/react';
+import ConnectWallet from 'components/svg/ConnectWallet';
 
 import ButtonBase from './ButtonBase';
-import ConnectWallet from '../../svg/ConnectWallet';
 
 interface Props extends ButtonProps {
   fsText?: number;

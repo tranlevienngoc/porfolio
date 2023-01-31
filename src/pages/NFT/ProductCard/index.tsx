@@ -6,10 +6,10 @@ import HeartIcon from 'components/svg/HeartIcon';
 import { ProductItem } from 'constants/types';
 
 interface props {
-  Product: ProductItem;
+  product: ProductItem;
 }
 
-export default function ProductCard({ Product }: props) {
+export default function ProductCard({ product }: props) {
   return (
     <Box
       mt='20px'
@@ -21,25 +21,25 @@ export default function ProductCard({ Product }: props) {
       _hover={{ boxShadow: '0px 8px 16px rgba(16, 108, 255, 0.25)' }}
       position='relative'
     >
-      <Image w='100%' src={Product.image} />
+      <Image w='100%' src={product.image} />
       <Box position='absolute' top='15px' right='15px'>
         <HeartIcon />
       </Box>
       <Box mt='16px'>
-        <TemplateText fontSize='16px' fontWeight={600} txt={Product.name} />
+        <TemplateText fontSize='16px' fontWeight={600} txt={product.name} />
         <TemplateText
           color='#93989A'
           fontSize='12px'
           fontWeight={400}
-          txt={Product.author}
+          txt={product.author}
         />
       </Box>
       <Box mt='16px'>
-        <TemplateText fontSize='10' color='#93989A' txt={Product.label} />
+        <TemplateText fontSize='10' color='#93989A' txt={product.label} />
         <Flex alignItems='center' justifyContent='space-between'>
           <Flex alignItems='center' gap='6px'>
             <Ethereum />
-            <TemplateText fontSize='16px' txt={Product.price} />
+            <TemplateText fontSize='16px' txt={product.price} />
           </Flex>
           <ButtonBase
             w='85px'

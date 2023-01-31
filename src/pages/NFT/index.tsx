@@ -32,10 +32,10 @@ export default function NFT() {
         gridGap={{ base: 'unset', md: '16px' }}
       >
         {PRODUCT_CARD.map((item) => (
-          <ProductCard key={uuidv4()} Product={item} />
+          <ProductCard key={uuidv4()} product={item} />
         ))}
       </SimpleGrid>
-      <Pagination lenght={PRODUCT_CARD.length} />
+      <Pagination length={PRODUCT_CARD.length} />
     </AccountHeader>
   );
 }

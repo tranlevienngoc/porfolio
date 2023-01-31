@@ -1,6 +1,6 @@
-import DollarSquare from '../../components/svg/DollarSquare';
-import Image from '../../components/svg/Image';
-import Ticket from '../../components/svg/Ticket';
+import DollarSquare from 'components/svg/DollarSquare';
+import Image from 'components/svg/Image';
+import Ticket from 'components/svg/Ticket';
 
 export const CARD_NFTS = [
   {

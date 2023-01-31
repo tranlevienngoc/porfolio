@@ -1,9 +1,8 @@
 import { Box, Flex, FlexProps } from '@chakra-ui/react';
+import TemplateText from 'components/common/Text/TemplateText';
+import AppStore from 'components/svg/AppStore';
+import CHPlay from 'components/svg/CHPlay';
 import { ReactNode } from 'react';
-
-import TemplateText from '../Text/TemplateText';
-import AppStore from '../../svg/AppStore';
-import CHPlay from '../../svg/CHPlay';
 
 interface Props extends FlexProps {
   children?: ReactNode;

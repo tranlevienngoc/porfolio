@@ -13,14 +13,13 @@ import {
   Flex,
 } from '@chakra-ui/react';
 import { useWeb3React } from '@web3-react/core';
+import TemplateText from 'components/common/Text/TemplateText';
 import ArrowLeft from 'components/svg/ArrowLeft';
 import Close from 'components/svg/Close';
 import { MENU_CONNECT, MENU_NOT_CONNECT } from 'config/menuBottom';
 import { KeyConnect } from 'constants/app';
 import { AppContext } from 'Context/AppContext';
 import { useContext, useState } from 'react';
-
-import TemplateText from '../../../common/Text/TemplateText';
 
 interface props extends BoxProps {
   onClose?: () => void;

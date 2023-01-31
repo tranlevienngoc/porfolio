@@ -5,12 +5,12 @@ import {
   DrawerContent,
   DrawerOverlay,
 } from '@chakra-ui/react';
+import TemplateText from 'components/common/Text/TemplateText';
 import IconClose from 'components/svg/IconClose';
 import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 import { ReactNode } from 'react';
 
 import FlexBox from '../FlexBox';
-import TemplateText from '../Text/TemplateText';
 
 interface Props {
   onClose: () => void;

@@ -1,9 +1,8 @@
 import { Box, Flex } from '@chakra-ui/react';
-
-import TemplateText from '../Text/TemplateText';
-import IconCheck from '../../svg/IconCheck';
-import { ChildrenConvertCoin } from '../../../constants/types';
-import useColorModeValueItem from '../../../hook/useColorModeValueItem/useColorModeValueItem';
+import TemplateText from 'components/common/Text/TemplateText';
+import IconCheck from 'components/svg/IconCheck';
+import { ChildrenConvertCoin } from 'constants/types';
+import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 
 interface Props {
   arrCoin?: ChildrenConvertCoin[];

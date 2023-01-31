@@ -6,18 +6,16 @@ import {
   Portal,
   useDisclosure,
 } from '@chakra-ui/react';
+import SelectCoin from 'components/common/SelectCoin/SelectCoin';
+import TemplateText from 'components/common/Text/TemplateText';
+import ArrowBottom from 'components/svg/ArrowBottom';
+import { ConvertCoin } from 'constants/types';
+import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 import { useState } from 'react';
-
-import SelectCoin from '../SelectCoin/SelectCoin';
-import TemplateText from '../Text/TemplateText';
-import ArrowBottom from '../../svg/ArrowBottom';
-import { ConvertCoin } from '../../../constants/types';
-import useColorModeValueItem from '../../../hook/useColorModeValueItem/useColorModeValueItem';
 
 interface Props {
   item: ConvertCoin;
   index: number;
-
   isDetail?: boolean;
 }
 

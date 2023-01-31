@@ -1,8 +1,7 @@
 import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
-
-import Search from '../../svg/Search';
-import { ChakraType } from '../../../constants/types';
-import useLightMode from '../../../helpers/lightMode/isLightMode';
+import Search from 'components/svg/Search';
+import { ChakraType } from 'constants/types';
+import useLightMode from 'helpers/lightMode/isLightMode';
 
 interface SearchInputProps {
   h?: ChakraType;

@@ -1,12 +1,12 @@
 import { Box } from '@chakra-ui/react';
 import MoreActionBox from 'components/common/Header/MoreActionBox';
+import Helps from 'components/svg/Helps';
+import ToggleBalanceBig from 'components/svg/ToggleBalanceBig';
 import { useMemo, useState } from 'react';
 
 import CurrencyItem from './CurrencyItem';
 import FiatItem from './FiatItem';
 import GasFeeItem from './GasFeeItem';
-import Helps from '../../../svg/Helps';
-import ToggleBalanceBig from '../../../svg/ToggleBalanceBig';
 
 const RightMenuConnect = () => {
   const [selected, setSeleted] = useState('');

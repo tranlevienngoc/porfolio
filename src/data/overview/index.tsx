@@ -1,16 +1,16 @@
-import Chain from '../../components/svg/Chain';
-import Chart from '../../components/svg/Chart';
-import Element from '../../components/svg/Element';
-import FollowerIcon from '../../components/svg/FollowerIcon';
-import ProfileStick from '../../components/svg/ProfileStick';
-import ReceivedIcon from '../../components/svg/ReceivedIcon';
-import SendIcon from '../../components/svg/SendIcon';
-import ShareIcon from '../../components/svg/ShareIcon';
-import WalletCheck from '../../components/svg/WalletCheck';
-import { ListItem } from '../../constants/interface';
-import ElementContent from '../../pages/Overview/ConnectedWallet/Element';
-import NetWorkBalance from '../../pages/Overview/ConnectedWallet/NetWorkBalance';
-import Wallet from '../../pages/Overview/ConnectedWallet/Wallet';
+import Chain from 'components/svg/Chain';
+import Chart from 'components/svg/Chart';
+import Element from 'components/svg/Element';
+import FollowerIcon from 'components/svg/FollowerIcon';
+import ProfileStick from 'components/svg/ProfileStick';
+import ReceivedIcon from 'components/svg/ReceivedIcon';
+import SendIcon from 'components/svg/SendIcon';
+import ShareIcon from 'components/svg/ShareIcon';
+import WalletCheck from 'components/svg/WalletCheck';
+import { ListItem } from 'constants/interface';
+import ElementContent from 'pages/Overview/ConnectedWallet/Element';
+import NetWorkBalance from 'pages/Overview/ConnectedWallet/NetWorkBalance';
+import Wallet from 'pages/Overview/ConnectedWallet/Wallet';
 
 export const FOLLOW = [
   {

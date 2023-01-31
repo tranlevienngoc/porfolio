@@ -1,5 +1,6 @@
-import Chain from '../../components/svg/Chain';
-import Token from '../../components/svg/Token';
+import Chain from 'components/svg/Chain';
+import Token from 'components/svg/Token';
+import TokenTab from 'pages/Sends/TokenTab';
 
 export const LIST_COIN = [
   {
@@ -7,13 +8,11 @@ export const LIST_COIN = [
     children: [
       {
         name: 'Ethereum ',
-
         value: '1',
         icon: <Chain isSendPage={true} />,
       },
       {
         name: 'Aurora',
-
         value: '1',
         icon: <Chain isSendPage={true} />,
       },
@@ -37,4 +36,9 @@ export const LIST_COIN = [
       },
     ],
   },
+];
+
+export const LIST_PANEL = [
+  { name: 'Token', element: <TokenTab /> },
+  { name: 'NFT', element: 'aaa' },
 ];

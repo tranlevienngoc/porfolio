@@ -1,9 +1,8 @@
 import { Box, Flex, FlexProps } from '@chakra-ui/react';
+import TemplateText from 'components/common/Text/TemplateText';
+import { ChakraType } from 'constants/types';
+import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 import { ReactNode } from 'react';
-
-import TemplateText from '../Text/TemplateText';
-import { ChakraType } from '../../../constants/types';
-import useColorModeValueItem from '../../../hook/useColorModeValueItem/useColorModeValueItem';
 
 interface Props extends FlexProps {
   fsText?: ChakraType;

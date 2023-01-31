@@ -1,6 +1,5 @@
 import { Flex } from '@chakra-ui/react';
-
-import { FlexItemProps } from '../../../../constants/interface';
+import { FlexItemProps } from 'constants/interface';
 
 export default function FlexScroll({ children, ...props }: FlexItemProps) {
   return (

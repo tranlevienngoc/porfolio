@@ -17,3 +17,14 @@ export enum TYPE_WALLETCONNECT {
   WalletConnect = 'WalletConnect',
   CoinBase = 'Coinbase Wallet',
 }
+
+export enum TYPE_FILTER_TRANSACTION {
+  AllTransaction = '/history',
+  Send = '/history/send',
+  Receive = 'history/received',
+}
+
+export enum TYPE_SELECT {
+  Language = 'Language',
+  Currency = 'Currency',
+}

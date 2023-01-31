@@ -1,9 +1,8 @@
 import { Flex } from '@chakra-ui/react';
+import ReactTable from 'components/common/ReactTable';
+import TemplateText from 'components/common/Text/TemplateText';
+import { CellOfTable } from 'constants/types';
 import { useMemo } from 'react';
-
-import ReactTable from '../../common/ReactTable';
-import TemplateText from '../../common/Text/TemplateText';
-import { CellOfTable } from '../../../constants/types';
 
 const HistoricalDataTable = () => {
   const datas = useMemo(

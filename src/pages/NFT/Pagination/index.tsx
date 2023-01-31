@@ -5,10 +5,10 @@ import TemplateText from 'components/common/Text/TemplateText';
 import React, { useState } from 'react';
 
 interface props {
-  lenght: number;
+  length: number;
 }
 
-export default function Pagination({ lenght }: props) {
+export default function Pagination({ length }: props) {
   const currentPage = 1;
   const [pageNext, setPageNext] = useState(1);
 
@@ -33,10 +33,10 @@ export default function Pagination({ lenght }: props) {
       <TemplateText
         fontSize={14}
         fontWeight={400}
-        txt={`Page ${pageNext} of ${lenght}`}
+        txt={`Page ${pageNext} of ${length}`}
       />
-      <Box as='button' disabled={pageNext === lenght} onClick={onNextPage}>
-        <ArrowRight color={pageNext === lenght ? 'gray' : '#1E1E1E'} />
+      <Box as='button' disabled={pageNext === length} onClick={onNextPage}>
+        <ArrowRight color={pageNext === length ? 'gray' : '#1E1E1E'} />
       </Box>
     </Flex>
   );

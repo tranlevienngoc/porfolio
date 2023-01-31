@@ -1,9 +1,9 @@
-import AndroidPlatform from '../../components/svg/AndroidPlatform';
-import AppStorePlatform from '../../components/svg/AppStorePlatform';
-import DarkModeTheme from '../../components/svg/DarkModeTheme';
-import GooglePlayPlatform from '../../components/svg/GooglePlayPlatform';
-import LightModeTheme from '../../components/svg/LightModeTheme';
-import SystemTheme from '../../components/svg/SystemTheme';
+import AndroidPlatform from 'components/svg/AndroidPlatform';
+import AppStorePlatform from 'components/svg/AppStorePlatform';
+import DarkModeTheme from 'components/svg/DarkModeTheme';
+import GooglePlayPlatform from 'components/svg/GooglePlayPlatform';
+import LightModeTheme from 'components/svg/LightModeTheme';
+import SystemTheme from 'components/svg/SystemTheme';
 
 export const THEME = [
   {

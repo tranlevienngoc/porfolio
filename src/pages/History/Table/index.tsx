@@ -5,10 +5,12 @@ import TextStatistical from 'components/common/Text/TextStatistical';
 import DeCrease from 'components/svg/DeCrease';
 import Gas from 'components/svg/Gas';
 import InCrease from 'components/svg/InCrease';
+import { TYPE_FILTER_TRANSACTION } from 'constants/enum';
 import { CellOfTable } from 'constants/types';
 import { AppContext } from 'Context/AppContext';
 import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 import { useContext, useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
 import truncateEthAddress from 'utils/truncateEthAddress';
 
 interface props {
@@ -29,13 +31,24 @@ const TableHistory = ({ length }: props) => {
   );
 
   const { darkmodeColors } = useColorModeValueItem();
+  const location = useLocation();
+
+  const renderTypeTransaction = (index: number) => {
+    if (TYPE_FILTER_TRANSACTION.AllTransaction === location.pathname) {
+      return index % 2 == 0 ? ['Send', 'To'] : ['Receive', 'From'];
+    }
+    if (TYPE_FILTER_TRANSACTION.Send === location.pathname) {
+      return ['Send', 'To'];
+    } else {
+      return ['Receive', 'From'];
+    }
+  };
 
   const columns = useMemo(
     () => [
       {
         Header: 'Status',
         accessor: 'status',
-
         Cell: ({
           cell: {
             row: { original, index },
@@ -51,7 +64,7 @@ const TableHistory = ({ length }: props) => {
               >
                 <TemplateText
                   fontSize={{ base: '13px', md: '16px' }}
-                  txt={index % 2 == 0 ? 'Send' : 'Receive'}
+                  txt={renderTypeTransaction(index)[0]}
                 />
                 <TemplateText
                   color={darkmodeColors.text425}
@@ -66,7 +79,7 @@ const TableHistory = ({ length }: props) => {
                 fontSize={{ base: '13px', md: '16px' }}
                 fontWeight={500}
                 txt={original.value}
-                isIncrease={index % 2 == 0}
+                isIncrease={renderTypeTransaction(index)[0] != 'Send'}
               />
               <TemplateText
                 fontSize={{ base: '13px', md: '16px' }}
@@ -91,14 +104,15 @@ const TableHistory = ({ length }: props) => {
             alignItems='center'
           >
             <TemplateText
-              txt={index % 2 == 0 ? 'To' : 'From'}
+              // txt={index % 2 == 0 ? 'To' : 'From'}
+              txt={renderTypeTransaction(index)[1]}
               w={{ base: 'unset', md: '70px', xl: 'unset' }}
               pr={{ base: 'unset', md: '10px', xl: 'unset' }}
               textAlign={{ base: 'unset', md: 'right', xl: 'unset' }}
               fontSize={{ base: '13px', md: '16px' }}
             />
             <Flex mt='4px' gap='8px' alignItems='center'>
-              <Image src='./svg/Image-Wallet.svg' />
+              <Image src='/svg/Image-Wallet.svg' />
               <TemplateText
                 color={darkmodeColors.text425}
                 fontWeight={400}
@@ -122,7 +136,7 @@ const TableHistory = ({ length }: props) => {
               fontSize={{ base: '13px', md: '16px' }}
               fontWeight={500}
               txt={original.value}
-              isIncrease={index % 2 == 0}
+              isIncrease={renderTypeTransaction(index)[0] != 'Send'}
             />
             <TemplateText
               fontSize={{ base: '13px', md: '16px' }}

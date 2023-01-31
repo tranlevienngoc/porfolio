@@ -16,9 +16,7 @@ const RightMenuNotConnect = () => {
         hIcon={24}
         wIcon={24}
         p='8px 24px 8px 24px'
-        onClick={() => {
-          connectwallet.onToggle();
-        }}
+        onClick={connectwallet.onToggle}
       />
       <MoreIcon ml='20px' />
 

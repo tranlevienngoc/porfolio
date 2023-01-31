@@ -1,9 +1,8 @@
 import { Box, Flex } from '@chakra-ui/react';
+import TemplateText from 'components/common/Text/TemplateText';
+import { SelectOption } from 'constants/types';
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-
-import TemplateText from '../Text/TemplateText';
-import { SelectOption } from '../../../constants/types';
 
 interface props {
   onClose?: () => void;

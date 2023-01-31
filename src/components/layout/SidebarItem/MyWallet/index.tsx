@@ -1,16 +1,15 @@
 import { Box, BoxProps, Flex } from '@chakra-ui/react';
+import Divider from 'components/common/Divider';
+import TemplateText from 'components/common/Text/TemplateText';
+import TextBold from 'components/common/Text/TextBold';
+import CoinIcon from 'components/svg/CoinIcon';
+import ConnectWallet from 'components/svg/ConnectWallet';
+import NoWalletChildren from 'components/svg/NoWalletChildren';
+import Tick from 'components/svg/Tick';
 import { AppContext } from 'Context/AppContext';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import truncateEthAddress from 'utils/truncateEthAddress';
-
-import Divider from '../../../common/Divider';
-import TemplateText from '../../../common/Text/TemplateText';
-import TextBold from '../../../common/Text/TextBold';
-import CoinIcon from '../../../svg/CoinIcon';
-import ConnectWallet from '../../../svg/ConnectWallet';
-import NoWalletChildren from '../../../svg/NoWalletChildren';
-import Tick from '../../../svg/Tick';
 
 interface props extends BoxProps {
   onClose?: () => void;

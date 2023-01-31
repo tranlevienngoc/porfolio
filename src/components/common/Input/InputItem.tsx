@@ -8,19 +8,15 @@ import {
   Select,
   Textarea,
 } from '@chakra-ui/react';
+import TemplateText from 'components/common/Text/TemplateText';
+import TickPass from 'components/svg/TickPass';
+import { ChakraType, ErrorFormType, OptionType } from 'constants/types';
+import useLightMode from 'helpers/lightMode/isLightMode';
 import { useCallback, useState } from 'react';
 import { Controller } from 'react-hook-form';
 
 import Hiden from './icon/Hiden';
 import Show from './icon/Show';
-import TemplateText from '../Text/TemplateText';
-import TickPass from '../../svg/TickPass';
-import {
-  ChakraType,
-  ErrorFormType,
-  OptionType,
-} from '../../../constants/types';
-import useLightMode from '../../../helpers/lightMode/isLightMode';
 
 interface TextInputProps {
   type: string;

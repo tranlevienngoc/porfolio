@@ -1,4 +1,6 @@
 import { Box, useBreakpointValue } from '@chakra-ui/react';
+import AllSymbol from 'components/svg/AllSymbol';
+import routes from 'config/routes';
 import { AppContext } from 'Context/AppContext';
 import NoConnectWallet from 'pages/Overview/NoConnectWallet';
 import React, { useContext, useState } from 'react';
@@ -6,8 +8,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Header from './Header';
 import SidebarItem from './SidebarItem';
-import AllSymbol from '../svg/AllSymbol';
-import routes from '../../config/routes';
 
 const Layout = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);

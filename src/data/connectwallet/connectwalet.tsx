@@ -1,6 +1,7 @@
 import CoinbaseWallet from 'components/svg/CoinbaseWallet';
 import CoinsPlusWallet from 'components/svg/CoinsPlusWallet';
 import MetaMaskIcon from 'components/svg/MetaMaskIcon';
+import StepIcon from 'components/svg/StepIcon';
 import WalletConnect from 'components/svg/WalletConnect';
 
 export const TEXT_GUIDE = [
@@ -10,13 +11,13 @@ export const TEXT_GUIDE = [
 
 export const STEP_CONNECT_FINISH = [
   {
-    finished: true,
+    icon: <StepIcon color='#106CFF' />,
   },
   {
-    finished: true,
+    icon: <StepIcon color='#106CFF' />,
   },
   {
-    finished: false,
+    icon: <StepIcon color='#D4D4D6' />,
   },
 ];
 
@@ -26,7 +27,6 @@ export const LIST_OPTION_WALLET = [
     icon: <MetaMaskIcon />,
     disable: false,
   },
-
   {
     label: 'Coinbase Wallet',
     icon: <CoinbaseWallet />,
@@ -42,7 +42,6 @@ export const LIST_OPTION_WALLET = [
   {
     label: 'Coins Plus',
     icon: <CoinsPlusWallet />,
-
     disable: true,
   },
 ];

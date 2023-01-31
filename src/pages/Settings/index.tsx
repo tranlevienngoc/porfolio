@@ -2,6 +2,7 @@ import { Box, Flex, Popover, Radio, RadioGroup, Stack } from '@chakra-ui/react';
 import PopupItem from 'components/common/PopupItem';
 import SelectItem from 'components/common/SelectItem';
 import TemplateText from 'components/common/Text/TemplateText';
+import { TYPE_SELECT } from 'constants/enum';
 import {
   LANGUAGE_CURRENCY,
   LIST_PLATFORM_DOWNLOAD,
@@ -18,8 +19,8 @@ const Settings = () => {
   const [currency, setCurrency] = useState('USD - US Dollar');
   const [select, setSelect] = useState('currency');
   const handleSelelect = (value: string) => {
-    if (select === 'Language') setLang(value);
-    if (select === 'Currency') setCurrency(value);
+    if (select === TYPE_SELECT.Language) setLang(value);
+    if (select === TYPE_SELECT.Currency) setCurrency(value);
   };
   return (
     <Box p='16px' className='settings-page' width='100%' height='100vh'>

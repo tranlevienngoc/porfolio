@@ -1,4 +1,4 @@
-import TableHistory from '../../pages/History/Table';
+import TableHistory from 'pages/History/Table';
 
 export const LIST_OPTION_HISTORY = [
   {

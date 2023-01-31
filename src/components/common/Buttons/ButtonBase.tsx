@@ -1,7 +1,6 @@
 import { Button, ButtonProps } from '@chakra-ui/react';
+import TemplateText from 'components/common/Text/TemplateText';
 import { ReactNode } from 'react';
-
-import TemplateText from '../Text/TemplateText';
 
 interface Props extends ButtonProps {
   fsText?: number;

@@ -2,18 +2,16 @@ import { Box } from '@chakra-ui/react';
 import CurrencyBox from 'components/common/Header/CurrencyBox';
 import FiatBox from 'components/common/Header/FiatBox';
 import GasFeeBox from 'components/common/Header/GasFeeBox';
-
-import AddressBook from '../components/svg/AddressBook';
-import BuyWithFiat from '../components/svg/BuyWithFiat';
-import Developer from '../components/svg/Developer';
-import GasFee from '../components/svg/Gasfee';
-import Helps from '../components/svg/Helps';
-import LogOut from '../components/svg/LogOut';
-import MoreActions from '../components/svg/MoreActions';
-import Setting from '../components/svg/Setting';
-import Supports from '../components/svg/Supports';
-import ToggleBalance from '../components/svg/ToggleBalance';
-import YourWallet from '../components/svg/YourWallet';
+import AddressBook from 'components/svg/AddressBook';
+import BuyWithFiat from 'components/svg/BuyWithFiat';
+import Developer from 'components/svg/Developer';
+import GasFee from 'components/svg/Gasfee';
+import Helps from 'components/svg/Helps';
+import LogOut from 'components/svg/LogOut';
+import MoreActions from 'components/svg/MoreActions';
+import Setting from 'components/svg/Setting';
+import Supports from 'components/svg/Supports';
+import ToggleBalance from 'components/svg/ToggleBalance';
 
 export const MORE_ACTION_NOT_CONNECT = [
   {
@@ -168,13 +166,4 @@ export const MENU_CONNECT = [
   },
 ];
 
-export const MENU_NOT_CONNECT = [
-  {
-    icon: <YourWallet />,
-    item: <GasFeeBox />,
-    title: 'Your Wallet',
-    value: 'yourWallet',
-    children: [],
-  },
-  MORE_ACTION,
-];
+export const MENU_NOT_CONNECT = [MORE_ACTION];

@@ -61,7 +61,7 @@ const FilterBox = ({
             cursor='pointer'
             borderRadius='8px'
             border='1px solid #D4D4D6'
-            key={uuidv4}
+            key={uuidv4()}
             bg={item.url === selected ? 'blue.200' : 'unset'}
             onClick={() => setSelected(item.value)}
             _hover={{

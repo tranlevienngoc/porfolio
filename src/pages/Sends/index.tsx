@@ -8,9 +8,9 @@ import {
   Tabs,
 } from '@chakra-ui/react';
 import TemplateText from 'components/common/Text/TemplateText';
+import { LIST_PANEL } from 'data/send/send';
 import React from 'react';
-
-import TokenTab from './TokenTab';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Sends() {
   return (
@@ -37,39 +37,28 @@ export default function Sends() {
         >
           <Tabs>
             <TabList w='100%'>
-              <Tab
-                _selected={{
-                  color: 'blue.100',
-                  borderBottom: '2px solid  #106CFF',
-                }}
-                color='gray.500'
-                fontSize={16}
-                fontWeight={600}
-                w='50%'
-              >
-                Token
-              </Tab>
-              <Tab
-                w='50%'
-                _selected={{
-                  color: 'blue.100',
-                  borderBottom: '2px solid  #106CFF',
-                }}
-                color='gray.500'
-                fontSize={16}
-                fontWeight={600}
-              >
-                NFT
-              </Tab>
+              {LIST_PANEL.map((item) => (
+                <Tab
+                  key={uuidv4()}
+                  _selected={{
+                    color: 'blue.100',
+                    borderBottom: '2px solid  #106CFF',
+                  }}
+                  color='gray.500'
+                  fontSize={16}
+                  fontWeight={600}
+                  w='50%'
+                >
+                  {item.name}
+                </Tab>
+              ))}
             </TabList>
-
             <TabPanels>
-              <TabPanel p='-10px'>
-                <TokenTab />
-              </TabPanel>
-              <TabPanel>
-                <p>two!</p>
-              </TabPanel>
+              {LIST_PANEL.map((item) => (
+                <TabPanel key={uuidv4()} p='-10px'>
+                  {item.element}
+                </TabPanel>
+              ))}
             </TabPanels>
           </Tabs>
         </Box>
