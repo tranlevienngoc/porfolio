@@ -29,6 +29,7 @@ export default function NFT() {
       </SimpleGrid>
       <SimpleGrid
         columns={{ base: 1, md: 2, xl: 4 }}
+        mt='20px'
         gridGap={{ base: 'unset', md: '16px' }}
       >
         {PRODUCT_CARD.map((item) => (

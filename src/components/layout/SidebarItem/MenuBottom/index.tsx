@@ -18,8 +18,9 @@ import ArrowLeft from 'components/svg/ArrowLeft';
 import Close from 'components/svg/Close';
 import { MENU_CONNECT, MENU_NOT_CONNECT } from 'config/menuBottom';
 import { KeyConnect } from 'constants/app';
+import { TYPE_AUTH } from 'constants/enum';
 import { AppContext } from 'Context/AppContext';
-import { useContext, useState } from 'react';
+import { useContext, useMemo, useState } from 'react';
 
 interface props extends BoxProps {
   onClose?: () => void;
@@ -30,7 +31,10 @@ const MenuBottom = ({ onClose = () => ({}), ...props }: props) => {
   const [renderItem, setRenderItem] = useState(null);
   const [chooseItem, setChooseItem] = useState('');
   const { isConnect } = useContext(AppContext);
-  const MENU = isConnect ? MENU_CONNECT : MENU_NOT_CONNECT;
+  const MENU = useMemo(
+    () => (isConnect ? MENU_CONNECT : MENU_NOT_CONNECT),
+    [isConnect]
+  );
 
   return (
     <Box {...props}>
@@ -106,6 +110,11 @@ const MenuChildren = ({ menuChildren, onclose }) => {
     onSetConnectStatus(false);
     onclose();
   };
+  const handleLogout = (title: string) => {
+    if (title === TYPE_AUTH.Logout) {
+      onLogout();
+    }
+  };
   return (
     <Box ml='15px' w='200px'>
       {menuChildren.map((item) => (
@@ -116,11 +125,7 @@ const MenuChildren = ({ menuChildren, onclose }) => {
           display='flex'
           cursor='pointer'
           alignItems='center'
-          onClick={() => {
-            if (item.title === 'Log out') {
-              onLogout();
-            }
-          }}
+          onClick={() => handleLogout(item.value)}
         >
           {item.icon}
           <TemplateText fontSize={13} txt={item.title} ml='12px' />

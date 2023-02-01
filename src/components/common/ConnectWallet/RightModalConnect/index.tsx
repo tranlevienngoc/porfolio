@@ -147,7 +147,7 @@ export default function RightModalConnect() {
             w='100%'
             value={valueSearch}
             backgroundColor='white'
-            onChange={(value) => handleChangeInput(value)}
+            onChange={handleChangeInput}
             placeholder='Enter address, domain or identity'
           />
           <ButtonBase

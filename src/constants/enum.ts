@@ -28,3 +28,7 @@ export enum TYPE_SELECT {
   Language = 'Language',
   Currency = 'Currency',
 }
+
+export enum TYPE_AUTH {
+  Logout = 'log-out',
+}

@@ -12,7 +12,6 @@ interface props {
 export default function ProductCard({ product }: props) {
   return (
     <Box
-      mt='20px'
       borderRadius='16px'
       w='100%'
       h='95%'
@@ -22,7 +21,7 @@ export default function ProductCard({ product }: props) {
       position='relative'
     >
       <Image w='100%' src={product.image} />
-      <Box position='absolute' top='15px' right='15px'>
+      <Box position='absolute' top='20px' right='20px'>
         <HeartIcon />
       </Box>
       <Box mt='16px'>

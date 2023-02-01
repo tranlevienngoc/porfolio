@@ -7,6 +7,7 @@ import ArrowRight from 'components/svg/ArrowRight';
 import MoreIcon from 'components/svg/MoreIcon';
 import { MORE_ACTION_NOT_CONNECT } from 'config/menuBottom';
 import { KeyConnect } from 'constants/app';
+import { TYPE_AUTH } from 'constants/enum';
 import { AppContext } from 'Context/AppContext';
 import useColorModeValueItem from 'hook/useColorModeValueItem/useColorModeValueItem';
 import { useContext } from 'react';
@@ -25,7 +26,7 @@ const MoreActionBox = () => {
   };
 
   const handleCheckOption = (value: string) => {
-    if (value === 'log-out') {
+    if (value === TYPE_AUTH.Logout) {
       onLogout();
     }
   };

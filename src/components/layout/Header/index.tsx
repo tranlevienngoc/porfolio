@@ -60,7 +60,7 @@ const Header = ({
         w={{ base: '100%', lg: '80%', xl: '645px' }}
         value={valueSearch}
         backgroundColor={darkmodeColors.bg900}
-        onChange={(value) => handleChangeInput(value)}
+        onChange={handleChangeInput}
         placeholder='Search accounts, wallets, domains...'
       />
 
