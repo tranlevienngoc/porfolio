@@ -3,28 +3,21 @@ import FlexCenter from 'components/common/Flex/FlexCenter';
 import PopoverItem from 'components/common/PopoverItem/PopoverItem';
 import TemplateText from 'components/common/Text/TemplateText';
 import EditIcon from 'components/svg/EditIcon';
-import EditIconBlue from 'components/svg/EditIconBlue';
-import { LIST_MORE_OPTION } from 'data/your-wallet/your-wallet';
+import { MORE_OPTIONS } from 'data/your-wallet/your-wallet';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 function MoreOptionWallet() {
-  const [useDisclosure, setUseDisclosure] = useState(false);
+  const [renderColor, setRenderColor] = useState(false);
 
   return (
     <Box>
       <PopoverItem
-        callback={setUseDisclosure}
+        callback={setRenderColor}
         buttonItem={
-          useDisclosure ? (
-            <FlexCenter borderRadius={400} w='32px' h='32px' cursor='pointer'>
-              <EditIconBlue />
-            </FlexCenter>
-          ) : (
-            <FlexCenter cursor='pointer' w='32px' h='32px'>
-              <EditIcon />
-            </FlexCenter>
-          )
+          <FlexCenter w='32px' h='32px' cursor='pointer'>
+            <EditIcon color={renderColor ? '#106CFF' : '#505052'} />
+          </FlexCenter>
         }
         w='auto'
         p='8px 10px'
@@ -35,7 +28,7 @@ function MoreOptionWallet() {
         mr='24px'
       >
         <Box w='197px'>
-          {LIST_MORE_OPTION.map((item) => (
+          {MORE_OPTIONS.map((item) => (
             <>
               {item.lable === 'Remove' && <Divider h='1px' m='5px 0' />}
               <Flex

@@ -4,7 +4,7 @@ import CloudChange from 'components/svg/CloudChange';
 import RemoveIcon from 'components/svg/RemoveIcon';
 import Rename from 'components/svg/Rename';
 
-export const LIST_TAB_YOUR_WALLET = [
+export const YOUR_WALLET_TAB = [
   {
     label: 'My wallet',
     value: '05',
@@ -15,7 +15,7 @@ export const LIST_TAB_YOUR_WALLET = [
   },
 ];
 
-export const LIST_MORE_OPTION = [
+export const MORE_OPTIONS = [
   {
     lable: 'Copy Address',
     icon: <ClipBoard />,

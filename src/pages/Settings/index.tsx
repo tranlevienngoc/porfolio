@@ -5,7 +5,7 @@ import TemplateText from 'components/common/Text/TemplateText';
 import { TYPE_SELECT } from 'constants/enum';
 import {
   LANGUAGE_CURRENCY,
-  LIST_PLATFORM_DOWNLOAD,
+  DOWNLOAD_FLATFORMS,
   THEME,
 } from 'data/setting/setting';
 import { useState } from 'react';
@@ -109,7 +109,7 @@ const Settings = () => {
               txt='Choose your version to download'
             />
             <Flex mt='16px' gap={{ base: '10px', md: '20px' }} flexWrap='wrap'>
-              {LIST_PLATFORM_DOWNLOAD.map((item) => (
+              {DOWNLOAD_FLATFORMS.map((item) => (
                 <Box key={uuidv4()}>{item.icon}</Box>
               ))}
             </Flex>

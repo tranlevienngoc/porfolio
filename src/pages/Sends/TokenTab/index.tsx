@@ -15,7 +15,7 @@ import ArrowBottom from 'components/svg/ArrowBottom';
 import PersonCard from 'components/svg/PersonCard';
 import { AppContext } from 'Context/AppContext';
 import { LIST_COIN } from 'data/send/send';
-import React, { useCallback, useContext, useState } from 'react';
+import React, { useCallback, useContext, useMemo, useState } from 'react';
 import truncateEthAddress from 'utils/truncateEthAddress';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -31,32 +31,35 @@ export default function TokenTab() {
   }, []);
 
   const { walletAddress } = useContext(AppContext);
-  const LIST_WALLET = [
-    {
-      name: 'Trust Wallet',
-      walletAddress: walletAddress,
-      value: '$3,429.65',
-      img: './svg/Image-Wallet.svg',
-    },
-    {
-      name: 'CoinBase Wallet',
-      walletAddress: walletAddress,
-      value: '$3,429.65',
-      img: './svg/Image-Wallet.svg',
-    },
-    {
-      name: 'Trust Wallet',
-      walletAddress: walletAddress,
-      value: '$3,429.65',
-      img: './svg/Image-Wallet.svg',
-    },
-    {
-      name: 'Metamask',
-      walletAddress: walletAddress,
-      value: '$3,429.65',
-      img: './svg/Image-Wallet.svg',
-    },
-  ];
+  const WALLETS = useMemo(
+    () => [
+      {
+        name: 'Trust Wallet',
+        walletAddress: walletAddress,
+        value: '$3,429.65',
+        img: './svg/Image-Wallet.svg',
+      },
+      {
+        name: 'CoinBase Wallet',
+        walletAddress: walletAddress,
+        value: '$3,429.65',
+        img: './svg/Image-Wallet.svg',
+      },
+      {
+        name: 'Trust Wallet',
+        walletAddress: walletAddress,
+        value: '$3,429.65',
+        img: './svg/Image-Wallet.svg',
+      },
+      {
+        name: 'Metamask',
+        walletAddress: walletAddress,
+        value: '$3,429.65',
+        img: './svg/Image-Wallet.svg',
+      },
+    ],
+    []
+  );
   return (
     <>
       <Flex w='100%'>
@@ -124,7 +127,7 @@ export default function TokenTab() {
                     boxShadow='0px 2px 6px -1px rgba(0, 0, 0, 0.1), 0px 6px 24px rgba(0, 0, 0, 0.1)'
                     borderRadius='16px'
                   >
-                    {LIST_WALLET.map((item, index) => (
+                    {WALLETS.map((item, index) => (
                       <Box
                         key={uuidv4()}
                         _hover={{ border: '1px solid #106CFF' }}
@@ -132,8 +135,7 @@ export default function TokenTab() {
                         borderRadius='16px'
                         border={{ base: '1px solid #EFF0F2', md: 'unset' }}
                         mb={{
-                          base:
-                            index === LIST_WALLET.length - 1 ? 'unset' : '12px',
+                          base: index === WALLETS.length - 1 ? 'unset' : '12px',
                           md: 'unset',
                         }}
                         onClick={() => {

@@ -90,7 +90,7 @@ export const LIST_PREFERENCES = [
   },
 ];
 
-export const LIST_PLATFORM_DOWNLOAD = [
+export const DOWNLOAD_FLATFORMS = [
   {
     label: 'AppStore',
     icon: <AppStorePlatform />,

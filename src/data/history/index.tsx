@@ -1,6 +1,6 @@
 import TableHistory from 'pages/History/Table';
 
-export const LIST_OPTION_HISTORY = [
+export const HISTORY_OPTIONS = [
   {
     label: 'All Transactions',
     url: '/history',
