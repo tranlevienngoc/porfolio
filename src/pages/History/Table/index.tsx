@@ -5,6 +5,7 @@ import TextStatistical from 'components/common/Text/TextStatistical';
 import DeCrease from 'components/svg/DeCrease';
 import Gas from 'components/svg/Gas';
 import InCrease from 'components/svg/InCrease';
+import { ReceiveTransaction, SendTransaction } from 'constants/app';
 import { TYPE_FILTER_TRANSACTION } from 'constants/enum';
 import { CellOfTable } from 'constants/types';
 import { AppContext } from 'Context/AppContext';
@@ -33,15 +34,14 @@ const TableHistory = ({ length }: props) => {
   const { darkmodeColors } = useColorModeValueItem();
   const location = useLocation();
 
-  const renderTypeTransaction = (index: number) => {
+  const getTransactionType = (index: number) => {
     if (TYPE_FILTER_TRANSACTION.AllTransaction === location.pathname) {
-      return index % 2 == 0 ? ['Send', 'To'] : ['Receive', 'From'];
+      return index % 2 == 0 ? SendTransaction : ReceiveTransaction;
     }
     if (TYPE_FILTER_TRANSACTION.Send === location.pathname) {
-      return ['Send', 'To'];
-    } else {
-      return ['Receive', 'From'];
+      return SendTransaction;
     }
+    return ReceiveTransaction;
   };
 
   const columns = useMemo(
@@ -64,7 +64,7 @@ const TableHistory = ({ length }: props) => {
               >
                 <TemplateText
                   fontSize={{ base: '13px', md: '16px' }}
-                  txt={renderTypeTransaction(index)[0]}
+                  txt={getTransactionType(index)[0]}
                 />
                 <TemplateText
                   color={darkmodeColors.text425}
@@ -79,7 +79,7 @@ const TableHistory = ({ length }: props) => {
                 fontSize={{ base: '13px', md: '16px' }}
                 fontWeight={500}
                 txt={original.value}
-                isIncrease={renderTypeTransaction(index)[0] != 'Send'}
+                isIncrease={getTransactionType(index)[0] != 'Send'}
               />
               <TemplateText
                 fontSize={{ base: '13px', md: '16px' }}
@@ -105,7 +105,7 @@ const TableHistory = ({ length }: props) => {
           >
             <TemplateText
               // txt={index % 2 == 0 ? 'To' : 'From'}
-              txt={renderTypeTransaction(index)[1]}
+              txt={getTransactionType(index)[1]}
               w={{ base: 'unset', md: '70px', xl: 'unset' }}
               pr={{ base: 'unset', md: '10px', xl: 'unset' }}
               textAlign={{ base: 'unset', md: 'right', xl: 'unset' }}
@@ -136,7 +136,7 @@ const TableHistory = ({ length }: props) => {
               fontSize={{ base: '13px', md: '16px' }}
               fontWeight={500}
               txt={original.value}
-              isIncrease={renderTypeTransaction(index)[0] != 'Send'}
+              isIncrease={getTransactionType(index)[0] != 'Send'}
             />
             <TemplateText
               fontSize={{ base: '13px', md: '16px' }}

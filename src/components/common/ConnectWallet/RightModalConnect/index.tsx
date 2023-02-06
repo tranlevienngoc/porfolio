@@ -48,9 +48,9 @@ export default function RightModalConnect() {
     localStorage.setItem(KeyConnect, account || '');
   }, [account]);
 
-  const [valueSearch, setValueSearch] = useState('');
+  const [valueSearch, setSearchValue] = useState('');
   const handleChangeInput = useCallback((value: string) => {
-    setValueSearch(value);
+    setSearchValue(value);
   }, []);
 
   const handleWalletConnect = (label: string) => {

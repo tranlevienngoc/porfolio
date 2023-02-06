@@ -37,10 +37,10 @@ const FilterBox = ({
     [isCryptocurrency]
   );
 
-  const [valueSearch, setValueSearch] = useState('');
+  const [valueSearch, setSearchValue] = useState('');
 
   const handleChangeInput = useCallback((value: string) => {
-    setValueSearch(value);
+    setSearchValue(value);
   }, []);
 
   return (

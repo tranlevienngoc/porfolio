@@ -20,14 +20,14 @@ import truncateEthAddress from 'utils/truncateEthAddress';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function TokenTab() {
-  const [valueSearch, setValueSearch] = useState('');
-  const [valueTrading, setvalueTrading] = useState('134.430');
+  const [valueSearch, setSearchValue] = useState('');
+  const [valueTrading, setTradingValue] = useState('134.430');
 
-  const handleChangeInput = useCallback((value: string) => {
-    setValueSearch(value);
+  const handleInputChange = useCallback((e) => {
+    setSearchValue(e.target.value);
   }, []);
   const handleChangeTrading = useCallback((value: string) => {
-    setvalueTrading(value);
+    setTradingValue(value);
   }, []);
 
   const { walletAddress } = useContext(AppContext);
@@ -88,7 +88,7 @@ export default function TokenTab() {
             w={{ base: '100%', xl: '90%' }}
             value={valueSearch}
             backgroundColor='white'
-            onChange={(e) => handleChangeInput(e.target.value)}
+            onChange={handleInputChange}
             borderRight='1px solid #D9D9D9'
             border='none'
             borderRadius='0px'
@@ -139,7 +139,7 @@ export default function TokenTab() {
                           md: 'unset',
                         }}
                         onClick={() => {
-                          setValueSearch(item.walletAddress);
+                          setSearchValue(item.walletAddress);
                           onClose();
                         }}
                       >

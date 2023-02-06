@@ -21,13 +21,13 @@ const Header = ({
   onShowSidebar,
   onShowLeftItem,
 }: Props) => {
-  const [valueSearch, setValueSearch] = useState('');
+  const [valueSearch, setSearchValue] = useState('');
 
   const { darkmodeColors } = useColorModeValueItem();
 
   const { isConnect } = useContext(AppContext);
   const handleChangeInput = useCallback((value: string) => {
-    setValueSearch(value);
+    setSearchValue(value);
   }, []);
 
   const handleClick = (value: boolean) => {
