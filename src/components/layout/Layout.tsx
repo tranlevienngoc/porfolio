@@ -35,7 +35,7 @@ const Layout = () => {
   return (
     <Box>
       <Router>
-        {/* cdnsv */}
+        cdnsv
         <Box>
           <SidebarItem
             variant={variant || 'sidebar'}
